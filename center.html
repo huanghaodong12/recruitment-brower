@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://www.zhipin.com/web/geek/resume?editItem=userinfo -->
+<html class="standard">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>hhd招聘</title>
+    <link href="./center_files/vendor.cd1046c7.css" rel="stylesheet">
+    <link href="./center_files/app.cd1046c7.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./center_files/business_chat_resume_user-center.cd1046c7.css">
+    <link rel="stylesheet" type="text/css" href="./center_files/guide_resume_user-center.cd1046c7.css">
+    <link rel="stylesheet" type="text/css" href="./center_files/resume_user-center.cd1046c7.css">
+    <link rel="stylesheet" type="text/css" href="./center_files/user-center.cd1046c7.css">
+    <link rel="stylesheet" type="text/css" href="./center_files/resume.cd1046c7.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/vue.js"></script>
+    <script src="./js/vue-router.js"></script>
+</head>
+
+<body>
+    <div id="app">
+
+    <div id="wrap" class="">
+        <div data-v-3cb81a63="">
+            <div data-v-3cb81a63="" class="not-chat-router">
+                <!-- header -->
+                <div id="header" style="z-index: 1500;">
+                    <div class="inner home-inner">
+                        <div class="logo">
+
+                        </div>
+
+                        <div class="user-nav">
+
+                            <ul>
+                                <li class=""><a ka="header-message" href="./chat.html">消息<span
+                                            class="nav-chat-num"></span></a></li>
+                                <li class=""><a ka="header-resume" href="###">简历</a>
+                                </li>
+                                <li class="nav-dot">·</li>
+                                <li class="nav-up-file"><a class="header-resume-upload" ka="header-resume-upload-2"
+                                        href="javascript:;" @click="openUpCvDiv()">上传</a></li>
+                                <li class="nav-figure" @mouseover="mouseOverUserNav()" @mouseleave="mouseLeaveUserNav()">
+                                    <a href="./main.html" ka="header-username">
+                                        <span class="label-text">{{userInfo.userNickname}}</span><img
+                                            :src="userInfo.userAvatar" alt="">
+                                    </a>
+                                    <div class="dropdown" style="display: block;" v-show="isShowUserNav">
+                                        <a href="./main.html" style="overflow: initial;"
+                                            ka="header-personal">个人中心<span>推荐职位</span></a>
+                                        <a href="###" style="overflow: initial;"
+                                            ka="account_manage">信息设置<span>修改密码、信息修改</span></a>
+                                        <a href="###" @click="loginout()" class="link-logout" ka="header-logout">退出登录</a>
+                                       
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+        <div id="main" class="inner">
+            <div id="container" class="resume-container">
+                <!-- left -->
+                <div class="resume-catalogue">
+                    <div class="resume-catalogue-group">
+                        <h2 class="catalogue-title main-title">简历目录</h2>
+                        <ul class="catalogue-list">
+                            <li class="catalogue-item"><span>个人信息</span></li>
+                            <li class="catalogue-item"><span>密码设置</span></li>
+                            <li class="catalogue-item"><span>工作经历</span></li>
+                            <li class="catalogue-item"><span>教育经历</span></li>
+                            <!-- <li class="catalogue-item active"><span>教育经历</span></li> -->
+                        </ul>
+                    </div>
+                    <div class="resume-catalogue-group custom-add">
+                        <h2 class="catalogue-title">自定义添加</h2>
+                        <ul class="catalogue-list">
+                            <li class="catalogue-item"><span>资格证书</span><i class="catalogue-icon"></i>
+                                <div class="catalogue-tip">尽可能选择有含金量的证书，证明你的专业程度</div>
+                            </li>
+                            <li class="catalogue-item"><span>社交主页</span><i class="catalogue-icon"></i>
+                                <div class="catalogue-tip">突出你个人实力的主页</div>
+                            </li>
+                            <li class="catalogue-item"><span>志愿者服务经历</span><i class="catalogue-icon"></i>
+                                <div class="catalogue-tip">展示你的志愿者精神</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="resume-content">
+                    <div class="resume-content-box">
+                        <div class="resume-box-header">
+                            <h2>我的在线简历</h2><a href="###" class="link-preview">预览&amp;下载</a>
+                        </div>
+                        <div class="resume-box resume-center">
+                            <div id="userinfo" class="resume-item resume-userinfo resume-baseInfo resume-undefined">
+                                <!-- 个人信息显示div -->
+                                <div @click="openUpdateUserInfoDiv" v-show="isShowUserInfo" data-v-7eae42f4="" class="item-primary baseinfo-container" style="">
+                                    <div data-v-7eae42f4="" class="header-upload">
+                                        <div data-v-7eae42f4="" class="header-box" @click="clickFileInput()">
+                                            <div data-v-7eae42f4="" class="header-mask"></div>
+                                            <img data-v-7eae42f4="" :src="userInfo.userAvatar" class="header-img">
+                                            <input id="file" ref="filElem" type="file" style="display: none"
+                                                @change="updateUserAvatar($event)">
+                                            <!---->
+                                        </div>
+                                        <svg data-v-7eae42f4="" class="icon-svg">
+                                            <use v-if="userInfo.gender == 'male'" data-v-7eae42f4="" xlink:href="#icon_man"></use>
+                                            <use v-if="userInfo.gender == 'female'" data-v-7eae42f4="" xlink:href="#icon_woman">
+                                            </use>
+                                        </svg>
+                                    </div>
+                                    <div data-v-7eae42f4="" ka="user-resume-edit-userinfo" class="user-info">
+                                        <p data-v-7eae42f4="" class="name">{{userInfo.userNickname}}</p>
+                                        <div data-v-7eae42f4="" class="info-flex">
+                                            <div data-v-7eae42f4="" class="info-flex-item">
+                                                <div data-v-7eae42f4="" class="info-labels">
+                                                    <p data-v-7eae42f4=""><span data-v-7eae42f4="" class="prev-line"><i
+                                                                data-v-7eae42f4=""
+                                                                class="fz-resume fz-experience"></i>{{userInfo.workAge}}年经验</span><span
+                                                            data-v-7eae42f4="" class="prev-line"><i data-v-7eae42f4=""
+                                                                class="fz-resume fz-degree"></i>本科</span><span
+                                                            data-v-7eae42f4="" class="prev-line"><i data-v-7eae42f4=""
+                                                                class="fz-resume fz-status"></i>在职-暂不考虑</span></p>
+                                                    <p data-v-7eae42f4=""><span data-v-7eae42f4="" class="prev-line"><i
+                                                                data-v-7eae42f4=""
+                                                                class="fz-resume fz-time"></i>{{getFormatDateShow(userInfo.workStartDay)}}</span><span
+                                                            data-v-7eae42f4="" class="prev-line"><i data-v-7eae42f4=""
+                                                                class="fz-resume fz-tel"></i>{{userInfo.userPhone}}</span>
+                                                        <!---->
+                                                        <!---->
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div data-v-7eae42f4="" class="resume-cropper-upload"><input type="file" accept=""
+                                            class="upload-input">
+                                        <div class="custom-box">
+                                            <div></div>
+                                        </div>
+                                        <div class="cropper-win" style="display: none;">
+                                            <div class="custom-cropper-box">
+                                                <div class="vue-cropper">
+                                                    <div class="cropper-box">
+                                                        <div class="cropper-box-canvas"
+                                                            style="width: 0px; height: 0px; transform: scale(1, 1) translate3d(0px, 0px, 0px) rotateZ(0deg); display: none;">
+                                                            <img src="https://www.zhipin.com/web/geek/resume?editItem=userinfo"
+                                                                alt="cropper-img">
+                                                        </div>
+                                                    </div>
+                                                    <div class="cropper-drag-box cropper-move"></div>
+                                                    <div class="cropper-crop-box"
+                                                        style="width: 0px; height: 0px; transform: translate3d(0px, 0px, 0px); display: none;">
+                                                        <span class="cropper-view-box"><img
+                                                                src="https://www.zhipin.com/web/geek/resume?editItem=userinfo"
+                                                                alt="cropper-img"
+                                                                style="width: 0px; height: 0px; transform: scale(1, 1) translate3d(0px, 0px, 0px) rotateZ(0deg);"></span><span
+                                                            class="cropper-face cropper-move"></span><span
+                                                            class="crop-info" style="top: 0px;">0 × 0</span><span><span
+                                                                class="crop-line line-w"></span><span
+                                                                class="crop-line line-a"></span><span
+                                                                class="crop-line line-s"></span><span
+                                                                class="crop-line line-d"></span><span
+                                                                class="crop-point point1"></span><span
+                                                                class="crop-point point2"></span><span
+                                                                class="crop-point point3"></span><span
+                                                                class="crop-point point4"></span><span
+                                                                class="crop-point point5"></span><span
+                                                                class="crop-point point6"></span><span
+                                                                class="crop-point point7"></span><span
+                                                                class="crop-point point8"></span></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="btns-box"><button type="button"
+                                                    class="btn btn-primary">确定</button><button type="button"
+                                                    class="btn">取消</button></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 个人信息修改div -->
+                                <div v-show="!isShowUserInfo" style="display: block;" data-v-f83a8e3e="" class="item-form">
+                                    <h3 data-v-f83a8e3e="" class="title">编辑个人信息</h3>
+                                    <form data-v-f83a8e3e="" autocomplete="off"
+                                        class="ui-form ui-form-label-top">
+                                        <div data-v-f83a8e3e="" class="form-item form-item-required">
+                                            <div class="item-label">姓名</div>
+                                            <div class="item-content">
+                                                <!---->
+                                                <div data-v-f83a8e3e=""
+                                                    class="input-wrap input-wrap-text input-group input-group-with-append input-hide-icon"
+                                                    ka="resume_form_edit_name">
+                                                    <input v-model="updateUserInfo.userNickname" autocomplete="on" spellcheck="false"
+                                                        type="text" placeholder="请输入您的姓名" maxlength="24"
+                                                        class="input">
+                                                    
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                        <div data-v-f83a8e3e="" class="form-item" style="width: 49%;"
+                                            ka="resume_form_edit_applyStatus">
+                                            <div class="item-label">当前求职状态</div>
+                                            <div class="item-content">
+                                                <div data-v-f83a8e3e="" class="ui-select ui-select-single"
+                                                    autocomplete="off">
+                                                    <div tabindex="0" class="ui-select-selection" @click="openUserInfoStatusSelectDiv()"><input
+                                                            type="hidden" value="1">
+                                                        <div class="ui-select-inner"><span
+                                                                class="ui-select-selected-value">在职-暂不考虑</span>
+                                                            <!---->
+                                                            <!----><i class="ui-icon-arrow-down"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ui-select-dropdown" style="display: none;" v-show="isShowUserInfoStatusDiv">
+                                                        <ul class="ui-dropdown-not-found"
+                                                            style="display: none;">
+                                                            <li>无匹配数据</li>
+                                                        </ul>
+                                                        <ul class="ui-dropdown-list">
+                                                            <li data-v-f83a8e3e="" class="ui-select-item">
+                                                                离职-随时到岗</li>
+                                                            <li data-v-f83a8e3e=""
+                                                                class="ui-select-item ui-select-item-selected">
+                                                                在职-暂不考虑
+                                                            </li>
+                                                            <li data-v-f83a8e3e="" class="ui-select-item">
+                                                                在职-考虑机会</li>
+                                                            <li data-v-f83a8e3e="" class="ui-select-item">
+                                                                在职-月内到岗</li>
+                                                        </ul>
+                                                        <ul class="ui-dropdown-loading" style="display: none;">
+                                                            加载中</ul>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-f83a8e3e="" class="form-item">
+                                            <div class="item-label">性别</div>
+                                            <div class="item-content">
+                                                <div data-v-f83a8e3e="" name="radioGroup_1619410538533_1"
+                                                    class="radio-group radio-group-rectangle"
+                                                    autocomplete="off"><label data-v-f83a8e3e=""
+                                                        class="radio radio-item " :class="getUserInfoGenderClass('male')"><span
+                                                            class="radio-inner"><input @click="selectUserGender('male')" type="radio"
+                                                                class="radio-input"
+                                                                name="radioGroup_1619410538533_1"><i
+                                                                class="radio-edging"></i></span>男</label><label
+                                                        data-v-f83a8e3e="" class="radio radio-item" :class="getUserInfoGenderClass('female')"><span
+                                                            class="radio-inner"><input @click="selectUserGender('female')" type="radio"
+                                                                class="radio-input"
+                                                                name="radioGroup_1619410538533_1"><i
+                                                                class="radio-edging"></i></span>女</label>
+                                                    <!---->
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-f83a8e3e="" class="form-item" style="width: 49%;"
+                                            ka="resume_form_edit_freshGraduate">
+                                            <div class="item-label">我的身份</div>
+                                            <div class="item-content">
+                                                <div data-v-f83a8e3e=""
+                                                    class="ui-select ui-select-disabled ui-select-single"
+                                                    autocomplete="off">
+                                                    <div tabindex="-1" class="ui-select-selection"><input
+                                                            type="hidden" value="0">
+                                                        <div class="ui-select-inner"><span
+                                                                class="ui-select-selected-value">职场人</span>
+                                                            <!---->
+                                                            <!----><i class="ui-icon-arrow-down"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ui-select-dropdown" style="display: none;">
+                                                        <ul class="ui-dropdown-not-found"
+                                                            style="display: none;">
+                                                            <li>无匹配数据</li>
+                                                        </ul>
+                                                        <ul class="ui-dropdown-list">
+                                                            <li data-v-f83a8e3e=""
+                                                                class="ui-select-item ui-select-item-selected">
+                                                                职场人</li>
+                                                            <li data-v-f83a8e3e="" class="ui-select-item">学生
+                                                            </li>
+                                                        </ul>
+                                                        <ul class="ui-dropdown-loading" style="display: none;">
+                                                            加载中</ul>
+                                                    </div>
+                                                    <div data-v-f83a8e3e="" class="append-tip">
+                                                        <p data-v-f83a8e3e="" class="gray">牛人身份需要到BOSS直聘APP中修改
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-f83a8e3e="" class="form-item">
+                                            <div class="item-label">生日</div>
+                                            <div class="item-content">
+                                                <div data-v-f83a8e3e="" class="datepicker-wrap"
+                                                    ka="resume_form_edit_birthday" autocomplete="off">
+                                                    <div class="input-wrap">
+                                                        <!----><input v-model="updateUserInfo.birthday" placeholder="请选择生日" type="text"
+                                                            autocomplete="off" class="input">
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                   
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-f83a8e3e="" class="form-item" style="width: 49%;">
+                                            <div class="item-label">联系电话</div>
+                                            <div class="item-content">
+                                                <div data-v-f83a8e3e=""
+                                                    class="input-wrap input-wrap-text input-group input-group-with-append input-hide-icon"
+                                                    ka="resume_form_edit_phone">
+                                                    <!---->
+                                                    <!----><input v-model="updateUserInfo.userPhone" autocomplete="off" spellcheck="false"
+                                                        type="text" placeholder="请输入您的手机号" 
+                                                        class="input input-disabled">
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <div class="input-group-append" style="">
+                                                        <div data-v-f83a8e3e="" class="append-tip">
+                                                            <p data-v-f83a8e3e="" class="gray" style="color: lightcoral;">
+                                                                该为联系电话，非登录账号的电话</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-f83a8e3e="" class="form-item">
+                                            <div class="item-label">参加工作时间</div>
+                                            <div class="item-content">
+                                                <div data-v-f83a8e3e="" class="datepicker-wrap"
+                                                    ka="resume_form_edit_startWorkDateDesc">
+                                                    <div class="input-wrap">
+                                                        <!----><input v-model="updateUserInfo.workStartDay" placeholder="请选择参加工作时间"
+                                                            type="text" autocomplete="off"
+                                                            class="input">
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-f83a8e3e="" class="form-item" style="width: 49%;">
+                                            <div class="item-label">微信号 (选填)</div>
+                                            <div class="item-content">
+                                                <div data-v-f83a8e3e="" class="input-wrap input-wrap-text"
+                                                    ka="resume_form_edit_weixin">
+                                                    <!---->
+                                                    <!----><input autocomplete="off" spellcheck="false"
+                                                        type="text" placeholder="请输入您的微信号" maxlength="100"
+                                                        class="input">
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-f83a8e3e="" class="form-item">
+                                            <div class="item-label">邮箱(选填)</div>
+                                            <div class="item-content">
+                                                <div data-v-f83a8e3e="" class="input-wrap input-wrap-text"
+                                                    ka="resume_form_edit_email">
+                                                    <!---->
+                                                    <!----><input v-model="updateUserInfo.userEmail" autocomplete="off" spellcheck="false"
+                                                        type="text" placeholder="请输入您的邮箱" maxlength="80"
+                                                        class="input">
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        <div data-v-f83a8e3e="" class="form-btns"><button @click="closeUpdateUserInfoDiv()" data-v-f83a8e3e=""
+                                                type="button" ka="resume_form_baseinfo_cancel"
+                                                class="btn btn-outline">取消</button>
+                                                <button data-v-f83a8e3e="" @click="updateUser()"
+                                                type="button" ka="resume_form_baseinfo_ok"
+                                                class="btn btn-primary">
+                                                完成
+                                            </button></div>
+                                    </form>
+                                </div>
+                                <!---->
+                            </div>
+                            <div id="password" class="resume-item resume-purpose resume-expectList resume-undefined">
+                                <!-- 密码信息显示div -->
+                                <div data-v-787fd1ea="" v-show="isShowPasswordDiv" class="item-primary" style="display: block;">
+                                    <h3 class="title"> 登陆信息 </h3>
+                                    <ul>
+                                        <li  class="" >
+                                            <div class="primary-info" @click="openPasswordDiv()">
+                                                <div data-v-787fd1ea="" class="info-labels expectation-list">
+                                                    <span
+                                                        data-v-787fd1ea="" class="split-line"><span data-v-787fd1ea=""
+                                                            class="label-text"><i data-v-787fd1ea=""
+                                                                class="fz-resume fz-tel"></i> {{userInfo.phone}} </span></span>
+                                                    <span
+                                                        data-v-787fd1ea="" class="split-line money-item"><i
+                                                            data-v-787fd1ea="" class="fz-resume fz-socal"></i> ********
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 密码信息修改div -->
+                                <div data-v-4644c21f="" v-show="!isShowPasswordDiv" class="item-form expectation-form"
+                                    locationcity="[object Object]">
+                                    <h3 data-v-4644c21f="" class="title">编辑登陆密码</h3>
+                                    <form data-v-4644c21f="" autocomplete="off" class="ui-form ui-form-label-top">
+                                        <div data-v-48ee9aa7="" class="form-item form-item-required">
+                                            <div class="item-label">输入新密码</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="ui-suggest ui-select ui-dropmenu"
+                                                    placeholder="" autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <input autocomplete="off" spellcheck="false"
+                                                                type="password" placeholder=""
+                                                                class="input" @input="password = $event.target.value">
+                                                            
+                                                            <div class="input-group-append" style="">
+                                                                <div data-v-f83a8e3e="" class="append-tip">
+                                                                    <p data-v-f83a8e3e="" class="gray" style="color: lightcoral;">
+                                                                        密码长度不能少于8</p>
+                                                                </div>
+                                                            </div>
+
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        
+                                        <div data-v-4644c21f="" class="form-btns">
+                                            <button type="button"
+                                                class="btn btn-outline" @click="closePasswordDiv()">取消</button>
+                                            <button type="button"
+                                                class="btn btn-primary" :disabled="isCanClickPasswordSubmitBtn()" @click="updatePassword()">确定</button>
+                                        </div>
+                                    </form>
+                                    <!---->
+                                    <!---->
+                                </div>
+                            </div>
+                            <div id="purpose" class="resume-item resume-purpose resume-expectList resume-undefined">
+                                <!-- 求职信息显示div -->
+                                <div data-v-787fd1ea="" v-show="isShowAddPurposeDiv" class="item-primary" style="display: block;">
+                                    <h3 class="title"> 期望职位 <a href="javascript:;" ka="user-resume-add-expectation"
+                                            class="link-add" @click="openAddPurposeDiv('add')"><span>添加</span></a></h3>
+                                    <ul>
+                                        <li v-for="(purpose, index) in purposeList" class="">
+                                            <div class="primary-info" @click="openUpdatePurposeDiv(index, 'update')">
+                                                <div data-v-787fd1ea="" class="info-labels expectation-list"><span
+                                                        data-v-787fd1ea="" class="split-line"><span data-v-787fd1ea=""
+                                                            class="label-text"><i data-v-787fd1ea=""
+                                                                class="fz-resume fz-job"></i> {{purpose.positionName}} </span></span><span
+                                                        data-v-787fd1ea="" class="split-line money-item"><i
+                                                            data-v-787fd1ea="" class="fz-resume fz-salary"></i> {{generatorPurposeSalary(purpose.positionSalary)}}k+
+                                                    </span><span data-v-787fd1ea="" class="split-line"><i
+                                                            data-v-787fd1ea="" class="fz-resume fz-industry"></i> {{purpose.companyType}}
+                                                    </span><span data-v-787fd1ea="" class="split-line"><i
+                                                            data-v-787fd1ea="" class="fz-resume fz-place"></i> {{purpose.positionArea}}
+                                                    </span></div>
+                                            </div>
+                                            <div class="op"><a @click="deletePurpose(purpose.id)" href="javascript:;" ka="user-resume-del-expectation0"
+                                                    class="link-delete"><span>删除</span></a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 求职信息修改div -->
+                                <div data-v-4644c21f="" v-show="!isShowAddPurposeDiv" class="item-form expectation-form"
+                                    locationcity="[object Object]">
+                                    <h3 data-v-4644c21f="" class="title">编辑求职期望</h3>
+                                    <form data-v-4644c21f="" autocomplete="off" class="ui-form ui-form-label-top">
+                                        <div data-v-48ee9aa7="" class="form-item form-item-required">
+                                            <div class="item-label">期望城市</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="ui-suggest ui-select ui-dropmenu"
+                                                    placeholder="例如： 北京" autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="purposeInfo.positionArea" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如： 北京"
+                                                                class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-48ee9aa7="" style="width: 49%;" class="form-item form-item-required">
+                                            <div class="item-label">期望职位</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="ui-suggest ui-select ui-dropmenu"
+                                                    placeholder="例如： 产品经理" autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="purposeInfo.positionName" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如： 产品经理"
+                                                                class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-item form-item-required" >
+                                            <div class="item-label">薪资要求</div>
+                                            <div class="item-content">
+                                                <div class="ui-suggest ui-select ui-dropmenu" placeholder="例如：20000"
+                                                    autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="purposeInfo.positionSalary" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如：20000" class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-48ee9aa7="" style="width: 49%;" class="form-item form-item-required">
+                                            <div class="item-label">期望行业</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="ui-suggest ui-select ui-dropmenu"
+                                                    placeholder="例如： 互联网" autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="purposeInfo.companyType" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如： 互联网"
+                                                                class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-item form-item-required">
+                                            <div class="item-label"></div>
+                                            <div class="item-content">
+                                                <div class="ui-suggest ui-select ui-dropmenu" placeholder="例如：10000"
+                                                    autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            
+                                                        </div>
+                                                        
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div> 
+                                        <div data-v-4644c21f="" class="form-btns">
+                                            <button type="button"
+                                                class="btn btn-outline" @click="closeAddPurposeDiv()">取消</button>
+                                            <button type="button"
+                                                class="btn btn-primary" @click="addOrUpdatePurpose()">完成</button>
+                                        </div>
+                                    </form>
+                                    <!---->
+                                    <!---->
+                                </div>
+                            </div>
+                            <div id="history" class="resume-item resume-history resume-workExpList resume-undefined">
+                                <!-- 工作经历显示div -->
+                                <div class="item-primary" v-show="isShowAddWorkDiv">
+                                    <h3 class="title"> 工作经历 <a @click="openAddWorkDiv('add')" href="javascript:;" ka="user-resume-add-workexp"
+                                            class="link-add"><span>添加</span></a></h3>
+                                    <ul>
+
+                                        <li v-for="(workExp, index) in workList" ka="user-resume-edit-workexp0"
+                                            class="">
+                                            <div class="primary-info" @click="openUpdateWorkDiv(index, 'update')">
+                                                <div class="info-text">
+                                                    <h4 class="name">{{workExp.companyName}}</h4><span
+                                                        class="gray period">{{getFormatDateShow(workExp.startTime)}}-{{getFormatDateShow(workExp.endTime)}}</span>
+                                                </div>
+                                                <h4><span class="prev-line">{{workExp.companyDepartment}}</span><span
+                                                        class="prev-line">{{workExp.position}}</span>
+                                                    <!---->
+                                                </h4>
+                                                <div class="info-text"><span
+                                                        class="text-type">内容：</span>{{workExp.describe}}</div>
+                                                <!---->
+                                                <div class="keywords"><span>Java</span><span>后端开发</span></div>
+                                            </div>
+                                            <div class="op"><a @click="deleteWork(workExp.companyName)" href="javascript:;" ka="user-resume-del-workexp0"
+                                                    class="link-delete"><span>删除</span></a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 工作教育经历添加or修改div -->
+                                <div data-v-48ee9aa7="" style="display: block;" v-show="!isShowAddWorkDiv" class="item-form expectation-form work-experience-container"
+                                    locationcity="[object Object]">
+                                    <h3 data-v-48ee9aa7="" class="title">编辑工作经历</h3>
+                                    <form data-v-48ee9aa7="" autocomplete="off" class="ui-form ui-form-label-top">
+                                        <div data-v-48ee9aa7="" class="form-item form-item-required">
+                                            <div class="item-label">公司名称</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="ui-suggest ui-select ui-dropmenu"
+                                                    placeholder="例如： 北京黄豪栋网络技术有限公司" autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="workInfo.companyName" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如： 北京黄豪栋网络技术有限公司"
+                                                                class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-48ee9aa7="" style="width: 49%;" class="form-item">
+                                            <div class="item-label">所属行业（选填）</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="input-wrap input-wrap-text"
+                                                    ka="resume_form_edit_customPositionName">
+                                                    <!---->
+                                                    <!----><input v-model="workInfo.type" autocomplete="off" spellcheck="false" type="text"
+                                                        placeholder="例如：互联网" class="input">
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-48ee9aa7="" class="form-item">
+                                            <div class="item-label">所属部门（选填）</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="input-wrap input-wrap-text"
+                                                    ka="resume_form_edit_department">
+                                                    <!---->
+                                                    <!----><input v-model="workInfo.companyDepartment" autocomplete="off" spellcheck="false" type="text"
+                                                        placeholder="例如：产品部" class="input">
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-48ee9aa7="" style="width: 49%;" class="form-item">
+                                            <div class="item-label">职位名称（选填）</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="input-wrap input-wrap-text"
+                                                    ka="resume_form_edit_customPositionName">
+                                                    <!---->
+                                                    <!----><input v-model="workInfo.position" autocomplete="off" spellcheck="false" type="text"
+                                                        placeholder="例如：UI设计师" class="input">
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-item form-item-required">
+                                            <div class="item-label">入职时间</div>
+                                            <div class="item-content">
+                                                <div class="ui-suggest ui-select ui-dropmenu" placeholder="例如：2017-09-01"
+                                                    autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="workInfo.startTime" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如：2017-09-01" class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div> 
+                                        <div class="form-item form-item-required" style="width: 49%;">
+                                            <div class="item-label">离职时间</div>
+                                            <div class="item-content">
+                                                <div class="ui-suggest ui-select ui-dropmenu" placeholder="例如：2017-09-01"
+                                                    autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="workInfo.endTime"  autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如：2017-09-01" class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>        
+                                        <div data-v-48ee9aa7=""
+                                            class="form-item-full form-item-work-content form-item form-item-required">
+                                            <div class="item-label">工作内容</div>
+                                            <div class="item-content">
+                                                <div data-v-48ee9aa7="" class="form-work-content-lookelse">
+                                                    <div data-v-74a7886f="" data-v-48ee9aa7="" class="look-else">
+                                                        <p data-v-74a7886f="" class="look-operate"><i data-v-74a7886f=""
+                                                                class="ui-icon-view"></i><span
+                                                                data-v-74a7886f="">看看别人怎么写</span></p>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                                <div data-v-48ee9aa7="" class="form-work-content-results">
+                                                    <div data-v-48ee9aa7="" class="results-tooltip">
+                                                        <p data-v-48ee9aa7="">添加工作业绩</p>
+                                                    </div>
+                                                </div>
+                                                <div data-v-48ee9aa7="" class="serial-selecter form-work-content"
+                                                    autocomplete="off">
+                                                    <div class="serial-toolbar"><span class="serial-btn ti-list"><i
+                                                                class="tip">无序列表</i></span><span
+                                                            class="serial-btn ti-list-ol"><i class="tip">有序列表</i></span>
+                                                    </div>
+                                                    <div class="ipt-wrap">
+                                                        <div class="input-wrap input-wrap-textarea"><textarea v-model="workInfo.describe"
+                                                                wrap="soft" autocomplete="on" spellcheck="false"
+                                                                placeholder="1、主要负责新员工入职培训；
+2、分析制定员工每月个人销售业绩；
+3、帮助员工提高每日客单价，整体店面管理等工作。" rows="8" class="input" style="height: 160px;"></textarea ><span class="suffix-counter"><em
+                                                                    class="">7</em>/1600</span>
+                                                            <!---->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                                <div data-v-48ee9aa7="" class="count-work-content">java开发工程师</div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <!---->
+                                        <div data-v-48ee9aa7="" class="resume-operate-container">
+                                            <div data-v-48ee9aa7="" class="resume-operate-left">
+                                                
+                                            </div>
+                                            <div data-v-48ee9aa7="" class="form-btns"><button @click="closeAddWorkDiv()" data-v-48ee9aa7=""
+                                                    type="button" ka="resume_form_expectation_cancel"
+                                                    class="btn btn-outline">取消</button><button @click="addOrUpdateWorkExp()" data-v-48ee9aa7=""
+                                                    type="button" ka="resume_form_expectation_ok"
+                                                    class="btn btn-primary">
+                                                    <!---->完成
+                                                </button></div>
+                                        </div>
+                                    </form>
+                                    <!---->
+                                    <!---->
+                                </div>
+                                <!---->
+                            </div>                           
+                            <div id="education"
+                                class="resume-item resume-education resume-educationExpList resume-undefined">
+                                <!-- 教育经历显示div -->
+                                <div class="item-primary" v-show="isShowAddEduDiv" style="display: block;">
+                                    <h3 class="title"> 教育经历 <a @click="openAddEduDiv('add')" href="###" ka="user-resume-add-eduexp"
+                                            class="link-add"><span>添加</span></a></h3>
+                                    <ul>
+                                        <!---->
+                                        <!---->
+                                        <li v-for="(eduExp, index) in eduList" ka="user-resume-edit-eduexp0" class="" >
+                                            <div class="primary-info" @click="openUpdateEduDiv(index, 'update')">
+                                                <div class="info-text">
+                                                    <h4 class="name">{{eduExp.schoolName}}</h4>
+                                                    <!----><span
+                                                        class="gray period">{{getFormatDateShow(eduExp.startTime)}}至{{getFormatDateShow(eduExp.endTime)}}</span>
+                                                </div>
+                                                <div class="info-text">
+                                                    <h4><span class="prev-line">{{eduExp.major}}</span><span
+                                                            class="prev-line">{{eduExp.degree}}
+                                                            <!---->
+                                                        </span></h4>
+                                                </div>
+                                                <div class="info-text">{{eduExp.describe}}</div>
+                                            </div>
+                                            <div class="op"><a @click="deleteEdu(eduExp.schoolName)" href="###" ka="user-resume-del-eduexp0"
+                                                    class="link-delete"><span>删除</span></a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- 教育经历添加or修改div -->
+                                <div class="item-form" v-show="!isShowAddEduDiv" style="display: block;" locationcity="[object Object]">
+                                    <h3 class="title">添加教育经历</h3>
+                                    <form autocomplete="off" class="ui-form ui-form-label-top">
+                                        <div class="form-item form-item-required">
+                                            <div class="item-label">学校名称</div>
+                                            <div class="item-content">
+                                                <div class="ui-suggest ui-select ui-dropmenu" placeholder="例如：北京大学"
+                                                    autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="eduInfo.schoolName" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如：北京大学" class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-item" style="width: 49%;" >
+                                            <div class="item-label"> </div>
+                                            <div class="item-content">
+                                                <div name="radioGroup_1619403082626_2"
+                                                    class="radio-group radio-group-rectangle" autocomplete="off">
+                                                    
+                                                    <label v-if="eduInfo.type == '全日制'" @click="selectEduType('全日制')"  
+                                                        class="radio radio-item radio-checked" style="width: 46%; top: 3px;"><span class="radio-inner"><input
+                                                                type="radio" class="radio-input"
+                                                                name="radioGroup_1619403082626_2"><i
+                                                                class="radio-edging"></i></span>全日制</label>
+                                                    <label v-if="eduInfo.type != '全日制'" @click="selectEduType('全日制')"  
+                                                        class="radio radio-item" style="width: 46%; top: 3px;"><span class="radio-inner"><input
+                                                                type="radio" class="radio-input"
+                                                                name="radioGroup_1619403082626_2"><i
+                                                                class="radio-edging"></i></span>全日制</label>
+                                                    <label v-if="eduInfo.type == '非全日制'" @click="selectEduType('非全日制')" 
+                                                        class="radio radio-item radio-checked" style="width: 46%; top: 3px;"><span class="radio-inner"><input
+                                                                type="radio" class="radio-input"
+                                                                name="radioGroup_1619403082626_2"><i
+                                                                class="radio-edging"></i></span>非全日制</label>
+                                                    <label v-if="eduInfo.type != '非全日制'" @click="selectEduType('非全日制')" 
+                                                        class="radio radio-item" style="width: 46%; top: 3px;"><span class="radio-inner"><input
+                                                                type="radio" class="radio-input"
+                                                                name="radioGroup_1619403082626_2"><i
+                                                                class="radio-edging"></i></span>非全日制</label>
+                                                </div>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-item form-item-required">
+                                            <div class="item-label">学历</div>
+                                            <div class="item-content">
+                                                <div class="ui-select ui-select-single" ka="resume_form_edit_degree"
+                                                    autocomplete="off">
+                                                    <div tabindex="0" class="ui-select-selection"><input type="hidden">
+                                                        <div class="ui-select-inner" @click="openSelectDegreeDiv()">
+                                                            <span v-if="eduInfo.degree == null" class="ui-select-placeholder">学历选择</span>
+                                                            <span v-if="eduInfo.degree != null" class="ui-select-selected-value">{{eduInfo.degree}}</span>
+                                                            <!---->
+                                                            <!----><i class="ui-icon-arrow-down"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ui-select-dropdown" style="display: none;" v-show="isShowSelectDegreeDiv">
+                                            
+                                                        <ul class="ui-dropdown-list">
+                                                            <li class="ui-select-item"  :class="getEduSelectClass('初中及以下')" @click="changeEduDegree('初中及以下')">初中及以下</li>
+                                                            <li class="ui-select-item"  :class="getEduSelectClass('中专/中技')" @click="changeEduDegree('中专/中技')">中专/中技</li>
+                                                            <li class="ui-select-item"  :class="getEduSelectClass('高中')" @click="changeEduDegree('高中')">高中</li>
+                                                            <li class="ui-select-item"  :class="getEduSelectClass('大专')" @click="changeEduDegree('大专')">大专</li>
+                                                            <li class="ui-select-item"  :class="getEduSelectClass('本科')" @click="changeEduDegree('本科')">本科</li>
+                                                            <li class="ui-select-item"  :class="getEduSelectClass('硕士')" @click="changeEduDegree('硕士')">硕士</li>
+                                                            <li class="ui-select-item"  :class="getEduSelectClass('博士')" @click="changeEduDegree('博士')">博士</li>
+                                                        </ul>
+                                                        
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-item" style="width: 49%;">
+                                            <div class="item-label">专业</div>
+                                            <div class="item-content">
+                                                <div class="ui-suggest ui-select ui-dropmenu" placeholder="例如：计算机科学与技术"
+                                                    autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="eduInfo.major" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如：计算机科学与技术" class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-item form-item-required">
+                                            <div class="item-label">入学时间</div>
+                                            <div class="item-content">
+                                                <div class="ui-suggest ui-select ui-dropmenu" placeholder="例如：2017-09-01"
+                                                    autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="eduInfo.startTime" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如：2017-09-01" class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div> 
+                                        <div class="form-item form-item-required" style="width: 49%;">
+                                            <div class="item-label">毕业时间</div>
+                                            <div class="item-content">
+                                                <div class="ui-suggest ui-select ui-dropmenu" placeholder="例如：2017-09-01"
+                                                    autocomplete="off">
+                                                    <div class="ui-dropmenu-label">
+                                                        <div class="ui-suggest-input input-wrap input-wrap-text">
+                                                            <!---->
+                                                            <!----><input v-model="eduInfo.endTime" autocomplete="off" spellcheck="false"
+                                                                type="text" placeholder="例如：2017-09-01" class="input">
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                            <!---->
+                                                        </div>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                    <div class="ui-dropmenu-list"></div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-item-full form-item-eduDescription form-item">
+                                            <div class="item-label">在校经历（选填）</div>
+                                            <div class="item-content">
+                                                <div class="form-eduDescription-lookelse">
+                                                    <div data-v-74a7886f="" class="look-else">
+                                                        <p data-v-74a7886f="" class="look-operate"><i data-v-74a7886f=""
+                                                                class="ui-icon-view"></i><span
+                                                                data-v-74a7886f="">看看别人怎么写</span></p>
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                                <div class="serial-selecter" autocomplete="off">
+                                                    <div class="serial-toolbar"><span class="serial-btn ti-list"><i
+                                                                class="tip">无序列表</i></span><span
+                                                            class="serial-btn ti-list-ol"><i class="tip">有序列表</i></span>
+                                                    </div>
+                                                    <div class="ipt-wrap">
+                                                        <div class="input-wrap input-wrap-textarea"><textarea
+                                                                v-model="eduInfo.describe" wrap="soft" autocomplete="on" spellcheck="false"
+                                                                placeholder="1、在校担任职务…
+2、获得荣誉…
+3、所学主要课程…" rows="8" class="input"></textarea><span class="suffix-counter"><em class="">0</em>/300</span>
+                                                            <!---->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!---->
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div class="form-btns"><button @click="closeAddEduDiv()" type="button" ka="resume_form_baseinfo_cancel"
+                                                class="btn btn-outline">取消</button><button @click="addOrUpdateEduExp()" type="button"
+                                                ka="resume_form_baseinfo_ok" class="btn btn-primary">
+                                                <!---->完成
+                                            </button></div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="certification"
+                                class="resume-item resume-certification resume-certificationList resume-undefined">
+                                <div class="item-primary" style="display: none;">
+                                    <h3 class="title"> 资格证书 <a href="javascript:;" ka="add-certificate-click"
+                                            class="link-add"><span>添加</span></a></h3>
+                                    <ul></ul>
+                                </div>
+                                <!---->
+                            </div>
+                            <div id="social"
+                                class="resume-item resume-social resume-socialContactList resume-undefined">
+                                <div class="item-primary" style="display: none;">
+                                    <h3 class="title"> 社交主页 <a href="javascript:;" ka="user-resume-add-website"
+                                            class="link-add"><span>添加</span></a></h3>
+                                    <ul></ul>
+                                </div>
+                                <!---->
+                            </div>
+                            <div id="volunteer"
+                                class="resume-item resume-volunteer resume-volunteerExpList resume-undefined">
+                                <div class="item-primary" style="display: none;">
+                                    <h3 class="title"> 志愿者服务经历 <a href="javascript:;" ka="user-resume-add-volunteer"
+                                            class="link-add"><span>添加</span></a></h3>
+                                    <ul></ul>
+                                </div>
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- right -->
+                <div class="user-sider">
+                    <!---->
+                    <!---->
+                    <div data-v-ab7696d4="" class="sider-box sider-resume">
+                        <div data-v-ab7696d4="" class="resume-attachment">
+                            <h3 data-v-ab7696d4="" class="sider-title">附件管理
+                                <span style="font-size: 13px; color: #9fa3af; margin-left: 4px;" 
+                                        v-show="cvs.length &gt; 2">最多上传3份</span>
+                            </h3>
+                            <ul data-v-ab7696d4="" class="annex-list">
+                                <li data-v-ab7696d4="" v-for="(cv, index) in cvs">
+                                    <div data-v-ab7696d4="" class="annex-item">
+                                        <svg data-v-ab7696d4="" class="icon-svg icon-svg-delete" @click="openCvDeleteDiv(cv.cvId)">
+                                            <use data-v-ab7696d4="" xlink:href="#icon-svg-delete">
+                                                <svg id="icon-svg-delete" viewBox="0 0 1024 1024">
+                                                    <path
+                                                        d="M384 320H160a32 32 0 0 1 0-64h160v-64a64 64 0 0 1 64-64h256a64 64 0 0 1 64 64v64h160a32 32 0 1 1 0 64H640v-96a32 32 0 0 0-32-32H416a32 32 0 0 0-32 32v96z m-192 64v384a64 64 0 0 0 64 64h512a64 64 0 0 0 64-64V384h64v384a128 128 0 0 1-128 128H256a128 128 0 0 1-128-128V384h64z m224 0a32 32 0 0 1 32 32v320a32 32 0 1 1-64 0V416a32 32 0 0 1 32-32z m192 0a32 32 0 0 1 32 32v320a32 32 0 1 1-64 0V416a32 32 0 0 1 32-32z">
+                                                    </path>
+                                                </svg>
+                                            </use>
+                                        </svg>
+                                        <img data-v-ab7696d4="" src="./center_files/icon-file.png" alt=""
+                                            class="icon-img-file">
+                                        <div data-v-ab7696d4="" class="txt-container"><span data-v-ab7696d4=""
+                                                class="txt">{{cv.cvName}}.pdf</span>
+                                            <!---->
+                                        </div>
+                                    </div>
+                                    <div data-v-ab7696d4="" class="annex-card">
+                                        <div data-v-ab7696d4="" class="card-body"><img data-v-ab7696d4=""
+                                                src="./center_files/icon-pdf.d2b22d86.png" alt="">
+                                            <div data-v-ab7696d4="" class="card-content">
+                                                <div data-v-ab7696d4="" class="basis"><a data-v-ab7696d4=""
+                                                        href="javascript:void(0);"
+                                                        title="JAVA研发工程师.pdf">{{cv.cvName}}.pdf</a>
+                                                    <!---->
+                                                    <!---->
+                                                </div>
+                                                <div data-v-ab7696d4="" class="desc">{{getFileSizeFormat(cv.size)}}
+                                                    {{cv.upTime}}上传</div>
+                                            </div>
+                                        </div>
+                                        <div data-v-ab7696d4="" class="card-footer">
+                                            <span data-v-ab7696d4="" class="rename-btn" @click="cvRename(cv.cvId, cv.cvName)">重命名</span>
+                                            <span data-v-ab7696d4="" class="load-btn" @click="downloadCvPdf(cv.pdfUrl)">下载</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div data-v-ab7696d4="" class="btns" v-show="cvs.length &lt; 3" ><button data-v-ab7696d4="" type="button"
+                                    class="btn btn-primary" @click="openUpCvDiv()">上传简历
+                                    <!---->
+                                </button>
+                                <!---->
+                            </div>
+                            <div data-v-ab7696d4="" class="">
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <div class="sider-box zhipin-resume"><a href="###"
+                            target="_blank" ka="resume_maker_click"><img
+                                src="./center_files/zhipin-resume_siderbar.22138ff3.png" alt=""></a></div>
+                    <div class="sider-box resume-settings">
+                        <div class="sider-title"><em>隐私设置</em><a
+                                href="###" class="pull-right"
+                                ka="privacy_set">设置</a></div>
+                        <div class="setting-item"><span>简历设置：</span>
+                            <!---->
+                            <!---->
+                            <!----><span class="pull-right">对外开放</span>
+                        </div>
+                        <div class="setting-item"><span>屏蔽公司：</span><span class="pull-right">已屏蔽<span
+                                    class="text-green">208</span>个</span></div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div>
+            <div id="footer" class="">
+                <div class="inner home-inner">
+                    <div class="footer-social">
+                        <br>
+                        <p>企业服务热线和举报投诉 <span>400 065 xxx</span></p>
+                        <p>工作日 <span>8:00 - 22:00</span></p>
+                        <p>休息日 <span>9:30 - 18:30</span></p>
+                    </div>
+                    <div class="footer-about clear-fix">
+                        <dl>
+                            <dt>企业服务</dt>
+                            <dd>
+                                <a href="###" ka="link-search">职位搜索</a>
+                                <a href="###" ka="link-news">新闻资讯</a>
+                                <a href="###" ka="link-app">APP</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>使用与帮助</dt>
+                            <dd>
+                                <a href="###" rel="nofollow" ka="link-privacy" target="_blank">平台协议</a>
+                                <a href="###" rel="nofollow" ka="link-anticheatguide" target="_blank">防骗指南</a>
+                                <a href="###" rel="nofollow" ka="link-usehelp" target="_blank">使用帮助</a>
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>联系hhd</dt>
+                            <dd>
+                                <p>北京华品博睿网络技术有限公司</p>
+                                <p>公司地址 北京市朝阳区xxx路xxx号院xx号楼xx层xxx内xx</p>
+                                <p>联系电话 010-xx</p>
+                                <p>违法和不良信息举报邮箱 <a class="report-mail" href="#" rel="nofollow">jubao@hhd.com</a></p>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="copyright">
+                        <p>
+                            <span>Copyright © 2021 直聘</span><span><a href="###" rel="nofollow" ka="link-icp"
+                                    target="_blank">京ICP备14013441号-5</a></span><span>京ICP证xxxxxx号</span><span>京网文[2020]xxxx-xxx
+                                号</span>
+                            <span>
+                                <a href="###" rel="nofollow" ka="link-businesslicense" target="_blank">
+                                    <img src="./main_files/icon-badge-1.png" alt="">
+                                    电子营业执照
+                                </a>
+                            </span>
+                            <span><a href="###" rel="nofollow" ka="link-beian" target="_blank"><img
+                                        src="./main_files/icon-beian.png" alt=""> 京公网安备110105020xxxx</a></span>
+                            <span><a href="###" rel="nofollow" ka="link-sdwj" target="_blank">朝阳网警</a></span>
+                            <span><a href="###" rel="nofollow" ka="link-hr-service" target="_blank">人力资源服务许可证</a></span>
+                            <span><a href="https://www.12377.cn/" rel="nofollow" ka="link-12377"
+                                    target="_blank">网上有害信息举报专区</a></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="siderbar" >
+            <div class="sider-index">
+                <ul class="siderbar-top">
+                    <li data-value="interest">
+                        <a href="javascript:;" ka="side_interest"><i class="icon-sider-interest"></i>感兴趣</a>
+                    </li>
+                    <li data-value="contact">
+                        <a href="javascript:;" ka="side_chat"><i class="icon-sider-chat"></i>沟通过</a>
+                    </li>
+                    <li data-value="deliver">
+                        <a href="javascript:;" ka="side_deliver"><i class="icon-sider-resume"></i>已投递</a>
+                    </li>
+                    <li data-value="interview">
+                        <a href="javascript:;" ka="side_interview"><i class="icon-sider-interview"></i>面试</a>
+                    </li>
+                </ul>
+                <ul class="siderbar-bottom">
+                    <li>
+                        <a class="siderbar-back-top" href="javascript:;" title="返回顶部"></a>
+                    </li>
+                    <li>
+                        <a class="siderbar-feedback" href="javascript:;">反馈</a>
+                    </li>
+                    <li>
+                        <a class="siderbar-wechat" href="javascript:;">微信
+                            <div class="qrcode-layer "><i></i><img src="./main_files/wx.png" alt="">关注微信服务号</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="siderbar-app" href="javascript:;">APP
+                            <div class="qrcode-layer"><i></i><img src="./main_files/wx.png" alt="">下载APP</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        
+    </div>
+    <input type="hidden" id="page_key_name" value="cpc_resume">
+
+
+
+
+
+
+    <!-- 上传简历附件 -->
+    <div v-show="isShowUpCvDiv" data-v-7a700006="" data-v-ab7696d4="" data-transfer="true"
+        class="dialog-wrap upload-resume-dialog v-transfer-dom" style="display: none;">
+        <div ka="dialog_layer" class="dialog-layer"></div>
+        <div class="dialog-container" style="display: block;">
+            <div class="dialog-header">
+                <!---->
+                <h3 class="title"></h3><span @click="closeUpCvDiv()" ka="dialog_close" class="close"><i class="icon-close"></i></span>
+            </div>
+            <div class="dialog-body">
+                <dl data-v-7a700006="" class="upload-resume__new">
+                    <dd data-v-7a700006="" class="sec-upload">
+                        <div data-v-7a700006="" class="upload-wrap">
+                            <p data-v-7a700006="" class="tip-guide">拖拽文件到这里</p>
+                            <p data-v-7a700006="" class="tip-filetype">简历建议使用 PDF 文件，也支持DOC、DOCX、JPG、PNG 格式,文件大小不超过8M
+                            </p>
+                        </div><a data-v-7a700006="" href="javascript:;" ka="resume_attach_upload"
+                            class="btn btn-primary btn-file">上传附件简历 
+                            <input @change="upPdfFile($event)" data-v-7a700006="" type="file"
+                                ka="user-resume-upload-file"
+                                accept="image/jpg, image/jpeg, image/png, application/vnd.ms-powerpoint, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.presentationml.presentation,.doc,.docx,.pdf"></a>
+                    </dd>
+                    <dd data-v-7a700006="" class="sec-make"><img data-v-7a700006=""
+                            src="./center_files/zhipin-resume.b0946791.png" alt=""><a data-v-7a700006=""
+                            href="https://cv.zhipin.com/resume/html/my-resumes" target="_blank"
+                            ka="resume_attach_create" class="btn btn-primary">在线快速制作</a></dd>
+                </dl>
+            </div>
+            <!---->
+        </div>
+    </div>
+    <!-- 修改简历名称 -->
+    <div v-show="isShowCvRename" data-v-ab7696d4="" data-transfer="true" class="dialog-rename dialog-wrap v-transfer-dom"
+        style="display: none;">
+        <div ka="dialog_layer" class="dialog-layer"></div>
+        <div class="dialog-container" style="display: block;">
+            <div class="dialog-header">
+                <!---->
+                <h3 class="title">修改附件简历名称</h3><span @click="isShowCvRename = false" ka="dialog_close" class="close"><i class="icon-close"></i></span>
+            </div>
+            <div class="dialog-body">
+                <div data-v-ab7696d4="" class="pop-resume-rename">
+                    <h5 data-v-ab7696d4="">请输入你确定要修改的简历名称</h5>
+                    <div data-v-ab7696d4="" class="input-wrap input-wrap-text">
+                        <!---->
+                        <!----><input v-model="cvName" autocomplete="on" spellcheck="false" type="text" placeholder="" class="input">
+                        <!---->
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+            </div>
+            <div class="dialog-footer">
+                <div data-v-ab7696d4="" class="btns">
+                    <span data-v-ab7696d4=""
+                        class="btn btn-outline btn-cancel"  @click="isShowCvRename = false">取消</span>
+                    <span data-v-ab7696d4=""
+                        class="btn btn-sure" @click="updateCvName()">确定</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 上传简历之预览 -->
+    <div v-show="isShowCvPreUpDiv" data-v-7a700006="" data-v-ab7696d4="" data-transfer="true"
+        class="dialog-wrap upload-resume-dialog upload-preview-dialog" style="">
+        <div ka="dialog_layer" class="dialog-layer"></div>
+        <div class="dialog-container" style="">
+            <div class="dialog-header">
+                <!---->
+                <h3 class="title"></h3><span @click="closeShowCvPreUpDiv()" ka="dialog_close" class="close"><i class="icon-close"></i></span>
+            </div>
+            <div class="dialog-body">
+                <div data-v-7a700006="" class="upload-preview">
+                    <div data-v-7a700006="" class="preview-box">
+                        <h3 data-v-7a700006="" class="title">上传附件</h3>
+                        <div data-v-7a700006="" class="img-box"><img data-v-7a700006=""
+                                src="./main_files/pdf.png" style="display: block;">
+                                <!-- <iframe
+                                data-v-7a700006="" id="pdfFrame" src="./main_files/pdf.png" frameborder="0"
+                                style="display: block; width: 100%; height: 100%;"></iframe> -->
+                            <!---->
+                        </div>
+                    </div>
+                    <div data-v-7a700006="" class="preview-sider">
+                        <h3 data-v-7a700006="" class="title">附件确认</h3>
+                        <p data-v-7a700006="">附件名称：{{file.name}}</p>
+                        <p data-v-7a700006="">附件大小：{{file.size}}</p>
+                        <p data-v-7a700006="">附件格式：{{fileType}}</p>
+                        <!---->
+                        <p data-v-7a700006="" class="gray">Boss将你转发给同事时，可能会将附件简历一并转发。</p>
+                        <div data-v-7a700006="" class="btns"><a data-v-7a700006="" href="javascript:;"
+                                class="btn btn-file btn-outline" >重新选择 
+                                <input @change="upPdfFile($event)" data-v-7a700006="" type="file"
+                                    ka="user_resume_add_reupload"
+                                    accept="image/jpg, image/jpeg, image/png, application/vnd.ms-powerpoint, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.presentationml.presentation,.doc,.docx,.pdf"></a>
+                                    <button @click="upPdf()" 
+                                data-v-7a700006="" type="button" ka="user_resume_add_sure"
+                                class="btn btn-primary btn-sure">
+                                <!---->确定添加
+                            </button></div>
+                    </div>
+                </div>
+            </div>
+            <!---->
+        </div>
+    </div>
+    <!-- 简历确认删除 -->
+    <div class="dialog-wrap resume-delete dialog-icons-default" v-show="isShowCvDeleteDiv">
+        <div ka="dialog_layer" class="dialog-layer"></div>
+        <div class="dialog-container" style="width: 460px;">
+            <div class="dialog-header"><i class="icon-dialog icon-dialog-warning"></i>
+                <h3 class="title">温馨提示</h3><span @click="closeCvDeleteDiv()" ka="dialog_close" class="close"><i class="icon-close"></i></span>
+            </div>
+            <div class="dialog-body">
+                <div class="tip-text">确定删除该附件简历吗？删除后将无法向BOSS投递简历</div>
+            </div>
+            <div class="dialog-footer">
+                <div class="btns"><span @click="closeCvDeleteDiv()" ka="dialog_cancel" class="btn btn-outline btn-cancel">取消</span><span
+                        ka="dialog_sure" @click="delectCv()" class="btn btn-primary btn-sure">
+                        <!---->确定
+                    </span></div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+    <!---->
+</body>
+
+
+
+
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            isShowUserNav: false,
+            userInfo: {},
+            cvs: [],
+            eduList: [],
+            workList: [],
+            ossInfo: {},
+            file: {},
+            isShowUserInfo: true,
+            isShowUserInfoStatusDiv: false,
+            updateUserInfo: {},
+            isShowAddEduDiv: true,
+            eduInfo: {},
+            isShowSelectDegreeDiv: false,
+            eduAddOrUpdateDivTyp: '',
+            isShowAddWorkDiv: true,
+            workAddOrUpdateDivType: '',
+            workInfo: {},
+            isShowAddPurposeDiv: true,
+            purposeAddOrUpdateDivType: '',
+            purposeList: [],
+            purposeInfo: {},
+            isShowPasswordDiv: true,
+            password: "",
+            isShowUpCvDiv: false,
+            cvId: "",
+            cvName: "",
+            isShowCvRename: false,
+            file: {},
+            fileType: "",
+            isShowCvPreUpDiv: false,
+            ossInfo: {},
+            isShowCvDeleteDiv: false,
+        },
+        created() {
+            let authorization = sessionStorage.getItem("Authorization");
+            if (authorization != null && authorization.length > 0) {
+                this.isLogin = true;
+                this.getUserInfo();
+                this.getCvList();
+                this.getEduExpList();
+                this.getWorkExpList();
+                this.getPurposeList();
+                this.clearRedis();
+            } else {
+                window.location.href = "./login.html";
+            }
+
+        },
+        methods: {
+            clearRedis() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/chat/close', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            loginout() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/login/out', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.cvs = response.data.pageInfo.list;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                sessionStorage.removeItem("Authorization");
+                window.location.href = "./login.html";
+            },
+            delectCv() {
+                let inCvId = this.cvId;
+                this.closeCvDeleteDiv();
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/cv/delete', {
+                        params: {
+                            cvId: inCvId,
+                        },
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getCvList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            closeCvDeleteDiv() {
+                this.isShowCvDeleteDiv = false;
+                this.cvId = "";
+            },
+            openCvDeleteDiv(cvId) {
+                this.isShowCvDeleteDiv = true;
+                this.cvId = cvId;
+            },
+            upPdf() {
+                this.getOssPolicyPdf('pdfPolicy');
+                this.isShowCvPreUpDiv = false
+            },
+            saveCvPdf() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("cvName", this.file.name.substring(0, this.file.name.lastIndexOf(".")));
+                    param.append("pdfUrl", this.ossInfo.host + "/" + this.ossInfo.dir + this.file.name);
+                    param.append("size", this.file.size);
+                    axios.post('http://localhost/cv/save', param, {
+                        headers: {
+                            Authorization: authorization,
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getCvList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            upFileToOssPdf() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let forms = new FormData()
+                    forms.append("signature", this.ossInfo.signature);
+                    forms.append("policy", this.ossInfo.policy);
+                    forms.append("OSSAccessKeyId", this.ossInfo.OSSAccessKeyId);
+                    forms.append("dir", this.ossInfo.dir);
+                    forms.append("key", this.ossInfo.dir + this.file.name);
+                    forms.append("file", this.file);
+                    axios.post(this.ossInfo.host, forms)
+                        .then((response) => {
+                            console.log(response);
+                            this.saveCvPdf();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            
+            getOssPolicyPdf(type) {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let url = "http://localhost/oss/" + type;
+                    axios.get(url, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.ossInfo = response.data;
+                            this.upFileToOssPdf();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            updateCvName() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("cvId", this.cvId);
+                    param.append("cvName", this.cvName);
+                    axios.post('http://localhost/cv/updateName', param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getCvList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                this.isShowCvRename = false;
+            },
+            updatePassword() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization!=null && authorization.length>0) {
+                    let param = new URLSearchParams();
+                    param.append("password", this.password);
+                    axios.post("http://localhost/user/updatePw", param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            sessionStorage.removeItem("Authorization");
+                            window.location.href = "./login.html";
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                this.closePasswordDiv();
+            },
+            addOrUpdatePurpose() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("positionArea", this.purposeInfo.positionArea);
+                    param.append("positionName", this.purposeInfo.positionName);
+                    param.append("positionSalary", this.purposeInfo.positionSalary);
+                    param.append("companyType", this.purposeInfo.companyType);
+                    let url = "http://localhost/purpose/save";
+                    if (this.purposeAddOrUpdateDivType == 'update') {
+                        url = "http://localhost/purpose/updateInfo";
+                        param.append("id", this.purposeInfo.id);
+                    }
+                    axios.post(url, param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getPurposeList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                this.closeAddPurposeDiv();
+            },
+            deletePurpose(id) {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/purpose/deleteInfo?id=' + id, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getPurposeList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getPurposeList() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/purpose/list', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.purposeList = response.data.list;
+                            this.purposeInfo = {};
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            deleteWork(companyName) {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let url = "http://localhost/workExp/deleteInfo?companyName=" + companyName;
+                    axios.get(url, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getWorkExpList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            addOrUpdateWorkExp() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("companyName", this.workInfo.companyName);
+                    param.append("type", this.workInfo.type);
+                    param.append("companyDepartment", this.workInfo.companyDepartment);
+                    param.append("position", this.workInfo.position);
+                    param.append("startTime", this.workInfo.startTime);
+                    param.append("endTime", this.workInfo.endTime);
+                    param.append("describe", this.workInfo.describe);
+                    let url = "http://localhost/workExp/save";
+                    if (this.workAddOrUpdateDivType == 'update') {
+                        url = "http://localhost/workExp/updateInfo";
+                        param.append("id", this.workInfo.id);
+                    }
+                    console.log(url);
+                    axios.post(url, param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getWorkExpList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                this.closeAddWorkDiv();
+            },
+            deleteEdu(schoolName) {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let url = "http://localhost/eduExp/deleteInfo?schoolName=" + schoolName;
+                    axios.get(url, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getEduExpList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            addOrUpdateEduExp() {
+                
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("schoolName", this.eduInfo.schoolName);
+                    param.append("type", this.eduInfo.type);
+                    param.append("degree", this.eduInfo.degree);
+                    param.append("major", this.eduInfo.major);
+                    param.append("startTime", this.eduInfo.startTime);
+                    param.append("endTime", this.eduInfo.endTime);
+                    param.append("describe", this.eduInfo.describe);
+                    let url = 'http://localhost/eduExp/save';
+                    if (this.eduAddOrUpdateDivTyp == "update") {
+                        url = 'http://localhost/eduExp/updateInfo';
+                        param.append("id", this.eduInfo.id);
+                    } 
+                    axios.post(url, param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getEduExpList();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                this.closeAddEduDiv();
+            },
+            updateUser() {
+                this.closeUpdateUserInfoDiv();
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("userPhone", this.updateUserInfo.userPhone);
+                    param.append("userNickname", this.updateUserInfo.userNickname);
+                    param.append("userEmail", this.updateUserInfo.userEmail);
+                    param.append("gender", this.updateUserInfo.gender);
+                    param.append("birthday", this.updateUserInfo.birthday);
+                    param.append("workStartDay", this.updateUserInfo.workStartDay);
+                    axios.post('http://localhost/user/updateInfo', param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getUserInfo();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            updateUserAvatar(event) {
+                this.file = event.target.files[0];
+                this.getOssPolicy("userAvatarPolicy");
+            },
+            updateAvatar() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("userAvatar", this.ossInfo.host + "/" + this.ossInfo.dir + this.file.name);
+                    axios.post('http://localhost/user/updateInfo', param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getUserInfo();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            upFileToOss() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let forms = new FormData()
+                    forms.append("signature", this.ossInfo.signature);
+                    forms.append("policy", this.ossInfo.policy);
+                    forms.append("OSSAccessKeyId", this.ossInfo.OSSAccessKeyId);
+                    forms.append("dir", this.ossInfo.dir);
+                    forms.append("key", this.ossInfo.dir + this.file.name);
+                    forms.append("file", this.file);
+                    axios.post(this.ossInfo.host, forms)
+                        .then((response) => {
+                            console.log(response);
+                            this.updateAvatar();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getOssPolicy(type) {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let url = "http://localhost/oss/" + type;
+                    axios.get(url, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.ossInfo = response.data;
+                            this.upFileToOss();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getEduExpList() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/eduExp/list', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.eduList = response.data.list;
+                            this.eduInfo = {};
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getWorkExpList() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/workExp/list', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.workList = response.data.list;
+                            this.workInfo = {};
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getUserInfo() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/user/getInfo', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.userInfo = response.data.user;
+                            this.updateUserInfo = this.userInfo;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            loginout() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/login/out', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.cvs = response.data.pageInfo.list;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                sessionStorage.removeItem("Authorization");
+                window.location.href = "./login.html";
+            },
+            getCvList() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/cv/list', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.cvs = response.data.pageInfo.list;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            mouseOverUserNav() {
+                this.isShowUserNav = true;
+            },
+            mouseLeaveUserNav() {
+                this.isShowUserNav = false;
+            },
+            getFormatDateShow(dateStr) {
+                if (dateStr == null || dateStr.length <= 0) {
+                    return "至今";
+                }
+                return dateStr.substring(0, dateStr.lastIndexOf("-"));
+            },
+            getFileSizeFormat(size) {
+                if (size >= 1024) {
+                    if (size >= (1024 * 1024)) {
+                        return (parseInt(size / 1024 / 1024) + "MB");
+                    } else {
+                        return (parseInt(size / 1024) + "MB");
+                    }
+                } else {
+                    return (size + "B");
+                }
+            },
+            clickFileInput() {
+                console.log("clickFileInput");
+                this.$refs.filElem.dispatchEvent(new MouseEvent('click'))
+            },
+            randomString(e) {
+                e = e || 32;
+                var t = "ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678",
+                    a = t.length,
+                    n = "";
+                for (i = 0; i < e; i++) n += t.charAt(Math.floor(Math.random() * a));
+                return n
+            },
+            openUpdateUserInfoDiv() {
+                this.isShowUserInfo = false;
+            },
+            closeUpdateUserInfoDiv() {
+                this.isShowUserInfo = true;
+            },
+            openUserInfoStatusSelectDiv() {
+                this.isShowUserInfoStatusDiv = !this.isShowUserInfoStatusDiv;
+            },
+            closeUserInfoStatusSelectDiv(status) {
+                this.isShowUserInfoStatusDiv = false;
+            },
+            selectUserGender(gender) {
+                this.updateUserInfo.gender = gender;
+            },
+            getUserInfoGenderClass(gender) {
+                let genderClass = ''
+                if (gender == this.updateUserInfo.gender) {
+                    genderClass = genderClass + ' radio-checked';
+                } 
+                return genderClass;
+            },
+            openAddEduDiv(type) {
+                this.eduAddOrUpdateDivTyp = type;
+                this.isShowAddEduDiv = false;
+            },
+            closeAddEduDiv() {
+                this.isShowAddEduDiv = true;
+                this.eduInfo= {};
+            },
+            openSelectDegreeDiv() {
+                this.isShowSelectDegreeDiv = !this.isShowSelectDegreeDiv;
+            },
+            getEduDegree(degree) {
+                if (degree == null || degree.length <= 0) {
+                    return '学历选择';
+                } 
+                return degree;
+            },
+            changeEduDegree(degree) {
+                this.eduInfo.degree = degree;
+                this.isShowSelectDegreeDiv = false;
+            },
+            getEduSelectClass(degree) {
+                let res = "";
+                if (degree == this.eduInfo.degree) {
+                    res = res + " ui-select-item-selected";
+                }
+                return res;
+            },
+            selectEduType(type) {
+                this.eduInfo.type = type;
+            },
+            getSelectEduTypeClass(type) {
+                console.log('getSelectEduTypeClass');
+                let res = "radio radio-item";
+                console.log(type == this.eduInfo.type);
+                console.log(this.eduInfo.type);
+                console.log(type);
+                if (this.eduInfo.type != null && type == this.eduInfo.type) {
+                    console.log('getSelectEduTypeClass inner');
+                    res = res + " radio-checked ";
+                }
+                return res;
+            },
+            openUpdateEduDiv(index, type) {
+                this.eduAddOrUpdateDivTyp = type;
+                this.isShowAddEduDiv = false;
+                this.eduInfo = this.eduList[index];
+            },
+            openAddWorkDiv(type) {
+                this.isShowAddWorkDiv = false;
+                this.workAddOrUpdateDivType = type;
+            },
+            closeAddWorkDiv() {
+                this.isShowAddWorkDiv = true;
+                this.workInfo = {};
+            },
+            openUpdateWorkDiv(index, type) {
+                this.workAddOrUpdateDivType = type;
+                this.isShowAddWorkDiv = false;
+                this.workInfo = this.workList[index];
+            },
+            openAddPurposeDiv(type) {
+                this.isShowAddPurposeDiv = false;
+                this.purposeAddOrUpdateDivType = type;
+            },
+            closeAddPurposeDiv() {
+                this.isShowAddPurposeDiv = true;
+                this.purposeInfo = {};
+            },
+            openUpdatePurposeDiv(index, type) {
+                this.isShowAddPurposeDiv = false;
+                this.purposeAddOrUpdateDivType = type;
+                this.purposeInfo = this.purposeList[index];
+            },
+            generatorPurposeSalary(salary) {
+                return salary/1000;
+            },
+            openPasswordDiv() {
+                this.isShowPasswordDiv = false;
+            },
+            closePasswordDiv() {
+                this.isShowPasswordDiv = true;
+                this.password = "";
+            },
+            isCanClickPasswordSubmitBtn() {
+                if (this.password.length < 8) {
+                    return "disabled";
+                }
+            },
+            openUpCvDiv() {
+                if (this.cvs.length < 3) {
+                    this.isShowUpCvDiv = true;
+                }
+            },
+            closeUpCvDiv() {
+                this.isShowUpCvDiv = false;
+                this.file = {};
+                this.type = "";
+            },
+            downloadCvPdf(pdfUrl) {
+                window.location.href = pdfUrl;
+            },
+            cvRename(cvId, cvName) {
+                this.cvId = cvId;
+                this.cvName = cvName;
+                this.isShowCvRename = true;
+            },
+            upPdfFile(event) {
+                console.log("upPdfFile");
+                this.file = event.target.files[0];
+                this.fileType = this.file.name.substring(this.file.name.lastIndexOf(".") + 1);
+                this.isShowUpCvDiv = false;
+                this.isShowCvPreUpDiv = true;
+            },
+            closeShowCvPreUpDiv() {
+                this.isShowCvPreUpDiv = false;
+                this.file = {};
+                this.type = "";
+            },
+        },
+    })
+</script>
+
+
+
+</html>

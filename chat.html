@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://www.zhipin.com/web/geek/chat?ka=header-message -->
+<html class="standard">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="./chat_files/style1536672475627.css">
+    <style type="text/css">
+        .amap-logo {
+            display: block !important;
+            pointer-events: none;
+        }
+    </style>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <title>HHD直聘</title>
+    <link rel="stylesheet" href="./chat_files/prop-mall.css">
+    <link href="./chat_files/vendor.70973952.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="./chat_files/app.70973952.css" rel="stylesheet" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./chat_files/business_chat_resume_user-center.70973952.css">
+    <link rel="stylesheet" type="text/css" href="./chat_files/chat.70973952.css">
+    <style type="text/css">
+        .amap-container {
+            cursor: url(https://webapi.amap.com/theme/v1.3/openhand.cur), default;
+        }
+
+        .amap-drag {
+            cursor: url(https://webapi.amap.com/theme/v1.3/closedhand.cur), default;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="wrap" class="">
+            <div data-v-3cb81a63="">
+                <div data-v-3cb81a63="" class="">
+                    <div id="header" style="z-index: 15000; ">
+                        <div class="inner home-inner">
+                            <div class="user-nav">
+                                <ul>
+                                    <li class="">
+                                        <a ka="header-message" href="###">消息
+                                            <!-- <span class="nav-chat-num" style="display: inline-block;">28</span> -->
+                                        </a>
+                                    </li>
+                                    <li class=""><a ka="header-resume" href="./center.html">简历</a>
+                                    </li>
+                                    <li class="nav-dot">·</li>
+                                    <li class="nav-up-file"><a class="header-resume-upload" ka="header-resume-upload-2"
+                                            href="javascript:;">上传</a></li>
+                                    <li class="nav-figure" @mouseover="mouseOverUserNav()" @mouseleave="mouseLeaveUserNav()">
+                                        <a href="./main.html" ka="header-username">
+                                            <span class="label-text">{{userInfo.userNickname}}</span><img
+                                                :src="userInfo.userAvatar" alt="">
+                                        </a>
+                                        <div class="dropdown" style="display: block;" v-if="true">
+                                            <a href="./main.html" style="overflow: initial;"
+                                                ka="header-personal">个人中心<span>推荐职位</span></a>
+                                            <a href="###" style="overflow: initial;"
+                                                ka="account_manage">信息设置<span>修改密码、信息修改</span></a>
+                                            <a href="###" @click="loginout()" class="link-logout" ka="header-logout">退出登录</a>
+                                           
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!---->
+                <!---->
+            </div>
+            <!---->
+            <div id="main" class="inner" headerrander="true">
+                <div id="container">
+                    <div class="chat-container page-container">
+                        <div class="chat-wrap">
+                            <div>
+                                <!-- left -->
+                                <div class="chat-user">
+                                    <div class="article">30天内联系人</div>
+                                    <div class="user-list">
+                                        <ul>
+                                            <!-- <li v-if="chat!=null" class="selected">
+                                                <div class="figure"><img src="###" :src="chat.publisherAvatar"
+                                                        draggable="false"></div>
+                                                <div class="text">
+                                                    <div class="title">
+                                                        <span class="time">{{chat.lastChatTime}}</span>
+                                                        <span class="name"> {{chat.publisherName}}</span>
+                                                        <p class="gray"> {{chat.companyName}} <i class="vline"></i>
+                                                            {{chat.publisherPosition}} </p>
+                                                    </div><span class="notice-badge" style="display: none;">0</span>
+                                                </div>
+                                            </li> -->
+                                            <li v-for="(ch, index) in chatList" :class="getLiClickClass(ch.id)"
+                                                @click="changeChat(index)">
+                                                <div class="figure"><img src="###" :src="ch.publisherAvatar"
+                                                        draggable="false"></div>
+                                                <div class="text">
+                                                    <div class="title"><span class="time">{{ch.lastChatTime}}</span>
+                                                        <!---->
+                                                        <!----><span class="name"> {{ch.publisherName}}
+                                                            <!---->
+                                                        </span>
+                                                        <p class="gray"> {{ch.companyName}} <i class="vline"></i>
+                                                            {{ch.publisherPosition}} </p>
+                                                    </div>
+                                                    <span v-if="ch.userUnread>0 && !unShowList.includes(ch.id)" class="notice-badge">{{ch.userUnread}}</span>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- right -->
+                            <div class="chat-record">
+                                <!---->
+                                <div v-if="chat != null" class="guide-download-app-chat-qrcode-v62">
+                                    <div class="app-icon-arrow"></div>
+                                    <div class="app-icon-v62"></div>
+                                </div>
+                                <div v-if="chat != null" class="article">
+                                    <p class="fl" style="">
+                                        <span>{{chat.publisherName}}</span><span>{{chat.companyName}}</span>
+                                        <!----><i class="vline"></i><span>{{chat.publisherPosition}}</span>
+                                    </p>
+                                </div>
+                                <div v-if="chat != null" class="chat-position-bar">
+                                    <a ka="geek_chat_job_detail" href="#" target="_blank">
+                                        <span>沟通职位</span>
+                                        <span class="bar-position-name">{{chat.positionName}}</span>
+                                        <span>{{generatorSalary(chat.positionMinSalary,
+                                            chat.positionMaxSalary,chat.positionSalaryMonth)}}</span>
+                                        <span> {{chat.positionArea}}</span>
+                                    </a>
+                                    <div class="guide-download-app-chat-v62 floatRight">
+
+                                    </div>
+                                    <!---->
+                                    <div class="chat-tips">温馨提示：</div>
+                                </div>
+                                <!---->
+                                <div v-if="chat != null" class="chat-message" style="">
+                                    <ul class="im-list">
+                                        <!-- -->
+                                        <li v-for="(chatRecord, index) in chatRecordList" data-mid="160276334181"
+                                            :class="getChatClass(chatRecord.toPhone)">
+                                            <div class="message-text">
+                                                <div v-if="chatRecord.toPhone != chat.bossPhone" class="figure">
+                                                    <img draggable="false" :src="chat.publisherAvatar">
+                                                </div>
+                                                <div v-if="chatRecord.toPhone == chat.bossPhone" class="figure"
+                                                    style="margin-left: 10px; margin-right: 0px; float: right;">
+                                                    <img draggable="false" :src="userInfo.userAvatar">
+                                                </div>
+                                                <div class="text">
+                                                    <p><span>{{chatRecord.message}}</span></p>
+                                                </div>
+                                            </div>
+                                        </li>
+
+                                    </ul>
+                                </div>
+                                <!---->
+                                <ul v-if="chat != null" class="right-click-panel" style="display: none;">
+                                    <li class="">撤回</li>
+                                </ul>
+                                <div v-if="chat != null" class="dialog-resume-preview">
+                                    <!---->
+                                </div>
+                                <!-- 输入 -->
+                                <div v-if="chat != null" class="chat-im chat-editor" style="">
+                                    <div class="sentence-panel" style="display: none;">
+                                        <h3 class="title">常用语</h3>
+                                        <ul>
+                                            <li>我可以把我的简历发给您看看吗？</li>
+                                            <li>我可以去贵公司面试吗？</li>
+                                            <li>对不起，我觉得该职位不适合我，祝您早日找到满意的工作人选</li>
+                                        </ul>
+                                    </div>
+                                    <div class="sentence-popover panel-resume" style="display: none;">
+                                        <div>
+                                            <p class="title">确定向 Boss 发送简历吗？</p>
+                                            <div class="content">
+                                                <p>Boss确认后，该附件简历将直接发送至对方邮箱</p>
+                                            </div>
+                                            <div class="btns"><span class="btn btn-cancel">取消</span><span
+                                                    class="btn btn-primary btn-sure">确定</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="sentence-popover panel-contact" style="display: none;">
+                                        <p class="title">确认与对方交换电话吗？</p>
+                                        <div class="content"></div>
+                                        <div class="btns"><span class="btn btn-cancel">取消</span><span
+                                                class="btn btn-primary btn-sure">确定</span></div>
+                                    </div>
+                                    <div class="sentence-popover panel-contact dialog-virtual-container"
+                                        style="display: none;">
+                                        <div class="virtual-title"></div>
+                                        <div class="virtual-container">
+                                            <div class="virtual-switch"><img
+                                                    src="./chat_files/icon-virtual-phone.a1c7900b.jpg"
+                                                    alt=""><span>对此人使用号码隐私保护</span>
+                                                <div class="flex-right">
+                                                    <div class="popover popover-top">
+                                                        <div>
+                                                            <!---->
+                                                        </div>
+                                                        <div class="popover-wrap popover-dark" style="display: none;">
+                                                            <div class="popover-content">该Boss可能有一定安全风险,已为你自动打开隐私保护
+                                                            </div>
+                                                        </div>
+                                                    </div><label class="checkbox"><span class="checkbox-inner"><input
+                                                                type="checkbox" class="checkbox-input"><i
+                                                                class="checkbox-edging"></i></span>
+                                                        <!---->
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="virtual-content"> </div>
+                                        </div>
+                                        <div class="virtual-footer"><span class="virtual-cancel">取消</span><span
+                                                class="virtual-confirm">确定</span></div>
+                                    </div>
+                                    <div class="sentence-popover panel-wechat" style="display: none;">
+                                        <div>
+                                            <p class="title">确认与对方交换微信吗？</p>
+                                            <div class="content"></div>
+                                            <div class="btns"><span class="btn btn-cancel">取消</span><span
+                                                    class="btn btn-primary btn-sure">确定</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="emotion" style="display: none;">
+                                        <div class="emotion-box">
+                                            <div class="animoji-box loaded emoji-box">
+                                                <!---->
+                                                <ul class="emotion-emoji loaded">
+                                                    <li><button title="微笑" data-key="[微笑]" class="emoj emoj-1"></button>
+                                                    </li>
+                                                    <li><button title="憨笑" data-key="[憨笑]" class="emoj emoj-2"></button>
+                                                    </li>
+                                                    <li><button title="偷笑" data-key="[偷笑]" class="emoj emoj-3"></button>
+                                                    </li>
+                                                    <li><button title="呲牙" data-key="[呲牙]" class="emoj emoj-4"></button>
+                                                    </li>
+                                                    <li><button title="开心" data-key="[开心]" class="emoj emoj-5"></button>
+                                                    </li>
+                                                    <li><button title="害羞" data-key="[害羞]" class="emoj emoj-6"></button>
+                                                    </li>
+                                                    <li><button title="调皮" data-key="[调皮]" class="emoj emoj-7"></button>
+                                                    </li>
+                                                    <li><button title="发呆" data-key="[发呆]" class="emoj emoj-8"></button>
+                                                    </li>
+                                                    <li><button title="坏笑" data-key="[坏笑]" class="emoj emoj-9"></button>
+                                                    </li>
+                                                    <li><button title="淘气" data-key="[淘气]"
+                                                            class="emoj emoj-10"></button>
+                                                    </li>
+                                                    <li><button title="鼓掌" data-key="[鼓掌]"
+                                                            class="emoj emoj-11"></button>
+                                                    </li>
+                                                    <li><button title="抠鼻" data-key="[抠鼻]"
+                                                            class="emoj emoj-12"></button>
+                                                    </li>
+                                                    <li><button title="流汗" data-key="[流汗]"
+                                                            class="emoj emoj-13"></button>
+                                                    </li>
+                                                    <li><button title="奋斗" data-key="[奋斗]"
+                                                            class="emoj emoj-14"></button>
+                                                    </li>
+                                                    <li><button title="尴尬" data-key="[尴尬]"
+                                                            class="emoj emoj-15"></button>
+                                                    </li>
+                                                    <li><button title="感动" data-key="[感动]"
+                                                            class="emoj emoj-16"></button>
+                                                    </li>
+                                                    <li><button title="委屈" data-key="[委屈]"
+                                                            class="emoj emoj-17"></button>
+                                                    </li>
+                                                    <li><button title="笑哭" data-key="[笑哭]"
+                                                            class="emoj emoj-18"></button>
+                                                    </li>
+                                                    <li><button title="难过" data-key="[难过]"
+                                                            class="emoj emoj-19"></button>
+                                                    </li>
+                                                    <li><button title="流泪" data-key="[流泪]"
+                                                            class="emoj emoj-20"></button>
+                                                    </li>
+                                                    <li><button title="石化" data-key="[石化]"
+                                                            class="emoj emoj-21"></button>
+                                                    </li>
+                                                    <li><button title="offer" data-key="[offer]"
+                                                            class="emoj emoj-22"></button></li>
+                                                    <li><button title="面试" data-key="[面试]"
+                                                            class="emoj emoj-23"></button>
+                                                    </li>
+                                                    <li><button title="牛" data-key="[牛]" class="emoj emoj-24"></button>
+                                                    </li>
+                                                    <li><button title="生病" data-key="[生病]"
+                                                            class="emoj emoj-25"></button>
+                                                    </li>
+                                                    <li><button title="疑问" data-key="[疑问]"
+                                                            class="emoj emoj-26"></button>
+                                                    </li>
+                                                    <li><button title="不屑" data-key="[不屑]"
+                                                            class="emoj emoj-27"></button>
+                                                    </li>
+                                                    <li><button title="发怒" data-key="[发怒]"
+                                                            class="emoj emoj-28"></button>
+                                                    </li>
+                                                    <li><button title="捂脸" data-key="[捂脸]"
+                                                            class="emoj emoj-29"></button>
+                                                    </li>
+                                                    <li><button title="惊恐" data-key="[惊恐]"
+                                                            class="emoj emoj-30"></button>
+                                                    </li>
+                                                    <li><button title="酷" data-key="[酷]" class="emoj emoj-31"></button>
+                                                    </li>
+                                                    <li><button title="钱" data-key="[钱]" class="emoj emoj-32"></button>
+                                                    </li>
+                                                    <li><button title="抱拳" data-key="[抱拳]"
+                                                            class="emoj emoj-33"></button>
+                                                    </li>
+                                                    <li><button title="困" data-key="[困]" class="emoj emoj-34"></button>
+                                                    </li>
+                                                    <li><button title="衰" data-key="[衰]" class="emoj emoj-35"></button>
+                                                    </li>
+                                                    <li><button title="喝可乐" data-key="[喝可乐]"
+                                                            class="emoj emoj-36"></button>
+                                                    </li>
+                                                    <li><button title="晕" data-key="[晕]" class="emoj emoj-37"></button>
+                                                    </li>
+                                                    <li><button title="等待" data-key="[等待]"
+                                                            class="emoj emoj-38"></button>
+                                                    </li>
+                                                    <li><button title="惊吓" data-key="[惊吓]"
+                                                            class="emoj emoj-39"></button>
+                                                    </li>
+                                                    <li><button title="挑眉" data-key="[挑眉]"
+                                                            class="emoj emoj-40"></button>
+                                                    </li>
+                                                    <li><button title="呵呵" data-key="[呵呵]"
+                                                            class="emoj emoj-41"></button>
+                                                    </li>
+                                                    <li><button title="晚安" data-key="[晚安]"
+                                                            class="emoj emoj-42"></button>
+                                                    </li>
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <li><button title="爱心" data-key="[爱心]"
+                                                            class="emoj emoj-53"></button>
+                                                    </li>
+                                                    <li><button title="心碎" data-key="[心碎]"
+                                                            class="emoj emoj-54"></button>
+                                                    </li>
+                                                    <li><button title="猫头" data-key="[猫头]"
+                                                            class="emoj emoj-55"></button>
+                                                    </li>
+                                                    <li><button title="狗头" data-key="[狗头]"
+                                                            class="emoj emoj-56"></button>
+                                                    </li>
+                                                    <li><button title="干杯" data-key="[干杯]"
+                                                            class="emoj emoj-57"></button>
+                                                    </li>
+                                                    <li><button title="玫瑰" data-key="[玫瑰]"
+                                                            class="emoj emoj-58"></button>
+                                                    </li>
+                                                    <li><button title="闹钟" data-key="[闹钟]"
+                                                            class="emoj emoj-59"></button>
+                                                    </li>
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <!---->
+                                                    <li><button title="挥手" data-key="[挥手]"
+                                                            class="emoj emoj-70"></button>
+                                                    </li>
+                                                    <li><button title="握手" data-key="[握手]"
+                                                            class="emoj emoj-71"></button>
+                                                    </li>
+                                                    <li><button title="赞" data-key="[赞]" class="emoj emoj-72"></button>
+                                                    </li>
+                                                    <li><button title="勾引" data-key="[勾引]"
+                                                            class="emoj emoj-73"></button>
+                                                    </li>
+                                                    <li><button title="OK" data-key="[OK]"
+                                                            class="emoj emoj-74"></button>
+                                                    </li>
+                                                    <li><button title="祈祷" data-key="[祈祷]"
+                                                            class="emoj emoj-75"></button>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="emotion-tab">
+                                            <div class="emotion-sort selected emition-default"><button
+                                                    class="emotion-default"></button></div>
+                                            <div class="emotion-sort"><button class="emotion-like"></button></div>
+                                            <div class="emotion-sort"><button class="emotion-veteran" style=""></button>
+                                            </div>
+                                            <div class="emotion-sort"><button class="emotion-zhi2" style=""></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="chat-controls"><a href="javascript:;" aria-label="表情"
+                                            class="btn-emotion tooltip tooltip-top"></a><a href="javascript:;"
+                                            aria-label="常用语" class="btn-dict tooltip tooltip-top"></a><a
+                                            href="javascript:;" aria-label="发简历：双方回复后可用"
+                                            class="btn-resume tooltip tooltip-top unable"></a><a href="javascript:;"
+                                            aria-label="交换手机：双方回复后可用"
+                                            class="btn-contact tooltip tooltip-top unable"></a><a href="javascript:;"
+                                            aria-label="交换微信：双方回复后可用"
+                                            class="btn-weixin tooltip tooltip-top unable"></a><a href="javascript:;"
+                                            aria-label="优先提醒" class="btn-online tooltip tooltip-top"></a>
+                                    </div>
+
+                                    <!-- 输入div -->
+                                    <div id="inputDiv" contenteditable="true" class="chat-input"
+                                        @keyup.enter="sendMessage()"></div>
+                                    <div class="chat-op"><span class="tip">按Enter键发送，按Ctrl+Enter键换行</span>
+                                        <!-- <button type="button" class="btn btn-primary btn-send disabled">发送</button> -->
+                                        <button @click="sendMessage()" type="button"
+                                            class="btn btn-primary btn-send ">发送</button>
+                                    </div>
+
+                                    <div class="chat-recommend-position" style="display: none;">
+                                        <ul class="position-list"></ul><i ka="chat_pop_close"
+                                            class="btn-close ui-icon-close"></i>
+                                    </div>
+                                </div>
+                                <!-- 右边欢迎 -->
+                                <div v-if="chat == null" class="chat-weclcome">
+                                    <div class="welcome-tips">
+                                        <p><b>Tips：</b>与您进行过沟通的 Boss 都会在左侧列表中显示 </p>
+                                    </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div data-v-7a700006="" data-v-3cb81a63="" data-transfer="true"
+            class="dialog-wrap upload-resume-dialog v-transfer-dom" style="display: none;">
+            <div ka="dialog_layer" class="dialog-layer"></div>
+            <div class="dialog-container" style="display: none;">
+                <div class="dialog-header">
+                    <!---->
+                    <h3 class="title"></h3><span ka="dialog_close" class="close"><i class="icon-close"></i></span>
+                </div>
+                <div class="dialog-body">
+                    <div data-v-7a700006="" class="upload-resume__old">
+                        <!---->
+                        <p data-v-7a700006="" class="tip-drag">拖拽文件到这里</p>
+                        <p data-v-7a700006="" class="tip-filetype">简历建议使用 PDF 文件，也支持DOC、DOCX、JPG、PNG 格式</p>
+                        <p data-v-7a700006="" class="tip-size">文件大小不超过8M</p>
+                        <div data-v-7a700006="" class="btns"><a data-v-7a700006="" href="javascript:;"
+                                class="btn btn-primary btn-file">上传附件简历 <input data-v-7a700006="" type="file"
+                                    ka="user-resume-upload-file"
+                                    accept="image/jpg, image/jpeg, image/png, application/vnd.ms-powerpoint, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.presentationml.presentation,.doc,.docx,.pdf"></a>
+                        </div>
+                        <p data-v-7a700006="" class="tip-guide">没有附件简历 <a data-v-7a700006=""
+                                href="https://www.zhipin.com/web/geek/guide" ka="nlp_no_resume"> 在线填写</a></p>
+                    </div>
+                </div>
+                <!---->
+            </div>
+        </div>
+        <div data-v-7a700006="" data-transfer="true" class="dialog-wrap upload-resume-dialog v-transfer-dom"
+            style="display: none;">
+            <div ka="dialog_layer" class="dialog-layer"></div>
+            <div class="dialog-container" style="display: none;">
+                <div class="dialog-header">
+                    <!---->
+                    <h3 class="title"></h3><span ka="dialog_close" class="close"><i class="icon-close"></i></span>
+                </div>
+                <div class="dialog-body">
+                    <div data-v-7a700006="" class="upload-resume__old">
+                        <!---->
+                        <p data-v-7a700006="" class="tip-drag">拖拽文件到这里</p>
+                        <p data-v-7a700006="" class="tip-filetype">简历建议使用 PDF 文件，也支持DOC、DOCX、JPG、PNG 格式</p>
+                        <p data-v-7a700006="" class="tip-size">文件大小不超过8M</p>
+                        <div data-v-7a700006="" class="btns"><a data-v-7a700006="" href="javascript:;"
+                                class="btn btn-primary btn-file">上传附件简历 <input data-v-7a700006="" type="file"
+                                    ka="user-resume-upload-file"
+                                    accept="image/jpg, image/jpeg, image/png, application/vnd.ms-powerpoint, application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document, application/vnd.openxmlformats-officedocument.presentationml.presentation,.doc,.docx,.pdf"></a>
+                        </div>
+                        <p data-v-7a700006="" class="tip-guide">没有附件简历 <a data-v-7a700006=""
+                                href="https://www.zhipin.com/web/geek/guide" ka="nlp_no_resume"> 在线填写</a></p>
+                    </div>
+                </div>
+                <!---->
+            </div>
+        </div>
+        <div data-transfer="true" class="dialog-wrap choose-resume-dialog v-transfer-dom" style="display: none;">
+            <div ka="dialog_layer" class="dialog-layer"></div>
+            <div class="dialog-container" style="width: 580px; display: none;">
+                <div class="dialog-header">
+                    <!---->
+                    <h3 class="title">请选择需要投递的附件简历</h3><span ka="dialog_close" class="close"><i
+                            class="icon-close"></i></span>
+                </div>
+                <div class="dialog-body">
+                    <div class="resume-choose-container">
+                        <div name="radioGroup_1619711391279_0" class="resume-list radio-group" slot="slot-content">
+                            <div class="pl30">
+                                <div class="resume-title">文件附件</div>
+                                <div class="resume-top-tip"><i class="icon-xinxi-tip"></i><span>未上传简历</span><span
+                                        class="btn-upload">去上传</span></div>
+                            </div>
+                            <!---->
+                        </div>
+                    </div>
+                    <div class="pl30"><button type="button" disabled="disabled"
+                            class="btn btn-primary btn-confirm">确定</button></div>
+                    <div>
+                        <!---->
+                        <!---->
+                    </div>
+                </div>
+                <!---->
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/sockjs.min.js"></script>
+<script src="./js/stomp.js"></script>
+<script src="./js/vue-router.js"></script>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            stompClient: null,
+            chat: null,
+            phone: null,
+            toPhone: null,
+            userInfo: {},
+            chatRecordList: [],
+            chatList: [],
+            unShowList: [],
+            isShowUserNav: false,
+        },
+        beforeRouteLeave(to, from, next) {
+            this.disconnect();
+            this.clearRedis();
+            next()
+        },
+        created() {
+            let authorization = sessionStorage.getItem("Authorization");
+            if (authorization != null && authorization.length > 0) {
+                window.addEventListener('unload', e => this.unloadFn(e))
+                this.getUserInfo();
+                this.getCurrentInfo();
+                this.connect();
+                this.getChatList();
+            } else {
+                window.location.href = "./login.html";
+            }
+
+        },
+        beforeDestroy() {
+            
+        },
+        destroyed() {
+            window.removeEventListener('unload', e => this.unloadFn(e));
+        },
+        methods: {
+            mouseOverUserNav() {
+                this.isShowUserNav = true;
+            },
+            mouseLeaveUserNav() {
+                this.isShowUserNav = false;
+            },
+            changeSendObject() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/chat/changeToObject?toPhone=' + this.chat.bossPhone + "&jdId=" + this.chat.jdId, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getChatRecord() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/chatRecord/get?chatId=' + this.chat.id, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.chatRecordList = response.data.list;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            changeChat(index) {
+                this.chat = this.chatList[index];
+                this.getChatRecord();
+                this.changeSendObject();
+                this.unShowList.push(this.chat.id);
+                this.stompQueue();
+            },
+            getLiClickClass(id) {
+                if (this.chat != null && id == this.chat.id) {
+                    return " selected";
+                }
+                return "";
+            },
+            getChatList() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/chat/getChatList', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.chatList = response.data.list;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getChatClass(toPhone) {
+                if (toPhone == this.chat.bossPhone) {
+                    return "item-myself";
+
+                } else {
+                    return "item-friend";
+                }
+            },
+            unloadFn(e) {
+                console.log('关闭')
+                this.disconnect();
+                this.clearRedis();
+            },
+            beforeunloadFn(e) {
+                console.log('刷新或关闭')
+                this.disconnect();
+                this.clearRedis();
+            },
+            disconnect() {
+                if (this.stompClient != null) {
+                    this.stompClient.disconnect();
+                }
+            },
+            clearRedis() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/chat/close', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getUserInfo() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/user/getInfo', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.userInfo = response.data.user;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            generatorSalary(positionMinSalary, positionMaxSalary, positionSalaryMonth) {
+                return (positionMinSalary / 1000) + "-" + (positionMaxSalary / 1000) + "k * " + positionSalaryMonth + "薪";
+            },
+            getCurrentInfo() {
+                let authorization = sessionStorage.getItem("Authorization");
+                axios.get('http://localhost/chat/getCurrent', {
+                    headers: {
+                        Authorization: authorization,
+                    }
+                })
+                    .then((response) => {
+                        console.log(response);
+                        this.chat = response.data.chat;
+                        this.chatRecordList = response.data.list;
+                        if (this.chat.bossPhone!=null && this.chat.jdId!=null) {
+                            this.stompQueue();
+                        }
+                    })
+                    .catch(function (error) {
+                        console.log(error);
+                    });
+            },
+            connect() {
+                let authorization = sessionStorage.getItem("Authorization");
+                let socket = new SockJS('http://127.0.0.1/chat');
+                this.stompClient = Stomp.over(socket);//使用STMOP子协议的WebSocket客户端
+                this.stompClient.connect({ 'Authorization': authorization }, function (frame) { //连接WebSocket服务端
+                    console.log('Connected:' + frame);
+                    //广播接收信息
+                    // stompTopic();
+                });
+            },
+            stompQueue() {
+                //通过stompClient.subscribe订阅/topic/getResponse 目标(destination)发送的消息（队列接收信息）
+                this.stompClient.subscribe('/user/' + this.chat.id + '/alone/getMessage', (response) => {
+                    let messageVo = JSON.parse(response.body);
+                    if (this.chat.bossPhone != messageVo.toUserPhone) {
+                        let curChatRecord = { "toPhone": messageVo.toUserPhone, "message":messageVo.message };
+                        this.chatRecordList.push(curChatRecord);
+                    }
+                });
+            },
+            sendMessage() {
+                let message = document.getElementById("inputDiv").innerText;
+                document.getElementById("inputDiv").innerText = "";
+                if (message == null || message.length <= 0) {
+                    return;
+                }
+                let postValue = {};
+                // postValue.fromUserPhone = this.phone;
+                postValue.chatId = this.chat.id;
+                postValue.toUserPhone = this.chat.bossPhone;
+                postValue.message = message;
+                postValue.role = this.userInfo.role;
+                postValue.jdId = this.chat.jdId;
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    this.stompClient.send("/sendMessage", { 'Authorization': authorization }, JSON.stringify(postValue));
+                }
+                let curChatRecord = { "toPhone": this.chat.bossPhone, "message": message };
+                this.chatRecordList.push(curChatRecord);
+            }
+        },
+        computed: {
+
+        },
+        // watch: {
+        //     $route(to, from) {
+        //         if (to.path != "http://127.0.0.1:5500/chat.html") {
+        //             console.log("fasle")
+        //         } else {
+        //             console.log("true")
+        //         }
+        //     }
+        // },
+    })
+
+</script>
+
+</html>

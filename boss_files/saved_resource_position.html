@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://www.zhipin.com/vue/index/#/dashboard/job-manage/job-edit/0 -->
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" type="text/css" href="./style1536672475627.css">
+  <link rel="stylesheet" type="text/css" href="./userPosition.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>HHD直聘</title>
+
+</head>
+
+<body>
+  <div id="app">
+    <div id="wrap">
+      <div id="main">
+        <div id="container" class="">
+
+          <div>
+            <!-- add and update -->
+            <div v-show="!isShowPulisherListDiv" data-v-10aea90f="" class="job-manage-container">
+              <!---->
+              <!---->
+              <!---->
+              <div data-v-10aea90f="" class="job-edit-container">
+                <div data-v-10aea90f="" class="title-container base-info">
+                  <h3 data-v-10aea90f="" class="title">职位基本信息</h3>
+                  <!-- <p data-v-10aea90f="" class="gray">职位发布成功后，招聘类型、职位名称、职位类型、工作城市，将无法修改</p> -->
+                  <p data-v-10aea90f="" class="gray" style="color: red; font-size: 15px;">职位发布成功后，将无法修改！</p>
+                </div>
+                <div data-v-10aea90f="" class="form-row">
+                  <div data-v-10aea90f="" class="title">
+                    公&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;司：
+                  </div>
+                  <div data-v-10aea90f="" class="content"><span data-v-10aea90f=""
+                      class="text-primary">{{bossInfo.companyName}}</span></div>
+                </div>
+                <div data-v-c1054d12="" data-v-10aea90f="" class="form-row">
+                  <div data-v-c1054d12="" class="title">
+                    招聘类型：
+                  </div>
+                  <div data-v-c1054d12="" class="content">
+                    <div data-v-6d1a184e="" data-v-c1054d12=""
+                      class="recruitment-type-select ui-select ui-select-single">
+                      <div data-v-6d1a184e="" tabindex="0" class="ui-select-selection"
+                        @click="openOrClosePositionTypeDiv()">
+                        <input data-v-6d1a184e="" type="hidden" value="0">
+                        <div data-v-6d1a184e="" class="ui-select-inner"> <span
+                            class="ui-select-selected-value">社招</span>
+                          <!---->
+                          <!----> <i class="ui-icon-arrow-down"></i>
+                        </div>
+                      </div>
+                      <div v-show="isShowPositionTypesDiv" data-v-6d1a184e="" class="ui-select-dropdown"
+                        style="display: block;">
+                        <ul data-v-6d1a184e="" class="ui-dropdown-list">
+                          <li data-v-c1054d12="" class="ui-select-item">兼职招聘</li>
+                          <li data-v-c1054d12="" class="ui-select-item ui-select-item-selected">社招</li>
+                          <li data-v-c1054d12="" class="ui-select-item">实习生</li>
+                          <li data-v-c1054d12="" class="ui-select-item">应届校招</li>
+                        </ul>
+                        <ul data-v-6d1a184e="" class="ui-dropdown-loading" style="display: none;">加载中</ul>
+                      </div>
+                    </div>
+                  </div>
+                  <!---->
+                </div>
+                <div data-v-ce7ff230="" data-v-10aea90f="" class="form-row job-name">
+                  <div data-v-ce7ff230="" class="title">
+                    职位名称：
+                  </div>
+                  <div data-v-ce7ff230="" class="content"><span data-v-ce7ff230="" class="ipt-wrap">
+                      <input v-model="addPosition.positionName" data-v-ce7ff230="" type="text" name="jobName"
+                        placeholder="输入职位名称" class="ipt"></span>
+                  </div>
+                </div>
+                <div data-v-8aa8376e="" data-v-10aea90f="" class="form-row performance-row">
+                  <div data-v-8aa8376e="" class="title">职位描述：</div>
+                  <div data-v-8aa8376e="" class="content">
+                    <div data-v-8aa8376e="" class="textarea-container">
+                      <textarea v-model="addPosition.positionDescribe" data-v-8aa8376e=""
+                        placeholder="请勿填写QQ、微信、电话等联系方式及特殊符号、性别歧视词、违反劳动法相关内容，否则有可能会导致您的账号被封禁。" class="ipt">
+                      </textarea>
+                      <span data-v-8aa8376e="" class="count-num"><em data-v-8aa8376e="" class="red">0</em>/5000
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div data-v-dee9f35a="" data-v-10aea90f="" class="form-row job-address">
+                  <div data-v-dee9f35a="" class="title">工作地点：</div>
+                  <div data-v-dee9f35a="" class="content">
+                    <!---->
+                    <div data-v-dee9f35a="" class="job-address-container"><span data-v-dee9f35a=""
+                        class="dropdown-select">
+                        <input v-model="addPosition.positionArea" data-v-dee9f35a="" type="text" autocomplete="off"
+                          placeholder="选择工作地点" class="ipt"></span></div>
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                  <div data-v-144372f8="" data-v-dee9f35a="">
+                    <!---->
+                  </div>
+                </div>
+                <!--职位福利-->
+                <div data-v-0484e5b1="" data-v-10aea90f="" class="form-row job-skill-row">
+                  <div data-v-0484e5b1="" class="title">福利关键词：</div>
+                  <div data-v-0484e5b1="" class="content">
+                    <!---->
+                    <div data-v-3e211e98="" data-v-0484e5b1="" class="job-skill-container dropdown-blank-open"
+                      placeholderalways="true"><span data-v-3e211e98="" class="dropdown-select">
+                        <div data-v-3e211e98="" class="bootstrap-tagsinput">
+                          <span v-for="(item, index) in welfareWordArr" data-v-3e211e98="" class="tag">
+                            <i @click="removeWelfareWord(index)" data-v-3e211e98="" class="iboss-close-solid"></i>
+                            {{item}}
+                          </span>
+                          <input @keyup.enter="addWelFareWord()" v-model="welfareWordInput" data-v-3e211e98=""
+                            type="text" autocomplete="off" placeholder="选择或输入职位关键词" maxlength="30">
+                        </div>
+                      </span>
+                      <span data-v-0484e5b1="" class="tip-text">可添加4个关键词突出展示给牛人</span>
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+
+
+                <div data-v-10aea90f="" class="title-container requirements-info">
+                  <h3 data-v-10aea90f="" class="title">职位要求</h3>
+                  <p data-v-10aea90f="" class="gray">我们将通过以下条件，为您精确推荐合适的牛人，请尽量详细填写</p>
+                </div>
+                <div data-v-8aa8376e="" data-v-10aea90f="" class="form-row performance-row">
+                  <div data-v-8aa8376e="" class="title">任职要求：</div>
+                  <div data-v-8aa8376e="" class="content">
+                    <div data-v-8aa8376e="" class="textarea-container"><textarea v-model="addPosition.positionRequire"
+                        data-v-8aa8376e="" placeholder="请勿填写QQ、微信、电话等联系方式及特殊符号、性别歧视词、违反劳动法相关内容，否则有可能会导致您的账号被封禁。"
+                        class="ipt"></textarea>
+                      <span data-v-8aa8376e="" class="count-num"><em data-v-8aa8376e="" class="red">0</em>/5000
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div data-v-10aea90f="" class="form-row job-experience-row">
+                  <div class="title">经验和学历：</div>
+                  <div class="content">
+                    <div data-v-6d1a184e="" class="small experience-select ui-select ui-select-single">
+                      <div @click="openOrCloseWorkYearDiv()" data-v-6d1a184e="" tabindex="0"
+                        class="ui-select-selection"> <input data-v-6d1a184e="" type="hidden" value="">
+                        <div data-v-6d1a184e="" class="ui-select-inner">
+                          <span v-show="addPosition.workYear==null" class="ui-select-placeholder">选择经验</span>
+                          <span v-show="addPosition.workYear!=null"
+                            class="ui-select-selected-value">{{addPosition.workYear}}</span>
+                          <i class="ui-icon-arrow-down"></i>
+                        </div>
+                      </div>
+                      <div v-show="isShowWorkYearDiv" data-v-6d1a184e="" class="ui-select-dropdown"
+                        style="width: 150px; display: block;">
+                        <ul data-v-6d1a184e="" class="ui-dropdown-list">
+                          <li class="ui-select-item" @click="selectWorkYear('不限')">不限</li>
+                          <li class="ui-select-item" @click="selectWorkYear('1年以内')">1年以内</li>
+                          <li class="ui-select-item" @click="selectWorkYear('1-3年')">1-3年</li>
+                          <li class="ui-select-item" @click="selectWorkYear('3-5年')">3-5年</li>
+                          <li class="ui-select-item" @click="selectWorkYear('5-10年')">5-10年</li>
+                          <li class="ui-select-item" @click="selectWorkYear('10年以上')">10年以上</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div data-v-6d1a184e="" class="small experience-select ui-select ui-select-single">
+                      <div @click="openOrCloseEduDiv()" data-v-6d1a184e="" tabindex="0" class="ui-select-selection">
+                        <input data-v-6d1a184e="" type="hidden" value="">
+                        <div data-v-6d1a184e="" class="ui-select-inner">
+                          <span v-show="addPosition.educationRequire==null" class="ui-select-placeholder">选择学历</span>
+                          <span v-show="addPosition.educationRequire!=null"
+                            class="ui-select-selected-value">{{addPosition.educationRequire}}</span>
+                          <i class="ui-icon-arrow-down"></i>
+                        </div>
+                      </div>
+                      <div v-show="isShowEduDiv" data-v-6d1a184e="" class="ui-select-dropdown" style="display: block;">
+                        <ul data-v-6d1a184e="" class="ui-dropdown-list">
+                          <li class="ui-select-item" @click="selectEducationRequire('不限')">不限</li>
+                          <li class="ui-select-item" @click="selectEducationRequire('初中及以下')">初中及以下</li>
+                          <li class="ui-select-item" @click="selectEducationRequire('中专/中技')">中专/中技</li>
+                          <li class="ui-select-item" @click="selectEducationRequire('高中')">高中</li>
+                          <li class="ui-select-item" @click="selectEducationRequire('大专')">大专</li>
+                          <li class="ui-select-item" @click="selectEducationRequire('本科')">本科</li>
+                          <li class="ui-select-item" @click="selectEducationRequire('硕士')">硕士</li>
+                          <li class="ui-select-item" @click="selectEducationRequire('博士')">博士</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!---->
+                    <!---->
+                  </div>
+                </div>
+                <!---->
+                <div data-v-2d268f96="" data-v-10aea90f="" class="form-row">
+                  <div data-v-2d268f96="" class="title">薪资范围：</div>
+                  <div data-v-2d268f96="" class="content">
+                    <div data-v-478ba92e="" data-v-2d268f96="" class="scope-selecter">
+                      <!--最低薪资-->
+                      <div data-v-6d1a184e="" data-v-478ba92e=""
+                        class="scope-select lowSarlay ui-select ui-select-single">
+                        <div @click="openOrCloseMinSalaryDiv()" data-v-6d1a184e="" tabindex="0"
+                          class="ui-select-selection"> <input data-v-6d1a184e="" type="hidden" value="">
+                          <div data-v-6d1a184e="" class="ui-select-inner">
+                            <span v-show="addPosition.positionMinSalary==null" class="ui-select-placeholder">最低</span>
+                            <span v-show="addPosition.positionMinSalary!=null"
+                              class="ui-select-selected-value">{{addPosition.positionMinSalary/1000 + "k"}}</span>
+                            <i class="ui-icon-arrow-down"></i>
+                          </div>
+                        </div>
+                        <div v-show="isShowMinSalaryDiv" data-v-6d1a184e="" class="ui-select-dropdown"
+                          style="display: block;">
+                          <ul data-v-6d1a184e="" class="ui-dropdown-list">
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(1000)">1k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(2000)">2k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(3000)">3k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(4000)">4k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(5000)">5k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(6000)">6k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(7000)">7k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(8000)">8k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(9000)">9k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(10000)">10k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(11000)">11k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(12000)">12k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(13000)">13k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(14000)">14k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(15000)">15k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(16000)">16k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(17000)">17k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(18000)">18k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(19000)">19k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(20000)">20k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(21000)">21k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(22000)">22k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(23000)">23k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(24000)">24k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(25000)">25k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(26000)">26k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(27000)">27k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(28000)">28k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(29000)">29k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(30000)">30k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(35000)">35k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(40000)">40k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(45000)">45k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(50000)">50k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(55000)">55k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(60000)">60k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(65000)">65k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(70000)">70k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(75000)">75k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(80000)">80k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(85000)">85k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(90000)">90k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(95000)">95k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(100000)">100k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(110000)">110k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(120000)">120k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(130000)">130k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(140000)">140k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(150000)">150k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(160000)">160k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(170000)">170k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(180000)">180k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(190000)">190k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(200000)">200k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(210000)">210k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(220000)">220k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(230000)">230k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(240000)">240k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMinSalary(250000)">250k
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!--最高薪资-->
+                      <div data-v-6d1a184e="" data-v-478ba92e="" class="scope-select ui-select ui-select-single">
+                        <div @click="openOrCloseMaxSalaryDiv()" data-v-6d1a184e="" tabindex="0"
+                          class="ui-select-selection"> <input data-v-6d1a184e="" type="hidden" value="">
+                          <div data-v-6d1a184e="" class="ui-select-inner">
+                            <span v-show="addPosition.positionMaxSalary==null" class="ui-select-placeholder">最高</span>
+                            <span v-show="addPosition.positionMaxSalary!=null"
+                              class="ui-select-selected-value">{{addPosition.positionMaxSalary/1000 + "k"}}</span>
+                            <i class="ui-icon-arrow-down"></i>
+                          </div>
+                        </div>
+                        <div v-show="isShowMaxSalaryDiv" data-v-6d1a184e="" class="ui-select-dropdown"
+                          style="display: block;">
+                          <ul data-v-6d1a184e="" class="ui-dropdown-list">
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(1000)">1k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(2000)">2k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(3000)">3k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(4000)">4k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(5000)">5k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(6000)">6k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(7000)">7k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(8000)">8k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(9000)">9k</li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(10000)">10k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(11000)">11k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(12000)">12k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(13000)">13k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(14000)">14k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(15000)">15k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(16000)">16k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(17000)">17k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(18000)">18k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(19000)">19k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(20000)">20k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(21000)">21k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(22000)">22k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(23000)">23k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(24000)">24k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(25000)">25k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(26000)">26k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(27000)">27k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(28000)">28k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(29000)">29k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(30000)">30k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(35000)">35k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(40000)">40k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(45000)">45k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(50000)">50k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(55000)">55k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(60000)">60k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(65000)">65k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(70000)">70k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(75000)">75k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(80000)">80k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(85000)">85k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(90000)">90k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(95000)">95k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(100000)">100k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(110000)">110k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(120000)">120k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(130000)">130k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(140000)">140k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(150000)">150k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(160000)">160k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(170000)">170k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(180000)">180k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(190000)">190k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(200000)">200k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(210000)">210k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(220000)">220k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(230000)">230k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(240000)">240k
+                            </li>
+                            <li data-v-478ba92e="" class="ui-select-item" @click="selectPositionMaxSalary(250000)">250k
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <span data-v-2d268f96="" class="salary-month-container">
+                      <div data-v-6d1a184e="" data-v-2d268f96=""
+                        class="small salaryMonth-select ui-select ui-select-single">
+                        <div @click="openOrCloseSalaryMonthDiv()" data-v-6d1a184e="" tabindex="0"
+                          class="ui-select-selection"> <input data-v-6d1a184e="" type="hidden" value="12">
+                          <div data-v-6d1a184e="" class="ui-select-inner">
+                            <span v-show="addPosition.positionSalaryMonth==null" class="ui-select-placeholder">月数</span>
+                            <span v-show="addPosition.positionSalaryMonth!=null"
+                              class="ui-select-selected-value">{{addPosition.positionSalaryMonth}}个月</span>
+                            <!---->
+                            <!----> <i class="ui-icon-arrow-down"></i>
+                          </div>
+                        </div>
+                        <div v-show="isShowSalaryMonthDiv" data-v-6d1a184e="" class="ui-select-dropdown"
+                          style="display: block;">
+                          <ul data-v-6d1a184e="" class="ui-dropdown-list">
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(12)">12个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(13)">13个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(14)">14个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(15)">15个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(16)">16个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(17)">17个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(18)">18个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(19)">19个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(20)">20个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(21)">21个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(22)">22个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(23)">23个月
+                            </li>
+                            <li data-v-2d268f96="" class="ui-select-item" @click="selectPositionSalaryMonth(24)">24个月
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </span>
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                    <!---->
+                  </div>
+                  <!---->
+                  <!---->
+                </div>
+
+                <!--职位关键词-->
+                <div data-v-0484e5b1="" data-v-10aea90f="" class="form-row job-skill-row">
+                  <div data-v-0484e5b1="" class="title">职位关键词：</div>
+                  <div data-v-0484e5b1="" class="content">
+                    <!---->
+                    <div data-v-3e211e98="" data-v-0484e5b1="" class="job-skill-container dropdown-blank-open"
+                      placeholderalways="true"><span data-v-3e211e98="" class="dropdown-select">
+                        <div data-v-3e211e98="" class="bootstrap-tagsinput">
+                          <span v-for="(item, index) in keyWordArr" data-v-3e211e98="" class="tag">
+                            <i @click="removeKeyWord(index)" data-v-3e211e98="" class="iboss-close-solid"></i>
+                            {{item}}
+                          </span>
+                          <input @keyup.enter="addKeyWord()" v-model="keyWordInput" data-v-3e211e98="" type="text"
+                            autocomplete="off" placeholder="选择或输入职位关键词" maxlength="30">
+                        </div>
+                      </span>
+                      <span data-v-0484e5b1="" class="tip-text">可添加4个关键词突出展示给牛人</span>
+                      <!---->
+                    </div>
+                    <!---->
+                  </div>
+                </div>
+
+                <div data-v-8d9d8714="" data-v-10aea90f="" class="form-btn">
+                  <!---->
+                  <!---->
+                  <div data-v-8d9d8714="" class="btns"><span data-v-8d9d8714="">
+                      已阅读并遵守《
+                      <a data-v-8d9d8714="" href="javascript:;" class="link-pub-protocol">BOSS直聘职位信息发布规则</a>》
+                    </span> <button data-v-8d9d8714="" type="button" @click="savePosition()" class="btn">发布</button>
+                    </span> <button data-v-8d9d8714="" type="button" @click="showListDiv()" class="btn">取消</button>
+                    <!---->
+                  </div>
+                  <!---->
+                  <div data-v-8d9d8714="" class="dialog-wrap blue-job-protocol-dialog" style="display: none;">
+                    <div class="dialog-layer"></div>
+                    <div class="dialog-container">
+                      <div class="dialog-header">
+                        <!---->
+                        <h3 class="title"></h3> <a href="javascript:;" class="close"><i class="icon-close"></i></a>
+                      </div>
+                      <div class="dialog-body">
+                        <div class="content"></div>
+                      </div>
+                      <div class="dialog-footer">
+                        <div class="btns"><span class="btn btn-outline btn-cancel">查看详情</span> <span
+                            class="btn btn-sure">同意并继续发布职位</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- list -->
+            <div v-show="isShowPulisherListDiv" class="job-list-container">
+              <div data-v-0bac0346="" class="job-filter-container">
+                <div data-v-0bac0346="" class="job-filter-content">
+                  <div data-v-0bac0346="" class="add-btn" @click="showAddPositionDiv('add')">发布职位</div>
+                  <!---->
+                  <!---->
+                  <!---->
+                  <div data-v-0bac0346="" class="filter-right">
+                    <div data-v-30d379c0="" data-v-0bac0346="" class="search-input-container" id="inputDiv"><label
+                        data-v-30d379c0="" for="search" class="input-label"><i data-v-30d379c0=""
+                          class="iboss-sousuoicon"></i></label>
+                      <input id="myInput" data-v-30d379c0="" id="search" type="text" placeholder="搜索" autocomplete="off"
+                        class="input-el">
+                    </div>
+                    <div data-v-28c1e2fd="" data-v-0bac0346="" :class="getPositionTypeDivClass()"
+                      class="ui-dropmenu ui-dropmenu-label-arrow ui-dropmenu-drop-arrow">
+                      <div data-v-28c1e2fd="" class="ui-dropmenu-label" :class="getPositionTypeLiClass()"
+                        @click="openOrClosePositionTypeDiv()">
+                        {{positionType}}
+                        <i data-v-28c1e2fd="" class="ui-icon-arrow-down"></i>
+                      </div>
+                      <div v-show="isShowPositionTypesDiv" style="display: block;" data-v-28c1e2fd=""
+                        class="ui-dropmenu-list">
+                        <ul data-v-28c1e2fd="" class="drop-ul">
+                          <li data-v-28c1e2fd="" @click="changePositionType('全部职类')">全部职类</li>
+                          <li data-v-28c1e2fd="" @click="changePositionType('后端')">后端</li>
+                          <li data-v-28c1e2fd="" @click="changePositionType('产品')">产品</li>
+                        </ul>
+                      </div>
+                    </div> <em data-v-0bac0346="" class="vline"></em>
+                    <div data-v-28c1e2fd="" data-v-0bac0346="" :class="getPositionStatusDivClass()"
+                      class="ui-dropmenu ui-dropmenu-label-arrow ui-dropmenu-drop-arrow dropmenu-status">
+                      <div data-v-28c1e2fd="" class="ui-dropmenu-label" :class="getPositionStatusLiClass()"
+                        @click="openOrClosePositionStatusDiv()">
+                        {{positionStatus}}
+                        <i data-v-28c1e2fd="" class="ui-icon-arrow-down"></i>
+                      </div>
+                      <div v-show="isShowPositionStatusDiv" style="display: block;" data-v-28c1e2fd=""
+                        class="ui-dropmenu-list">
+                        <ul data-v-28c1e2fd="" class="drop-ul">
+                          <li data-v-28c1e2fd="" @click="changePositionStatus('全部状态')">全部状态</li>
+                          <li data-v-28c1e2fd="" @click="changePositionStatus('打开的职位')">打开的职位</li>
+                          <li data-v-28c1e2fd="" @click="changePositionStatus('审核中')">审核中</li>
+                          <li data-v-28c1e2fd="" @click="changePositionStatus('审核失败')">审核失败</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div data-v-7a155fd1="" class="job-list-warp">
+                <!---->
+                <!---->
+                <div data-v-7a155fd1="" class="list-inner-container">
+                  <!---->
+                  <!---->
+                  <!---->
+                  <ul data-v-7a155fd1="" class="job-list-content">
+                    <li v-for="(position, index) in positions" data-v-0f0c15cf="" data-v-7a155fd1=""
+                      class="job-jobInfo-warp disabled">
+                      <div data-v-0f0c15cf="">
+                        <div data-v-0f0c15cf="" class="jobInfo-container info-container">
+                          <!---->
+                          <div data-v-0f0c15cf="" class="job-title">
+                            <div data-v-0f0c15cf="" class="single-check-box disabled"></div> <a id="pm"
+                              data-v-0f0c15cf="" href="###">{{position.positionName}}</a>
+                            <!-- <em data-v-0f0c15cf="" class="label-common label-hot">竞</em> -->
+                            <!----> <span data-v-0f0c15cf=""
+                              :class="getPositionStatusClass(position.status)">{{generatorPositionStatus(position.status)}}
+                            </span>
+                            <!---->
+                            <!---->
+                          </div>
+                          <div data-v-0f0c15cf="" class="info-labels">
+                            <!----> <span data-v-0f0c15cf="">{{position.positionArea}}</span> <em data-v-0f0c15cf=""
+                              class="vline"></em> <span data-v-0f0c15cf="">{{generatorWorkYear(position.minWorkYear,
+                              position.maxWorkYear)}}</span> <em data-v-0f0c15cf="" class="vline"></em> <span
+                              data-v-0f0c15cf="">{{position.educationRequire}}</span> <em data-v-0f0c15cf=""
+                              class="vline"></em> <span data-v-0f0c15cf="">{{generatorSalary(position.positionMinSalary,
+                              position.positionMaxSalary)}}</span>
+                          </div>
+                        </div>
+                        <div data-v-0f0c15cf="" class="jobInfo-container links-container"><span data-v-0f0c15cf=""
+                            href="javascript:;" class="link-recommend-container"><a data-v-0f0c15cf=""
+                              href="javascript:;" class="link-recommend"><span data-v-0f0c15cf=""
+                                class="jobInfo-num">0</span>人收藏
+                              <i data-v-0f0c15cf="" class="icon-arrow"></i></a>
+                            <!---->
+                          </span></div>
+                        <div data-v-0f0c15cf="" class="jobInfo-container chat-container"><a data-v-0f0c15cf=""
+                            href="javascript:;" class="link-chat"><span data-v-0f0c15cf=""
+                              class="jobInfo-num">0</span>人沟通过
+                            <i data-v-0f0c15cf="" class="icon-arrow"></i></a></div>
+                        <div data-v-0f0c15cf="" class="jobInfo-container date-container"><span
+                            class="date">{{position.publishTime}}</span>
+                          <!----> <a href="javascript:;" class="link-recommend">
+                            <!----> <span class="icon-preview"></span>
+                          </a>
+                        </div>
+                        <div data-v-0f0c15cf="" class="jobInfo-container operation-container">
+                          <a v-if="position.status==1" data-v-0f0c15cf="" href="javascript:;"
+                            class="position-edit">下架</a>
+                          <a v-if="position.status==2" data-v-0f0c15cf="" href="javascript:;"
+                            class="position-edit">删除</a>
+                        </div>
+                      </div>
+                      <!---->
+                    </li>
+                  </ul>
+                  <div data-v-7a155fd1="" class="bottom-text">没有更多了</div>
+                  <!---->
+                </div>
+                <!---->
+                <!---->
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <input type="hidden" id="page_key_name" value="bpc_job_create_v1">
+
+
+    <div data-v-6c011df0="" data-v-8d9d8714="" data-transfer="true"
+      class="dialog-wrap add-resume-email-wrap-job v-transfer-dom" style="display: none;">
+      <div data-v-6c011df0="" ka="dialog_layer" class="dialog-layer"></div>
+      <div data-v-6c011df0="" class="dialog-container" style="display: none;">
+        <div data-v-6c011df0="" class="dialog-header">
+          <!---->
+          <h3 data-v-6c011df0="" class="title">设置接收简历的邮箱</h3> <span data-v-6c011df0="" ka="dialog_close"
+            class="close"><i data-v-6c011df0="" class="icon-close"></i></span>
+        </div>
+        <div data-v-6c011df0="" class="dialog-body"></div>
+        <div data-v-6c011df0="" class="dialog-footer">
+          <div data-v-6c011df0="" class="btns"><span data-v-6c011df0="" ka="dialog_cancel"
+              class="btn btn-outline btn-cancel">取消</span><span data-v-6c011df0="" ka="dialog_sure"
+              class="btn btn-sure">
+              <!---->确定
+            </span></div>
+        </div>
+      </div>
+    </div>
+    <div data-v-6c011df0="" data-v-d27b6618="" data-v-10aea90f="" data-transfer="true"
+      class="similar-jobs-dialog dialog-wrap v-transfer-dom" style="display: none;">
+      <div data-v-6c011df0="" ka="dialog_layer" class="dialog-layer"></div>
+      <div data-v-6c011df0="" class="dialog-container" style="width: 750px; display: none;">
+        <div data-v-6c011df0="" class="dialog-header">
+          <!---->
+          <h3 data-v-6c011df0="" class="title">
+            <div data-v-d27b6618="" class="similar-jobs-title"><i data-v-d27b6618=""
+                class="iboss-wancheng"></i>您已成功发布过同类职位 是否使用相同内容
+              <span data-v-d27b6618="">快速填写？</span>
+            </div>
+          </h3> <span data-v-6c011df0="" ka="dialog_close" class="close"><i data-v-6c011df0=""
+              class="icon-close"></i></span>
+        </div>
+        <div data-v-6c011df0="" class="dialog-body">
+          <div data-v-d27b6618="" class="similar-jobs-container">
+            <!---->
+            <div data-v-d27b6618="" class="job-detail-container">
+              <div data-v-d27b6618="" class="item-container">
+                <div data-v-d27b6618="" class="title">职位名称</div>
+                <div data-v-d27b6618="" class="content"></div>
+              </div>
+              <div data-v-d27b6618="" class="item-container">
+                <div data-v-d27b6618="" class="title">职位类型</div>
+                <div data-v-d27b6618="" class="content"></div>
+              </div>
+              <div data-v-d27b6618="" class="item-container">
+                <div data-v-d27b6618="" class="child-item">
+                  <div data-v-d27b6618="" class="title">经验要求</div>
+                  <div data-v-d27b6618="" class="content"></div>
+                </div>
+                <div data-v-d27b6618="" class="child-item">
+                  <div data-v-d27b6618="" class="title">学历要求</div>
+                  <div data-v-d27b6618="" class="content"></div>
+                </div>
+                <div data-v-d27b6618="" class="child-item">
+                  <div data-v-d27b6618="" class="title">薪资范围</div>
+                  <div data-v-d27b6618="" class="content">
+
+                    <!---->
+                  </div>
+                </div>
+              </div>
+              <div data-v-d27b6618="" class="item-container similar-jobs-description">
+                <div data-v-d27b6618="" class="title">职位描述</div>
+                <div data-v-d27b6618="" class="content">
+                  <div data-v-d27b6618="" class="inner-content"></div>
+                  <!---->
+                </div>
+              </div>
+              <!---->
+            </div>
+          </div>
+        </div>
+        <div data-v-6c011df0="" class="dialog-footer">
+          <div data-v-6c011df0="" class="btns">
+            <!----><span data-v-6c011df0="" ka="dialog_sure" class="btn btn-sure">
+              <!---->使用
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div data-v-6c011df0="" data-v-144372f8="" data-transfer="true"
+      class="add-newAddress-dialog dialog-wrap v-transfer-dom" style="display: none;">
+      <div data-v-6c011df0="" ka="dialog_layer" class="dialog-layer"></div>
+      <div data-v-6c011df0="" class="dialog-container" style="width: 590px; display: none;">
+        <div data-v-6c011df0="" class="dialog-header">
+          <!---->
+          <h3 data-v-6c011df0="" class="title">工作地点</h3> <span data-v-6c011df0="" ka="dialog_close" class="close"><i
+              data-v-6c011df0="" class="icon-close"></i></span>
+        </div>
+        <div data-v-6c011df0="" class="dialog-body">
+          <div data-v-144372f8="" class="add-newAddress-container">
+            <div data-v-144372f8="" class="tip-text">请填写真实地址，若查实造假，账号将被冻结</div>
+            <div data-v-144372f8="" class="form-row">
+              <div data-v-144372f8="" class="title">
+                街道/写字楼：
+              </div>
+              <div data-v-144372f8="" class="content"><span data-v-144372f8="" class="ipt-wrap"><em data-v-144372f8=""
+                    class="city-name">北京</em> <input data-v-144372f8="" type="text" autocomplete="off"
+                    placeholder="输入行政区、街道、写字楼" class="ipt ipt-location"></span>
+                <!---->
+                <!---->
+              </div>
+            </div>
+            <div data-v-144372f8="" class="form-row">
+              <div data-v-144372f8="" class="title">门牌号：</div>
+              <div data-v-144372f8="" class="content"><span data-v-144372f8="" class="ipt-wrap"><input
+                    data-v-144372f8="" type="text" maxlength="20" autocomplete="off" placeholder=" 输入门牌号"
+                    class="ipt house-number"></span>
+                <!---->
+              </div>
+            </div>
+            <!---->
+            <div data-v-144372f8="" id="job-manage-amap-container" style="display: none;"></div>
+          </div>
+        </div>
+        <div data-v-6c011df0="" class="dialog-footer">
+          <div data-v-144372f8="" class="footer-container"><span data-v-144372f8=""
+              class="btn btn-outline btn-cancel">取消</span> <span data-v-144372f8=""
+              class="btn btn-sure disabled">保存地址</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: "#app",
+    data: {
+      isShowPulisherListDiv: true,
+      type: "",
+      isShowPositionStatusDiv: false,
+      positionStatus: "全部状态",
+      isShowPositionTypesDiv: false,
+      positionType: "全部职类",
+      isShowWorkYearDiv: false,
+      isShowEduDiv: false,
+      isShowMinSalaryDiv: false,
+      isShowMaxSalaryDiv: false,
+      isShowSalaryMonthDiv: false,
+      positions: [],
+      keyWordInput: "",
+      welfareWordInput: "",
+      keyWordArr: [],
+      welfareWordArr: [],
+      addPosition: {},
+      bossInfo: {},
+    },
+    created() {
+      let authorization = sessionStorage.getItem("Authorization");
+      if (authorization != null && authorization.length > 0) {
+        this.getPositions();
+        this.getBossInfo();
+      }
+    },
+    methods: {
+      getMinAndMaxWorkYear(workYear) {
+        if (workYear == "不限") {
+          this.addPosition.minWorkYear = 0;
+          this.addPosition.maxWorkYear = 0;
+        } else if (workYear == "1年以内") {
+          this.addPosition.minWorkYear = 0;
+          this.addPosition.maxWorkYear = 1;
+        } else if (workYear == "1-3年") {
+          this.addPosition.minWorkYear = 1;
+          this.addPosition.maxWorkYear = 3;
+        } else if (workYear == "3-5年") {
+          this.addPosition.minWorkYear = 3;
+          this.addPosition.maxWorkYear = 5;
+        } else if (workYear == "5-10年") {
+          this.addPosition.minWorkYear = 5;
+          this.addPosition.maxWorkYear = 10;
+        } else if (workYear == "10年以上") {
+          this.addPosition.minWorkYear = 10;
+          this.addPosition.maxWorkYear = 100;
+        }
+      },
+      savePosition() {
+        let authorization = sessionStorage.getItem("Authorization");
+        if (authorization != null && authorization.length > 0) {
+          this.getMinAndMaxWorkYear(this.addPosition.workYear);
+          let param = new URLSearchParams();
+          param.append("positionName", this.addPosition.positionName);
+          param.append("positionArea", this.addPosition.positionArea);
+          param.append("educationRequire", this.addPosition.educationRequire);
+          param.append("positionMinSalary", this.addPosition.positionMinSalary);
+          param.append("positionMaxSalary", this.addPosition.positionMaxSalary);
+          param.append("positionSalaryMonth", this.addPosition.positionSalaryMonth);
+          param.append("positionDescribe", this.addPosition.positionDescribe);
+          param.append("positionRequire", this.addPosition.positionRequire);
+          param.append("minWorkYear", this.addPosition.minWorkYear);
+          param.append("maxWorkYear", this.addPosition.maxWorkYear);
+          let str = "";
+          for (let i = 0; i < this.keyWordArr.length; i++) {
+            if (i == this.keyWordArr.length-1) {
+              str = str + this.keyWordArr[i];
+            } else {
+              str = str + this.keyWordArr[i] + "；";
+            }
+          }
+          param.append("positionLabel", str);
+          str = ""
+          for (let i = 0; i < this.welfareWordArr.length; i++) {
+            if (i == this.welfareWordArr.length-1) {
+              str = str + this.welfareWordArr[i];
+            } else {
+              str = str + this.welfareWordArr[i] + "，";
+            }
+          }
+          param.append("positionDuty", str);
+          axios.post('http://localhost/jd/save', param, {
+            headers: {
+              Authorization: authorization
+            }
+          })
+            .then((response) => {
+              console.log(response);
+              this.getPositions();
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }
+        this.showListDiv();
+      },
+      getBossInfo() {
+        let authorization = sessionStorage.getItem("Authorization");
+        if (authorization != null && authorization.length > 0) {
+          axios.get('http://localhost/boss/info', {
+            headers: {
+              Authorization: authorization
+            }
+          })
+            .then((response) => {
+              console.log(response);
+              this.bossInfo = response.data.boss;
+              // this.getCompanyInfo(this.bossInfo.companyName);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }
+      },
+      selectPositionSalaryMonth(month) {
+        this.addPosition.positionSalaryMonth = month;
+        this.isShowSalaryMonthDiv = false;
+      },
+      selectPositionMaxSalary(salary) {
+        this.addPosition.positionMaxSalary = salary;
+        this.isShowMaxSalaryDiv = false;
+      },
+      selectPositionMinSalary(salary) {
+        this.addPosition.positionMinSalary = salary;
+        this.isShowMinSalaryDiv = false;
+      },
+      selectEducationRequire(edu) {
+        this.addPosition.educationRequire = edu;
+        this.isShowEduDiv = false;
+      },
+      selectWorkYear(year) {
+        this.addPosition.workYear = year;
+        this.isShowWorkYearDiv = false;
+      },
+      removeWelfareWord(index) {
+        this.welfareWordArr.splice(index, 1);
+      },
+      removeKeyWord(index) {
+        this.keyWordArr.splice(index, 1);
+      },
+      addWelFareWord() {
+        if (this.welfareWordInput.length <= 0) {
+          return;
+        }
+        if (this.welfareWordArr.length < 4) {
+          this.welfareWordArr.push(this.welfareWordInput);
+        }
+        this.welfareWordInput = "";
+      },
+      addKeyWord() {
+        if (this.keyWordInput.length <= 0) {
+          return;
+        }
+        if (this.keyWordArr.length < 4) {
+          this.keyWordArr.push(this.keyWordInput);
+        }
+        this.keyWordInput = "";
+      },
+      getPositionStatusClass(status) {
+        if (status == 0) {
+          return " badge-muted";
+        } else if (status == 1) {
+          return " badge-success";
+        }
+        return "";
+      },
+      generatorPositionStatus(status) {
+        if (status == 0) {
+          return "审批中";
+        } else if (status == 1) {
+          return "已开放";
+        }
+        return "未知"
+      },
+      generatorWorkYear(minWorkYear, maxWorkYear) {
+        if (minWorkYear == 0 && maxWorkYear == 0) {
+          return "不限";
+        } else if (minWorkYear >= 10) {
+            return "10年以上";
+        }
+        return minWorkYear + "-" + maxWorkYear + "年";
+      },
+      generatorSalary(positionMinSalary, positionMaxSalary) {
+        return (positionMinSalary / 1000) + "-" + (positionMaxSalary / 1000) + "k";
+      },
+      getPositions() {
+        let authorization = sessionStorage.getItem("Authorization");
+        if (authorization != null && authorization.length > 0) {
+          axios.get('http://localhost/jd/list', {
+            headers: {
+              Authorization: authorization,
+            }
+          })
+            .then((response) => {
+              console.log(response);
+              this.positions = response.data.list;
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+        }
+      },
+      showAddPositionDiv(type) {
+        this.type = type;
+        this.isShowPulisherListDiv = false;
+      },
+      showListDiv() {
+        this.isShowPulisherListDiv = true;
+        this.addPosition = {};
+        this.keyWordArr = [];
+        this.welfareWordArr = [];
+      },
+      openOrClosePositionStatusDiv() {
+        this.isShowPositionStatusDiv = !this.isShowPositionStatusDiv;
+        this.isShowPositionTypesDiv = false;
+      },
+      changePositionStatus(status) {
+        this.isShowPositionStatusDiv = false;
+        this.positionStatus = status;
+      },
+      getPositionStatusLiClass() {
+        let res = "";
+        if (this.positionStatus != "全部状态") {
+          res = res + " active";
+        }
+        return res;
+      },
+      getPositionStatusDivClass() {
+        let res = "";
+        if (this.isShowPositionStatusDiv) {
+          res = res + " ui-dropmenu-visible";
+        }
+        return res;
+      },
+      openOrClosePositionTypeDiv() {
+        this.isShowPositionTypesDiv = !this.isShowPositionTypesDiv;
+        this.isShowPositionStatusDiv = false;
+      },
+      changePositionType(type) {
+        this.positionType = type;
+        this.isShowPositionTypesDiv = false;
+      },
+      getPositionTypeDivClass() {
+        let res = "";
+        if (this.isShowPositionTypesDiv) {
+          res = res + " ui-dropmenu-visible";
+        }
+        return res;
+      },
+      getPositionTypeLiClass() {
+        let res = "";
+        if (this.positionType != "全部职类") {
+          res = res + " active";
+        }
+        return res;
+      },
+      openOrCloseWorkYearDiv() {
+        this.isShowWorkYearDiv = !this.isShowWorkYearDiv;
+      },
+      openOrCloseEduDiv() {
+        this.isShowEduDiv = !this.isShowEduDiv;
+      },
+      openOrCloseMinSalaryDiv() {
+        this.isShowMinSalaryDiv = !this.isShowMinSalaryDiv;
+      },
+      openOrCloseMaxSalaryDiv() {
+        this.isShowMaxSalaryDiv = !this.isShowMaxSalaryDiv;
+      },
+      openOrCloseSalaryMonthDiv() {
+        this.isShowSalaryMonthDiv = !this.isShowSalaryMonthDiv;
+      },
+    },
+  })
+
+</script>
+
+</html>

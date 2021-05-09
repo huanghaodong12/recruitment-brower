@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<!-- saved from url=(0038)https://www.zhipin.com/user/login.html -->
+<html class="standard">
+<!--<![endif]-->
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="format-detection" content="email=no">
+    <meta name="format-detection" content="address=no">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="copyright" content="Copyright (c) zhipin.com">
+
+
+
+
+    <title>hhd招聘</title>
+    <meta name="keywords" content="BOSS直聘，BOSS直聘短信登录">
+    <meta name="description" content="BOSS直聘网页版登录页，是BOSS直聘给boss和牛人共有的电脑登录页面，用户可使用账号密码登录、短信快捷登录、扫描二维码登录三种方式，BOSS直聘-互联网招聘神器！">
+
+
+    <link href="./login_files/main.css" type="text/css" rel="stylesheet">
+
+</head>
+
+<body class="page-sign" style="height: 100%;">
+    <div id="wrap">
+        <div id="header">
+            <div class="tel"><i class="iboss-call"></i>客户服务热线: 400 065 xxxx</div>
+        </div>
+        <div class="sign-wrap sign-wrap-v2" style="display: block">
+
+
+            <!--密码登录-->
+            <div class="sign-form sign-pwd" :style="{'display':isPasswordShow}">
+                <div class="sign-slide-box">
+                    <a class="logo" href="./main.html" ka="header-logo">
+                        <img src="./login_files/icon-sign-welcome.png">
+                        <div>
+                            <p>找工作</p>
+                            <p>我要跟老板谈</p>
+                        </div>
+                    </a>
+                    <ul>
+                        <li>
+                            <i class="icon"></i>
+                            <span>沟通</span>
+                            <span>在线职位及时沟通</span>
+                        </li>
+                        <li>
+                            <i class="icon"></i>
+                            <span>任性选</span>
+                            <span>各大行业职位任你选</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sign-content">
+                    <div class="inner-box">
+                        <h3 class="title">登录BOSS直聘</h3>
+                        <form action="#" method="post"><input type="hidden" name="pk" value="cpc_user_sign_up">
+                            <div class="sign-tab"><span class="link-signin cur">密码登录</span><span class="link-sms" @click="changeCodeLogin">短信登录</span><span class="link-scan">扫码登录</span></div>
+                            <div class="tip-error tip-error-form"></div>
+                            <div class="form-row row-select">
+                                <span class="dropdown-select"><i class="icon-select-arrow"></i><em class="text-select">+86</em><input
+                    type="hidden" name="regionCode" value="+86"></span>
+                                <span class="ipt-wrap"><i class="icon-sign-phone"></i><input type="tel" class="ipt ipt-phone required"
+                    placeholder="手机号" name="phone" v-model="phone"></span>
+                                <div class="dropdown-menu">
+
+                                    <ul>
+                                        <li class="disabled">热门</li>
+                                        <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                        <li data-val="+61"><span class="num">+61</span>澳大利亚</li>
+                                        <li data-val="+49"><span class="num">+49</span>德国</li>
+                                        <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                        <li data-val="+33"><span class="num">+33</span>法国</li>
+                                        <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                        <li data-val="+1"><span class="num">+1</span>加拿大</li>
+                                        <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                        <li data-val="+1"><span class="num">+1</span>美国</li>
+                                        <li data-val="+81"><span class="num">+81</span>日本</li>
+                                        <li data-val="+66"><span class="num">+66</span>泰国</li>
+                                        <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                        <li class="disabled">A</li>
+                                        <li data-val="+355"><span class="num">+355</span>阿尔巴尼亚</li>
+                                        <li data-val="+213"><span class="num">+213</span>阿尔及利亚</li>
+                                        <li data-val="+93"><span class="num">+93</span>阿富汗</li>
+                                        <li data-val="+54"><span class="num">+54</span>阿根廷</li>
+                                        <li data-val="+971"><span class="num">+971</span>阿拉伯联合酋长国</li>
+                                        <li data-val="+968"><span class="num">+968</span>阿曼</li>
+                                        <li data-val="+994"><span class="num">+994</span>阿塞拜疆</li>
+                                        <li data-val="+247"><span class="num">+247</span>阿森松</li>
+                                        <li data-val="+20"><span class="num">+20</span>埃及</li>
+                                        <li data-val="+251"><span class="num">+251</span>埃塞俄比亚</li>
+                                        <li data-val="+353"><span class="num">+353</span>爱尔兰</li>
+                                        <li data-val="+372"><span class="num">+372</span>爱沙尼亚</li>
+                                        <li data-val="+376"><span class="num">+376</span>安道尔共和国</li>
+                                        <li data-val="+244"><span class="num">+244</span>安哥拉</li>
+                                        <li data-val="+1264"><span class="num">+1264</span>安圭拉岛</li>
+                                        <li data-val="+1268"><span class="num">+1268</span>安提瓜和巴布达</li>
+                                        <li data-val="+43"><span class="num">+43</span>奥地利</li>
+                                        <li data-val="+61"><span class="num">+61</span>澳大利亚</li>
+                                        <li class="disabled">B</li>
+                                        <li data-val="+1246"><span class="num">+1246</span>巴巴多斯</li>
+                                        <li data-val="+675"><span class="num">+675</span>巴布亚新几内亚</li>
+                                        <li data-val="+1242"><span class="num">+1242</span>巴哈马</li>
+                                        <li data-val="+92"><span class="num">+92</span>巴基斯坦</li>
+                                        <li data-val="+595"><span class="num">+595</span>巴拉圭</li>
+                                        <li data-val="+973"><span class="num">+973</span>巴林</li>
+                                        <li data-val="+507"><span class="num">+507</span>巴拿马</li>
+                                        <li data-val="+55"><span class="num">+55</span>巴西</li>
+                                        <li data-val="+375"><span class="num">+375</span>白俄罗斯</li>
+                                        <li data-val="+1441"><span class="num">+1441</span>百慕大群岛</li>
+                                        <li data-val="+359"><span class="num">+359</span>保加利亚</li>
+                                        <li data-val="+229"><span class="num">+229</span>贝宁</li>
+                                        <li data-val="+32"><span class="num">+32</span>比利时</li>
+                                        <li data-val="+354"><span class="num">+354</span>冰岛</li>
+                                        <li data-val="+1787"><span class="num">+1787</span>波多黎各</li>
+                                        <li data-val="+48"><span class="num">+48</span>波兰</li>
+                                        <li data-val="+591"><span class="num">+591</span>玻利维亚</li>
+                                        <li data-val="+501"><span class="num">+501</span>伯利兹</li>
+                                        <li data-val="+267"><span class="num">+267</span>博茨瓦纳</li>
+                                        <li data-val="+226"><span class="num">+226</span>布基纳法索</li>
+                                        <li data-val="+257"><span class="num">+257</span>布隆迪</li>
+                                        <li class="disabled">C</li>
+                                        <li data-val="+850"><span class="num">+850</span>朝鲜</li>
+                                        <li class="disabled">D</li>
+                                        <li data-val="+45"><span class="num">+45</span>丹麦</li>
+                                        <li data-val="+49"><span class="num">+49</span>德国</li>
+                                        <li data-val="+684"><span class="num">+684</span>东萨摩亚(美)</li>
+                                        <li data-val="+228"><span class="num">+228</span>多哥</li>
+                                        <li data-val="+1890"><span class="num">+1890</span>多米尼加共和国</li>
+                                        <li class="disabled">E</li>
+                                        <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                        <li data-val="+593"><span class="num">+593</span>厄瓜多尔</li>
+                                        <li class="disabled">F</li>
+                                        <li data-val="+33"><span class="num">+33</span>法国</li>
+                                        <li data-val="+689"><span class="num">+689</span>法属玻利尼西亚</li>
+                                        <li data-val="+594"><span class="num">+594</span>法属圭亚那</li>
+                                        <li data-val="+63"><span class="num">+63</span>菲律宾</li>
+                                        <li data-val="+679"><span class="num">+679</span>斐济</li>
+                                        <li data-val="+358"><span class="num">+358</span>芬兰</li>
+                                        <li class="disabled">G</li>
+                                        <li data-val="+220"><span class="num">+220</span>冈比亚</li>
+                                        <li data-val="+242"><span class="num">+242</span>刚果</li>
+                                        <li data-val="+57"><span class="num">+57</span>哥伦比亚</li>
+                                        <li data-val="+506"><span class="num">+506</span>哥斯达黎加</li>
+                                        <li data-val="+1809"><span class="num">+1809</span>格林纳达</li>
+                                        <li data-val="+995"><span class="num">+995</span>格鲁吉亚</li>
+                                        <li data-val="+53"><span class="num">+53</span>古巴</li>
+                                        <li data-val="+1671"><span class="num">+1671</span>关岛</li>
+                                        <li data-val="+592"><span class="num">+592</span>圭亚那</li>
+                                        <li class="disabled">H</li>
+                                        <li data-val="+327"><span class="num">+327</span>哈萨克斯坦</li>
+                                        <li data-val="+509"><span class="num">+509</span>海地</li>
+                                        <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                        <li data-val="+31"><span class="num">+31</span>荷兰</li>
+                                        <li data-val="+599"><span class="num">+599</span>荷属安的列斯</li>
+                                        <li data-val="+504"><span class="num">+504</span>洪都拉斯</li>
+                                        <li class="disabled">J</li>
+                                        <li data-val="+253"><span class="num">+253</span>吉布提</li>
+                                        <li data-val="+331"><span class="num">+331</span>吉尔吉斯坦</li>
+                                        <li data-val="+224"><span class="num">+224</span>几内亚</li>
+                                        <li data-val="+1"><span class="num">+1</span>加拿大</li>
+                                        <li data-val="+233"><span class="num">+233</span>加纳</li>
+                                        <li data-val="+241"><span class="num">+241</span>加蓬</li>
+                                        <li data-val="+855"><span class="num">+855</span>柬埔寨</li>
+                                        <li data-val="+420"><span class="num">+420</span>捷克</li>
+                                        <li data-val="+263"><span class="num">+263</span>津巴布韦</li>
+                                        <li class="disabled">K</li>
+                                        <li data-val="+237"><span class="num">+237</span>喀麦隆</li>
+                                        <li data-val="+974"><span class="num">+974</span>卡塔尔</li>
+                                        <li data-val="+1345"><span class="num">+1345</span>开曼群岛</li>
+                                        <li data-val="+225"><span class="num">+225</span>科特迪瓦</li>
+                                        <li data-val="+965"><span class="num">+965</span>科威特</li>
+                                        <li data-val="+254"><span class="num">+254</span>肯尼亚</li>
+                                        <li data-val="+682"><span class="num">+682</span>库克群岛</li>
+                                        <li class="disabled">L</li>
+                                        <li data-val="+371"><span class="num">+371</span>拉脱维亚</li>
+                                        <li data-val="+266"><span class="num">+266</span>莱索托</li>
+                                        <li data-val="+856"><span class="num">+856</span>老挝</li>
+                                        <li data-val="+961"><span class="num">+961</span>黎巴嫩</li>
+                                        <li data-val="+370"><span class="num">+370</span>立陶宛</li>
+                                        <li data-val="+231"><span class="num">+231</span>利比里亚</li>
+                                        <li data-val="+218"><span class="num">+218</span>利比亚</li>
+                                        <li data-val="+423"><span class="num">+423</span>列支敦士登</li>
+                                        <li data-val="+262"><span class="num">+262</span>留尼旺</li>
+                                        <li data-val="+352"><span class="num">+352</span>卢森堡</li>
+                                        <li data-val="+40"><span class="num">+40</span>罗马尼亚</li>
+                                        <li class="disabled">M</li>
+                                        <li data-val="+261"><span class="num">+261</span>马达加斯加</li>
+                                        <li data-val="+960"><span class="num">+960</span>马尔代夫</li>
+                                        <li data-val="+356"><span class="num">+356</span>马耳他</li>
+                                        <li data-val="+265"><span class="num">+265</span>马拉维</li>
+                                        <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                        <li data-val="+223"><span class="num">+223</span>马里</li>
+                                        <li data-val="+1670"><span class="num">+1670</span>马里亚那群岛</li>
+                                        <li data-val="+596"><span class="num">+596</span>马提尼克</li>
+                                        <li data-val="+230"><span class="num">+230</span>毛里求斯</li>
+                                        <li data-val="+1"><span class="num">+1</span>美国</li>
+                                        <li data-val="+976"><span class="num">+976</span>蒙古</li>
+                                        <li data-val="+1664"><span class="num">+1664</span>蒙特塞拉特岛</li>
+                                        <li data-val="+880"><span class="num">+880</span>孟加拉国</li>
+                                        <li data-val="+51"><span class="num">+51</span>秘鲁</li>
+                                        <li data-val="+95"><span class="num">+95</span>缅甸</li>
+                                        <li data-val="+373"><span class="num">+373</span>摩尔多瓦</li>
+                                        <li data-val="+212"><span class="num">+212</span>摩洛哥</li>
+                                        <li data-val="+377"><span class="num">+377</span>摩纳哥</li>
+                                        <li data-val="+258"><span class="num">+258</span>莫桑比克</li>
+                                        <li data-val="+52"><span class="num">+52</span>墨西哥</li>
+                                        <li class="disabled">N</li>
+                                        <li data-val="+264"><span class="num">+264</span>纳米比亚</li>
+                                        <li data-val="+27"><span class="num">+27</span>南非</li>
+                                        <li data-val="+381"><span class="num">+381</span>南斯拉夫</li>
+                                        <li data-val="+674"><span class="num">+674</span>瑙鲁</li>
+                                        <li data-val="+977"><span class="num">+977</span>尼泊尔</li>
+                                        <li data-val="+505"><span class="num">+505</span>尼加拉瓜</li>
+                                        <li data-val="+227"><span class="num">+227</span>尼日尔</li>
+                                        <li data-val="+234"><span class="num">+234</span>尼日利亚</li>
+                                        <li data-val="+47"><span class="num">+47</span>挪威</li>
+                                        <li class="disabled">P</li>
+                                        <li data-val="+351"><span class="num">+351</span>葡萄牙</li>
+                                        <li class="disabled">R</li>
+                                        <li data-val="+81"><span class="num">+81</span>日本</li>
+                                        <li data-val="+46"><span class="num">+46</span>瑞典</li>
+                                        <li data-val="+41"><span class="num">+41</span>瑞士</li>
+                                        <li class="disabled">S</li>
+                                        <li data-val="+503"><span class="num">+503</span>萨尔瓦多</li>
+                                        <li data-val="+232"><span class="num">+232</span>塞拉利昂</li>
+                                        <li data-val="+221"><span class="num">+221</span>塞内加尔</li>
+                                        <li data-val="+357"><span class="num">+357</span>塞浦路斯</li>
+                                        <li data-val="+248"><span class="num">+248</span>塞舌尔</li>
+                                        <li data-val="+966"><span class="num">+966</span>沙特阿拉伯</li>
+                                        <li data-val="+239"><span class="num">+239</span>圣多美和普林西比</li>
+                                        <li data-val="+1758"><span class="num">+1758</span>圣卢西亚</li>
+                                        <li data-val="+378"><span class="num">+378</span>圣马力诺</li>
+                                        <li data-val="+1784"><span class="num">+1784</span>圣文森特</li>
+                                        <li data-val="+1784"><span class="num">+1784</span>圣文森特岛</li>
+                                        <li data-val="+94"><span class="num">+94</span>斯里兰卡</li>
+                                        <li data-val="+421"><span class="num">+421</span>斯洛伐克</li>
+                                        <li data-val="+386"><span class="num">+386</span>斯洛文尼亚</li>
+                                        <li data-val="+268"><span class="num">+268</span>斯威士兰</li>
+                                        <li data-val="+249"><span class="num">+249</span>苏丹</li>
+                                        <li data-val="+597"><span class="num">+597</span>苏里南</li>
+                                        <li data-val="+677"><span class="num">+677</span>所罗门群岛</li>
+                                        <li data-val="+252"><span class="num">+252</span>索马里</li>
+                                        <li class="disabled">T</li>
+                                        <li data-val="+992"><span class="num">+992</span>塔吉克斯坦</li>
+                                        <li data-val="+66"><span class="num">+66</span>泰国</li>
+                                        <li data-val="+255"><span class="num">+255</span>坦桑尼亚</li>
+                                        <li data-val="+676"><span class="num">+676</span>汤加</li>
+                                        <li data-val="+1809"><span class="num">+1809</span>特立尼达和多巴哥</li>
+                                        <li data-val="+216"><span class="num">+216</span>突尼斯</li>
+                                        <li data-val="+90"><span class="num">+90</span>土耳其</li>
+                                        <li data-val="+993"><span class="num">+993</span>土库曼斯坦</li>
+                                        <li class="disabled">W</li>
+                                        <li data-val="+502"><span class="num">+502</span>危地马拉</li>
+                                        <li data-val="+58"><span class="num">+58</span>委内瑞拉</li>
+                                        <li data-val="+673"><span class="num">+673</span>文莱</li>
+                                        <li data-val="+256"><span class="num">+256</span>乌干达</li>
+                                        <li data-val="+380"><span class="num">+380</span>乌克兰</li>
+                                        <li data-val="+598"><span class="num">+598</span>乌拉圭</li>
+                                        <li data-val="+233"><span class="num">+233</span>乌兹别克斯坦</li>
+                                        <li class="disabled">X</li>
+                                        <li data-val="+34"><span class="num">+34</span>西班牙</li>
+                                        <li data-val="+685"><span class="num">+685</span>西萨摩亚</li>
+                                        <li data-val="+30"><span class="num">+30</span>希腊</li>
+                                        <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                        <li data-val="+64"><span class="num">+64</span>新西兰</li>
+                                        <li data-val="+36"><span class="num">+36</span>匈牙利</li>
+                                        <li data-val="+963"><span class="num">+963</span>叙利亚</li>
+                                        <li class="disabled">Y</li>
+                                        <li data-val="+1876"><span class="num">+1876</span>牙买加</li>
+                                        <li data-val="+374"><span class="num">+374</span>亚美尼亚</li>
+                                        <li data-val="+967"><span class="num">+967</span>也门</li>
+                                        <li data-val="+964"><span class="num">+964</span>伊拉克</li>
+                                        <li data-val="+98"><span class="num">+98</span>伊朗</li>
+                                        <li data-val="+972"><span class="num">+972</span>以色列</li>
+                                        <li data-val="+39"><span class="num">+39</span>意大利</li>
+                                        <li data-val="+91"><span class="num">+91</span>印度</li>
+                                        <li data-val="+62"><span class="num">+62</span>印度尼西亚</li>
+                                        <li data-val="+44"><span class="num">+44</span>英国</li>
+                                        <li data-val="+962"><span class="num">+962</span>约旦</li>
+                                        <li data-val="+84"><span class="num">+84</span>越南</li>
+                                        <li class="disabled">Z</li>
+                                        <li data-val="+260"><span class="num">+260</span>赞比亚</li>
+                                        <li data-val="+243"><span class="num">+243</span>扎伊尔</li>
+                                        <li data-val="+235"><span class="num">+235</span>乍得</li>
+                                        <li data-val="+350"><span class="num">+350</span>直布罗陀</li>
+                                        <li data-val="+56"><span class="num">+56</span>智利</li>
+                                        <li data-val="+236"><span class="num">+236</span>中非共和国</li>
+                                        <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                        <li data-val="+852"><span class="num">+852</span>中国香港</li>
+                                        <li data-val="+853"><span class="num">+853</span>中国澳门</li>
+                                        <li data-val="+886"><span class="num">+886</span>中国台湾</li>
+                                    </ul>
+                                </div>
+                                <div class="tip-error"></div>
+                            </div>
+                            <div class="form-row">
+                                <span class="ipt-wrap"><i class="icon-sign-pwd"></i><input type="password" class="ipt ipt-pwd required"
+                    ka="signin-password" placeholder="密码" name="password" v-model="password"></span>
+                                <div class="tip-error"></div>
+                            </div>
+                            <div class="form-btn">
+                                <button type="button" class="btn" @click="login">登录</button>
+                            </div>
+
+
+
+                            <div class="text-tip">
+                                <a href="javascript:;" class="left-tip link-wechat-login" ka="wx_signin">微信登录</a>
+                                <a href="javascript:;" class="scan-login-btn" @click='changeScanLogin'>扫码登录</a>
+                                <a href="javascript:;" class="link-signup" @click="changeRegister">免费注册</a>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="btn-switch login-tab-switch scan-switch" @click='changeScanLogin'>
+                        <div class="switch-tip">扫码登录在这里</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--短信登录-->
+            <div class="sign-form sign-sms" :style="{'display':isCodeShow}">
+                <div class="sign-slide-box">
+                    <a class="logo" href="./main.html" ka="header-logo">
+                        <img src="./login_files/icon-sign-welcome.png">
+                        <div>
+                            <p>找工作</p>
+                            <p>我要跟老板谈</p>
+                        </div>
+                    </a>
+                    <ul>
+                        <li>
+                            <i class="icon"></i>
+                            <span>沟通</span>
+                            <span>在线职位及时沟通</span>
+                        </li>
+                        <li>
+                            <i class="icon"></i>
+                            <span>任性选</span>
+                            <span>各大行业职位任你选</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sign-content">
+                    <div class="inner-box">
+                        <h3 class="title">登录BOSS直聘</h3>
+                        <form action="#" method="post"><input type="hidden" name="pk" value="cpc_user_sign_up">
+                            <div class="sign-tab"><span class="link-signin" @click="changePasswordLogin">密码登录</span><span class="link-sms cur">短信登录</span><span class="link-scan">扫码登录</span></div>
+                            <div class="tip-error tip-error-form"></div>
+                            <div class="form-row row-select">
+                                <span class="dropdown-select"><i class="icon-select-arrow"></i><em class="text-select">+86</em><input
+                    type="hidden" name="regionCode" value="+86"></span>
+                                <span class="ipt-wrap"><i class="icon-sign-phone"></i><input type="tel" class="ipt ipt-phone required"
+                    placeholder="手机号" name="phone" v-model="phone"></span>
+                                <div class="dropdown-menu">
+
+                                    <ul>
+                                        <li class="disabled">热门</li>
+                                        <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                        <li data-val="+61"><span class="num">+61</span>澳大利亚</li>
+                                        <li data-val="+49"><span class="num">+49</span>德国</li>
+                                        <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                        <li data-val="+33"><span class="num">+33</span>法国</li>
+                                        <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                        <li data-val="+1"><span class="num">+1</span>加拿大</li>
+                                        <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                        <li data-val="+1"><span class="num">+1</span>美国</li>
+                                        <li data-val="+81"><span class="num">+81</span>日本</li>
+                                        <li data-val="+66"><span class="num">+66</span>泰国</li>
+                                        <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                        <li class="disabled">A</li>
+                                        <li data-val="+355"><span class="num">+355</span>阿尔巴尼亚</li>
+                                        <li data-val="+213"><span class="num">+213</span>阿尔及利亚</li>
+                                        <li data-val="+93"><span class="num">+93</span>阿富汗</li>
+                                        <li data-val="+54"><span class="num">+54</span>阿根廷</li>
+                                        <li data-val="+971"><span class="num">+971</span>阿拉伯联合酋长国</li>
+                                        <li data-val="+968"><span class="num">+968</span>阿曼</li>
+                                        <li data-val="+994"><span class="num">+994</span>阿塞拜疆</li>
+                                        <li data-val="+247"><span class="num">+247</span>阿森松</li>
+                                        <li data-val="+20"><span class="num">+20</span>埃及</li>
+                                        <li data-val="+251"><span class="num">+251</span>埃塞俄比亚</li>
+                                        <li data-val="+353"><span class="num">+353</span>爱尔兰</li>
+                                        <li data-val="+372"><span class="num">+372</span>爱沙尼亚</li>
+                                        <li data-val="+376"><span class="num">+376</span>安道尔共和国</li>
+                                        <li data-val="+244"><span class="num">+244</span>安哥拉</li>
+                                        <li data-val="+1264"><span class="num">+1264</span>安圭拉岛</li>
+                                        <li data-val="+1268"><span class="num">+1268</span>安提瓜和巴布达</li>
+                                        <li data-val="+43"><span class="num">+43</span>奥地利</li>
+                                        <li data-val="+61"><span class="num">+61</span>澳大利亚</li>
+                                        <li class="disabled">B</li>
+                                        <li data-val="+1246"><span class="num">+1246</span>巴巴多斯</li>
+                                        <li data-val="+675"><span class="num">+675</span>巴布亚新几内亚</li>
+                                        <li data-val="+1242"><span class="num">+1242</span>巴哈马</li>
+                                        <li data-val="+92"><span class="num">+92</span>巴基斯坦</li>
+                                        <li data-val="+595"><span class="num">+595</span>巴拉圭</li>
+                                        <li data-val="+973"><span class="num">+973</span>巴林</li>
+                                        <li data-val="+507"><span class="num">+507</span>巴拿马</li>
+                                        <li data-val="+55"><span class="num">+55</span>巴西</li>
+                                        <li data-val="+375"><span class="num">+375</span>白俄罗斯</li>
+                                        <li data-val="+1441"><span class="num">+1441</span>百慕大群岛</li>
+                                        <li data-val="+359"><span class="num">+359</span>保加利亚</li>
+                                        <li data-val="+229"><span class="num">+229</span>贝宁</li>
+                                        <li data-val="+32"><span class="num">+32</span>比利时</li>
+                                        <li data-val="+354"><span class="num">+354</span>冰岛</li>
+                                        <li data-val="+1787"><span class="num">+1787</span>波多黎各</li>
+                                        <li data-val="+48"><span class="num">+48</span>波兰</li>
+                                        <li data-val="+591"><span class="num">+591</span>玻利维亚</li>
+                                        <li data-val="+501"><span class="num">+501</span>伯利兹</li>
+                                        <li data-val="+267"><span class="num">+267</span>博茨瓦纳</li>
+                                        <li data-val="+226"><span class="num">+226</span>布基纳法索</li>
+                                        <li data-val="+257"><span class="num">+257</span>布隆迪</li>
+                                        <li class="disabled">C</li>
+                                        <li data-val="+850"><span class="num">+850</span>朝鲜</li>
+                                        <li class="disabled">D</li>
+                                        <li data-val="+45"><span class="num">+45</span>丹麦</li>
+                                        <li data-val="+49"><span class="num">+49</span>德国</li>
+                                        <li data-val="+684"><span class="num">+684</span>东萨摩亚(美)</li>
+                                        <li data-val="+228"><span class="num">+228</span>多哥</li>
+                                        <li data-val="+1890"><span class="num">+1890</span>多米尼加共和国</li>
+                                        <li class="disabled">E</li>
+                                        <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                        <li data-val="+593"><span class="num">+593</span>厄瓜多尔</li>
+                                        <li class="disabled">F</li>
+                                        <li data-val="+33"><span class="num">+33</span>法国</li>
+                                        <li data-val="+689"><span class="num">+689</span>法属玻利尼西亚</li>
+                                        <li data-val="+594"><span class="num">+594</span>法属圭亚那</li>
+                                        <li data-val="+63"><span class="num">+63</span>菲律宾</li>
+                                        <li data-val="+679"><span class="num">+679</span>斐济</li>
+                                        <li data-val="+358"><span class="num">+358</span>芬兰</li>
+                                        <li class="disabled">G</li>
+                                        <li data-val="+220"><span class="num">+220</span>冈比亚</li>
+                                        <li data-val="+242"><span class="num">+242</span>刚果</li>
+                                        <li data-val="+57"><span class="num">+57</span>哥伦比亚</li>
+                                        <li data-val="+506"><span class="num">+506</span>哥斯达黎加</li>
+                                        <li data-val="+1809"><span class="num">+1809</span>格林纳达</li>
+                                        <li data-val="+995"><span class="num">+995</span>格鲁吉亚</li>
+                                        <li data-val="+53"><span class="num">+53</span>古巴</li>
+                                        <li data-val="+1671"><span class="num">+1671</span>关岛</li>
+                                        <li data-val="+592"><span class="num">+592</span>圭亚那</li>
+                                        <li class="disabled">H</li>
+                                        <li data-val="+327"><span class="num">+327</span>哈萨克斯坦</li>
+                                        <li data-val="+509"><span class="num">+509</span>海地</li>
+                                        <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                        <li data-val="+31"><span class="num">+31</span>荷兰</li>
+                                        <li data-val="+599"><span class="num">+599</span>荷属安的列斯</li>
+                                        <li data-val="+504"><span class="num">+504</span>洪都拉斯</li>
+                                        <li class="disabled">J</li>
+                                        <li data-val="+253"><span class="num">+253</span>吉布提</li>
+                                        <li data-val="+331"><span class="num">+331</span>吉尔吉斯坦</li>
+                                        <li data-val="+224"><span class="num">+224</span>几内亚</li>
+                                        <li data-val="+1"><span class="num">+1</span>加拿大</li>
+                                        <li data-val="+233"><span class="num">+233</span>加纳</li>
+                                        <li data-val="+241"><span class="num">+241</span>加蓬</li>
+                                        <li data-val="+855"><span class="num">+855</span>柬埔寨</li>
+                                        <li data-val="+420"><span class="num">+420</span>捷克</li>
+                                        <li data-val="+263"><span class="num">+263</span>津巴布韦</li>
+                                        <li class="disabled">K</li>
+                                        <li data-val="+237"><span class="num">+237</span>喀麦隆</li>
+                                        <li data-val="+974"><span class="num">+974</span>卡塔尔</li>
+                                        <li data-val="+1345"><span class="num">+1345</span>开曼群岛</li>
+                                        <li data-val="+225"><span class="num">+225</span>科特迪瓦</li>
+                                        <li data-val="+965"><span class="num">+965</span>科威特</li>
+                                        <li data-val="+254"><span class="num">+254</span>肯尼亚</li>
+                                        <li data-val="+682"><span class="num">+682</span>库克群岛</li>
+                                        <li class="disabled">L</li>
+                                        <li data-val="+371"><span class="num">+371</span>拉脱维亚</li>
+                                        <li data-val="+266"><span class="num">+266</span>莱索托</li>
+                                        <li data-val="+856"><span class="num">+856</span>老挝</li>
+                                        <li data-val="+961"><span class="num">+961</span>黎巴嫩</li>
+                                        <li data-val="+370"><span class="num">+370</span>立陶宛</li>
+                                        <li data-val="+231"><span class="num">+231</span>利比里亚</li>
+                                        <li data-val="+218"><span class="num">+218</span>利比亚</li>
+                                        <li data-val="+423"><span class="num">+423</span>列支敦士登</li>
+                                        <li data-val="+262"><span class="num">+262</span>留尼旺</li>
+                                        <li data-val="+352"><span class="num">+352</span>卢森堡</li>
+                                        <li data-val="+40"><span class="num">+40</span>罗马尼亚</li>
+                                        <li class="disabled">M</li>
+                                        <li data-val="+261"><span class="num">+261</span>马达加斯加</li>
+                                        <li data-val="+960"><span class="num">+960</span>马尔代夫</li>
+                                        <li data-val="+356"><span class="num">+356</span>马耳他</li>
+                                        <li data-val="+265"><span class="num">+265</span>马拉维</li>
+                                        <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                        <li data-val="+223"><span class="num">+223</span>马里</li>
+                                        <li data-val="+1670"><span class="num">+1670</span>马里亚那群岛</li>
+                                        <li data-val="+596"><span class="num">+596</span>马提尼克</li>
+                                        <li data-val="+230"><span class="num">+230</span>毛里求斯</li>
+                                        <li data-val="+1"><span class="num">+1</span>美国</li>
+                                        <li data-val="+976"><span class="num">+976</span>蒙古</li>
+                                        <li data-val="+1664"><span class="num">+1664</span>蒙特塞拉特岛</li>
+                                        <li data-val="+880"><span class="num">+880</span>孟加拉国</li>
+                                        <li data-val="+51"><span class="num">+51</span>秘鲁</li>
+                                        <li data-val="+95"><span class="num">+95</span>缅甸</li>
+                                        <li data-val="+373"><span class="num">+373</span>摩尔多瓦</li>
+                                        <li data-val="+212"><span class="num">+212</span>摩洛哥</li>
+                                        <li data-val="+377"><span class="num">+377</span>摩纳哥</li>
+                                        <li data-val="+258"><span class="num">+258</span>莫桑比克</li>
+                                        <li data-val="+52"><span class="num">+52</span>墨西哥</li>
+                                        <li class="disabled">N</li>
+                                        <li data-val="+264"><span class="num">+264</span>纳米比亚</li>
+                                        <li data-val="+27"><span class="num">+27</span>南非</li>
+                                        <li data-val="+381"><span class="num">+381</span>南斯拉夫</li>
+                                        <li data-val="+674"><span class="num">+674</span>瑙鲁</li>
+                                        <li data-val="+977"><span class="num">+977</span>尼泊尔</li>
+                                        <li data-val="+505"><span class="num">+505</span>尼加拉瓜</li>
+                                        <li data-val="+227"><span class="num">+227</span>尼日尔</li>
+                                        <li data-val="+234"><span class="num">+234</span>尼日利亚</li>
+                                        <li data-val="+47"><span class="num">+47</span>挪威</li>
+                                        <li class="disabled">P</li>
+                                        <li data-val="+351"><span class="num">+351</span>葡萄牙</li>
+                                        <li class="disabled">R</li>
+                                        <li data-val="+81"><span class="num">+81</span>日本</li>
+                                        <li data-val="+46"><span class="num">+46</span>瑞典</li>
+                                        <li data-val="+41"><span class="num">+41</span>瑞士</li>
+                                        <li class="disabled">S</li>
+                                        <li data-val="+503"><span class="num">+503</span>萨尔瓦多</li>
+                                        <li data-val="+232"><span class="num">+232</span>塞拉利昂</li>
+                                        <li data-val="+221"><span class="num">+221</span>塞内加尔</li>
+                                        <li data-val="+357"><span class="num">+357</span>塞浦路斯</li>
+                                        <li data-val="+248"><span class="num">+248</span>塞舌尔</li>
+                                        <li data-val="+966"><span class="num">+966</span>沙特阿拉伯</li>
+                                        <li data-val="+239"><span class="num">+239</span>圣多美和普林西比</li>
+                                        <li data-val="+1758"><span class="num">+1758</span>圣卢西亚</li>
+                                        <li data-val="+378"><span class="num">+378</span>圣马力诺</li>
+                                        <li data-val="+1784"><span class="num">+1784</span>圣文森特</li>
+                                        <li data-val="+1784"><span class="num">+1784</span>圣文森特岛</li>
+                                        <li data-val="+94"><span class="num">+94</span>斯里兰卡</li>
+                                        <li data-val="+421"><span class="num">+421</span>斯洛伐克</li>
+                                        <li data-val="+386"><span class="num">+386</span>斯洛文尼亚</li>
+                                        <li data-val="+268"><span class="num">+268</span>斯威士兰</li>
+                                        <li data-val="+249"><span class="num">+249</span>苏丹</li>
+                                        <li data-val="+597"><span class="num">+597</span>苏里南</li>
+                                        <li data-val="+677"><span class="num">+677</span>所罗门群岛</li>
+                                        <li data-val="+252"><span class="num">+252</span>索马里</li>
+                                        <li class="disabled">T</li>
+                                        <li data-val="+992"><span class="num">+992</span>塔吉克斯坦</li>
+                                        <li data-val="+66"><span class="num">+66</span>泰国</li>
+                                        <li data-val="+255"><span class="num">+255</span>坦桑尼亚</li>
+                                        <li data-val="+676"><span class="num">+676</span>汤加</li>
+                                        <li data-val="+1809"><span class="num">+1809</span>特立尼达和多巴哥</li>
+                                        <li data-val="+216"><span class="num">+216</span>突尼斯</li>
+                                        <li data-val="+90"><span class="num">+90</span>土耳其</li>
+                                        <li data-val="+993"><span class="num">+993</span>土库曼斯坦</li>
+                                        <li class="disabled">W</li>
+                                        <li data-val="+502"><span class="num">+502</span>危地马拉</li>
+                                        <li data-val="+58"><span class="num">+58</span>委内瑞拉</li>
+                                        <li data-val="+673"><span class="num">+673</span>文莱</li>
+                                        <li data-val="+256"><span class="num">+256</span>乌干达</li>
+                                        <li data-val="+380"><span class="num">+380</span>乌克兰</li>
+                                        <li data-val="+598"><span class="num">+598</span>乌拉圭</li>
+                                        <li data-val="+233"><span class="num">+233</span>乌兹别克斯坦</li>
+                                        <li class="disabled">X</li>
+                                        <li data-val="+34"><span class="num">+34</span>西班牙</li>
+                                        <li data-val="+685"><span class="num">+685</span>西萨摩亚</li>
+                                        <li data-val="+30"><span class="num">+30</span>希腊</li>
+                                        <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                        <li data-val="+64"><span class="num">+64</span>新西兰</li>
+                                        <li data-val="+36"><span class="num">+36</span>匈牙利</li>
+                                        <li data-val="+963"><span class="num">+963</span>叙利亚</li>
+                                        <li class="disabled">Y</li>
+                                        <li data-val="+1876"><span class="num">+1876</span>牙买加</li>
+                                        <li data-val="+374"><span class="num">+374</span>亚美尼亚</li>
+                                        <li data-val="+967"><span class="num">+967</span>也门</li>
+                                        <li data-val="+964"><span class="num">+964</span>伊拉克</li>
+                                        <li data-val="+98"><span class="num">+98</span>伊朗</li>
+                                        <li data-val="+972"><span class="num">+972</span>以色列</li>
+                                        <li data-val="+39"><span class="num">+39</span>意大利</li>
+                                        <li data-val="+91"><span class="num">+91</span>印度</li>
+                                        <li data-val="+62"><span class="num">+62</span>印度尼西亚</li>
+                                        <li data-val="+44"><span class="num">+44</span>英国</li>
+                                        <li data-val="+962"><span class="num">+962</span>约旦</li>
+                                        <li data-val="+84"><span class="num">+84</span>越南</li>
+                                        <li class="disabled">Z</li>
+                                        <li data-val="+260"><span class="num">+260</span>赞比亚</li>
+                                        <li data-val="+243"><span class="num">+243</span>扎伊尔</li>
+                                        <li data-val="+235"><span class="num">+235</span>乍得</li>
+                                        <li data-val="+350"><span class="num">+350</span>直布罗陀</li>
+                                        <li data-val="+56"><span class="num">+56</span>智利</li>
+                                        <li data-val="+236"><span class="num">+236</span>中非共和国</li>
+                                        <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                        <li data-val="+852"><span class="num">+852</span>中国香港</li>
+                                        <li data-val="+853"><span class="num">+853</span>中国澳门</li>
+                                        <li data-val="+886"><span class="num">+886</span>中国台湾</li>
+                                    </ul>
+                                </div>
+                                <div class="tip-error"></div>
+                            </div>
+                            <div class="form-row">
+                                <span class="ipt-wrap"><i class="icon-sign-sms"></i><input type="text" class="ipt ipt-sms required"
+                    ka="signup-sms" placeholder="短信验证码" name="phoneCode" maxlength="6" v-model="phoneCode"><input
+                    type="hidden" name="smsType" value="1"><button type="button" class="btn btn-sms"
+                    data-url="/wapi/zppassport/send/smsCode" @click="sendMsg()">发送验证码</button></span>
+                                <div class="tip-error"></div>
+                            </div>
+                            <div class="form-btn">
+                                <button type="button" class="btn" @click="login()">登录</button>
+                            </div>
+
+
+
+                            <div class="text-tip">
+                                <a href="javascript:;" class="left-tip link-wechat-login" ka="wx_signin">微信登录</a>
+                                <a href="javascript:;" class="scan-login-btn" @click='changeScanLogin'>扫码登录</a>
+                                <a href="javascript:;" class="link-signup" @click="changeRegister">免费注册</a>
+                            </div>
+
+
+                        </form>
+                    </div>
+                    <div class="btn-switch login-tab-switch scan-switch" @click='changeScanLogin'>
+                        <div class="switch-tip">扫码登录在这里</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--扫码登录-->
+            <div class="sign-form sign-scan" :style="{'display':isScanShow}">
+                <div class="sign-slide-box">
+                    <a class="logo" href="./main.html" ka="header-logo">
+                        <img src="./login_files/icon-sign-welcome.png">
+                        <div>
+                            <p>找工作</p>
+                            <p>我要跟老板谈</p>
+                        </div>
+                    </a>
+                    <ul>
+                        <li>
+                            <i class="icon"></i>
+                            <span>沟通</span>
+                            <span>在线职位及时沟通</span>
+                        </li>
+                        <li>
+                            <i class="icon"></i>
+                            <span>任性选</span>
+                            <span>各大行业职位任你选</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sign-content">
+                    <div class="inner-box">
+                        <div class="tip-error tip-error-form"></div>
+                        <div class="sign-tab">
+                            <p class="scan-title-text">手机扫码 安全登录</p>
+
+                        </div>
+                        <div class="qrcode-box">
+                            <input type="hidden" class="uuid" value="bosszp-75a9644b-cf03-4b34-9db0-aae1d505b708">
+                            <p><span>使用 BOSS直聘 APP 扫码登录</span><em>扫码帮助</em></p>
+                            <div class="qrcodeimg-box">
+                                <div class="invalid-box">
+                                    <p>请重新刷新二维码</p>
+                                    <button class="btn">点击刷新</button>
+                                </div>
+                                <!-- <img src="./login_files/bosszp-75a9644b-cf03-4b34-9db0-aae1d505b708"
+                  data-url="https://www.zhipin.com/qrscan/dispatcher?qrId="> -->
+                                <img src="./main_files/wx.png">
+                            </div>
+                            <div class="qrcode-tip" style="display: block;"><span class="gray">知道了</span>Boss现在也可以使用密码和短信登录了</div>
+                            <div class="hover-range-left"></div>
+                            <div class="hover-range-right"></div>
+                            <div class="sign-scan-help animation">
+                                <h4>扫码帮助</h4>
+                                <ul class="scan-help-tab">
+                                    <li class="active">我是BOSS</li>
+                                    <li>我是牛人</li>
+                                </ul>
+                                <div class="sub-title">我的&nbsp;&gt;&nbsp;登录网页版</div>
+                                <ul class="scan-help-content">
+                                    <li class="help-boss active"></li>
+                                    <li class="help-geek"></li>
+                                </ul>
+                            </div>
+                            <div class="app-load-box">
+                                <img src="./login_files/generate.json">
+                                <p>ios、Android下载</p>
+                            </div>
+                        </div>
+
+                        <div class="text-tip">
+                            <a href="javascript:;" class="download-btn">下载App</a>
+                            <a href="javascript:;" class="pwd-login-btn" @click="changePasswordLogin">账号登录</a>
+                            <a href="javascript:;" class="link-signup" @click="changeRegister">免费注册</a>
+                        </div>
+                        <div class="login-step-box">
+                            <div class="user-photo">
+                                <img src="https://www.zhipin.com/user/login.html">
+                            </div>
+                            <div class="login-step-text">
+                                <h3 class="login-step-title">扫描成功</h3>
+                                <p class="login-step-detail">请在App端确认登录</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="btn-switch login-tab-switch  pwd-switch" @click="changePasswordLogin">
+                        <div class="switch-tip">账号登录在这里</div>
+                    </div>
+                </div>
+            </div>
+
+            <!--注册-->
+            <div class="sign-form sign-register" :style="{'display':isRegisterShow}">
+                <div class="sign-slide-box">
+                    <a class="logo" href="./main.html" ka="header-logo">
+                        <img src="./login_files/icon-sign-welcome.png">
+                        <div>
+                            <p>找工作</p>
+                            <p>我要跟老板谈</p>
+                        </div>
+                    </a>
+                    <ul class="geek-slide ">
+                        <li>
+                            <i class="icon"></i>
+                            <span>沟通</span>
+                            <span>在线职位及时沟通</span>
+                        </li>
+                        <li>
+                            <i class="icon"></i>
+                            <span>任性选</span>
+                            <span>各大行业职位任你选</span>
+                        </li>
+                    </ul>
+                    <ul class="boss-slide hide">
+                        <li>
+                            <i class="icon"></i>
+                            <span>招聘效果好</span>
+                            <span>与职场牛人在线开聊</span>
+                        </li>
+                        <li>
+                            <i class="icon"></i>
+                            <span>更多在线牛人</span>
+                            <span>入职速度快</span>
+                        </li>
+                        <li>
+                            <i class="icon"></i>
+                            <span>人才匹配度高</span>
+                            <span>获取更精准的牛人</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sign-content">
+                    <div class="inner-box">
+                        <h3 class="title">注册BOSS直聘</h3>
+                        <form action="#" method="post"><input type="hidden" name="pk" value="cpc_user_sign_up">
+                            <input type="hidden" name="act" value="0">
+                            <input type="hidden" name="purpose" value="0">
+
+                            <div class="purpose-row">
+                                <span class="cur">我要找工作</span><span class="cur">我要招聘</span>
+                            </div>
+
+                            <h4></h4>
+                            <div class="tip-error tip-error-form"></div>
+                            <div class="form-row row-select">
+                                <span class="dropdown-select"><i class="icon-select-arrow"></i><em class="text-select">+86</em><input
+                    type="hidden" name="regionCode" value="+86"></span>
+                                <span class="ipt-wrap"><i class="icon-sign-phone"></i><input type="tel" class="ipt ipt-phone required"
+                    placeholder="手机号" name="phone" v-model="phone"></span>
+                                <div class="dropdown-menu">
+
+                                    <ul>
+                                        <li class="disabled">热门</li>
+                                        <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                        <li data-val="+61"><span class="num">+61</span>澳大利亚</li>
+                                        <li data-val="+49"><span class="num">+49</span>德国</li>
+                                        <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                        <li data-val="+33"><span class="num">+33</span>法国</li>
+                                        <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                        <li data-val="+1"><span class="num">+1</span>加拿大</li>
+                                        <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                        <li data-val="+1"><span class="num">+1</span>美国</li>
+                                        <li data-val="+81"><span class="num">+81</span>日本</li>
+                                        <li data-val="+66"><span class="num">+66</span>泰国</li>
+                                        <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                        <li class="disabled">A</li>
+                                        <li data-val="+355"><span class="num">+355</span>阿尔巴尼亚</li>
+                                        <li data-val="+213"><span class="num">+213</span>阿尔及利亚</li>
+                                        <li data-val="+93"><span class="num">+93</span>阿富汗</li>
+                                        <li data-val="+54"><span class="num">+54</span>阿根廷</li>
+                                        <li data-val="+971"><span class="num">+971</span>阿拉伯联合酋长国</li>
+                                        <li data-val="+968"><span class="num">+968</span>阿曼</li>
+                                        <li data-val="+994"><span class="num">+994</span>阿塞拜疆</li>
+                                        <li data-val="+247"><span class="num">+247</span>阿森松</li>
+                                        <li data-val="+20"><span class="num">+20</span>埃及</li>
+                                        <li data-val="+251"><span class="num">+251</span>埃塞俄比亚</li>
+                                        <li data-val="+353"><span class="num">+353</span>爱尔兰</li>
+                                        <li data-val="+372"><span class="num">+372</span>爱沙尼亚</li>
+                                        <li data-val="+376"><span class="num">+376</span>安道尔共和国</li>
+                                        <li data-val="+244"><span class="num">+244</span>安哥拉</li>
+                                        <li data-val="+1264"><span class="num">+1264</span>安圭拉岛</li>
+                                        <li data-val="+1268"><span class="num">+1268</span>安提瓜和巴布达</li>
+                                        <li data-val="+43"><span class="num">+43</span>奥地利</li>
+                                        <li data-val="+61"><span class="num">+61</span>澳大利亚</li>
+                                        <li class="disabled">B</li>
+                                        <li data-val="+1246"><span class="num">+1246</span>巴巴多斯</li>
+                                        <li data-val="+675"><span class="num">+675</span>巴布亚新几内亚</li>
+                                        <li data-val="+1242"><span class="num">+1242</span>巴哈马</li>
+                                        <li data-val="+92"><span class="num">+92</span>巴基斯坦</li>
+                                        <li data-val="+595"><span class="num">+595</span>巴拉圭</li>
+                                        <li data-val="+973"><span class="num">+973</span>巴林</li>
+                                        <li data-val="+507"><span class="num">+507</span>巴拿马</li>
+                                        <li data-val="+55"><span class="num">+55</span>巴西</li>
+                                        <li data-val="+375"><span class="num">+375</span>白俄罗斯</li>
+                                        <li data-val="+1441"><span class="num">+1441</span>百慕大群岛</li>
+                                        <li data-val="+359"><span class="num">+359</span>保加利亚</li>
+                                        <li data-val="+229"><span class="num">+229</span>贝宁</li>
+                                        <li data-val="+32"><span class="num">+32</span>比利时</li>
+                                        <li data-val="+354"><span class="num">+354</span>冰岛</li>
+                                        <li data-val="+1787"><span class="num">+1787</span>波多黎各</li>
+                                        <li data-val="+48"><span class="num">+48</span>波兰</li>
+                                        <li data-val="+591"><span class="num">+591</span>玻利维亚</li>
+                                        <li data-val="+501"><span class="num">+501</span>伯利兹</li>
+                                        <li data-val="+267"><span class="num">+267</span>博茨瓦纳</li>
+                                        <li data-val="+226"><span class="num">+226</span>布基纳法索</li>
+                                        <li data-val="+257"><span class="num">+257</span>布隆迪</li>
+                                        <li class="disabled">C</li>
+                                        <li data-val="+850"><span class="num">+850</span>朝鲜</li>
+                                        <li class="disabled">D</li>
+                                        <li data-val="+45"><span class="num">+45</span>丹麦</li>
+                                        <li data-val="+49"><span class="num">+49</span>德国</li>
+                                        <li data-val="+684"><span class="num">+684</span>东萨摩亚(美)</li>
+                                        <li data-val="+228"><span class="num">+228</span>多哥</li>
+                                        <li data-val="+1890"><span class="num">+1890</span>多米尼加共和国</li>
+                                        <li class="disabled">E</li>
+                                        <li data-val="+7"><span class="num">+7</span>俄罗斯</li>
+                                        <li data-val="+593"><span class="num">+593</span>厄瓜多尔</li>
+                                        <li class="disabled">F</li>
+                                        <li data-val="+33"><span class="num">+33</span>法国</li>
+                                        <li data-val="+689"><span class="num">+689</span>法属玻利尼西亚</li>
+                                        <li data-val="+594"><span class="num">+594</span>法属圭亚那</li>
+                                        <li data-val="+63"><span class="num">+63</span>菲律宾</li>
+                                        <li data-val="+679"><span class="num">+679</span>斐济</li>
+                                        <li data-val="+358"><span class="num">+358</span>芬兰</li>
+                                        <li class="disabled">G</li>
+                                        <li data-val="+220"><span class="num">+220</span>冈比亚</li>
+                                        <li data-val="+242"><span class="num">+242</span>刚果</li>
+                                        <li data-val="+57"><span class="num">+57</span>哥伦比亚</li>
+                                        <li data-val="+506"><span class="num">+506</span>哥斯达黎加</li>
+                                        <li data-val="+1809"><span class="num">+1809</span>格林纳达</li>
+                                        <li data-val="+995"><span class="num">+995</span>格鲁吉亚</li>
+                                        <li data-val="+53"><span class="num">+53</span>古巴</li>
+                                        <li data-val="+1671"><span class="num">+1671</span>关岛</li>
+                                        <li data-val="+592"><span class="num">+592</span>圭亚那</li>
+                                        <li class="disabled">H</li>
+                                        <li data-val="+327"><span class="num">+327</span>哈萨克斯坦</li>
+                                        <li data-val="+509"><span class="num">+509</span>海地</li>
+                                        <li data-val="+82"><span class="num">+82</span>韩国</li>
+                                        <li data-val="+31"><span class="num">+31</span>荷兰</li>
+                                        <li data-val="+599"><span class="num">+599</span>荷属安的列斯</li>
+                                        <li data-val="+504"><span class="num">+504</span>洪都拉斯</li>
+                                        <li class="disabled">J</li>
+                                        <li data-val="+253"><span class="num">+253</span>吉布提</li>
+                                        <li data-val="+331"><span class="num">+331</span>吉尔吉斯坦</li>
+                                        <li data-val="+224"><span class="num">+224</span>几内亚</li>
+                                        <li data-val="+1"><span class="num">+1</span>加拿大</li>
+                                        <li data-val="+233"><span class="num">+233</span>加纳</li>
+                                        <li data-val="+241"><span class="num">+241</span>加蓬</li>
+                                        <li data-val="+855"><span class="num">+855</span>柬埔寨</li>
+                                        <li data-val="+420"><span class="num">+420</span>捷克</li>
+                                        <li data-val="+263"><span class="num">+263</span>津巴布韦</li>
+                                        <li class="disabled">K</li>
+                                        <li data-val="+237"><span class="num">+237</span>喀麦隆</li>
+                                        <li data-val="+974"><span class="num">+974</span>卡塔尔</li>
+                                        <li data-val="+1345"><span class="num">+1345</span>开曼群岛</li>
+                                        <li data-val="+225"><span class="num">+225</span>科特迪瓦</li>
+                                        <li data-val="+965"><span class="num">+965</span>科威特</li>
+                                        <li data-val="+254"><span class="num">+254</span>肯尼亚</li>
+                                        <li data-val="+682"><span class="num">+682</span>库克群岛</li>
+                                        <li class="disabled">L</li>
+                                        <li data-val="+371"><span class="num">+371</span>拉脱维亚</li>
+                                        <li data-val="+266"><span class="num">+266</span>莱索托</li>
+                                        <li data-val="+856"><span class="num">+856</span>老挝</li>
+                                        <li data-val="+961"><span class="num">+961</span>黎巴嫩</li>
+                                        <li data-val="+370"><span class="num">+370</span>立陶宛</li>
+                                        <li data-val="+231"><span class="num">+231</span>利比里亚</li>
+                                        <li data-val="+218"><span class="num">+218</span>利比亚</li>
+                                        <li data-val="+423"><span class="num">+423</span>列支敦士登</li>
+                                        <li data-val="+262"><span class="num">+262</span>留尼旺</li>
+                                        <li data-val="+352"><span class="num">+352</span>卢森堡</li>
+                                        <li data-val="+40"><span class="num">+40</span>罗马尼亚</li>
+                                        <li class="disabled">M</li>
+                                        <li data-val="+261"><span class="num">+261</span>马达加斯加</li>
+                                        <li data-val="+960"><span class="num">+960</span>马尔代夫</li>
+                                        <li data-val="+356"><span class="num">+356</span>马耳他</li>
+                                        <li data-val="+265"><span class="num">+265</span>马拉维</li>
+                                        <li data-val="+60"><span class="num">+60</span>马来西亚</li>
+                                        <li data-val="+223"><span class="num">+223</span>马里</li>
+                                        <li data-val="+1670"><span class="num">+1670</span>马里亚那群岛</li>
+                                        <li data-val="+596"><span class="num">+596</span>马提尼克</li>
+                                        <li data-val="+230"><span class="num">+230</span>毛里求斯</li>
+                                        <li data-val="+1"><span class="num">+1</span>美国</li>
+                                        <li data-val="+976"><span class="num">+976</span>蒙古</li>
+                                        <li data-val="+1664"><span class="num">+1664</span>蒙特塞拉特岛</li>
+                                        <li data-val="+880"><span class="num">+880</span>孟加拉国</li>
+                                        <li data-val="+51"><span class="num">+51</span>秘鲁</li>
+                                        <li data-val="+95"><span class="num">+95</span>缅甸</li>
+                                        <li data-val="+373"><span class="num">+373</span>摩尔多瓦</li>
+                                        <li data-val="+212"><span class="num">+212</span>摩洛哥</li>
+                                        <li data-val="+377"><span class="num">+377</span>摩纳哥</li>
+                                        <li data-val="+258"><span class="num">+258</span>莫桑比克</li>
+                                        <li data-val="+52"><span class="num">+52</span>墨西哥</li>
+                                        <li class="disabled">N</li>
+                                        <li data-val="+264"><span class="num">+264</span>纳米比亚</li>
+                                        <li data-val="+27"><span class="num">+27</span>南非</li>
+                                        <li data-val="+381"><span class="num">+381</span>南斯拉夫</li>
+                                        <li data-val="+674"><span class="num">+674</span>瑙鲁</li>
+                                        <li data-val="+977"><span class="num">+977</span>尼泊尔</li>
+                                        <li data-val="+505"><span class="num">+505</span>尼加拉瓜</li>
+                                        <li data-val="+227"><span class="num">+227</span>尼日尔</li>
+                                        <li data-val="+234"><span class="num">+234</span>尼日利亚</li>
+                                        <li data-val="+47"><span class="num">+47</span>挪威</li>
+                                        <li class="disabled">P</li>
+                                        <li data-val="+351"><span class="num">+351</span>葡萄牙</li>
+                                        <li class="disabled">R</li>
+                                        <li data-val="+81"><span class="num">+81</span>日本</li>
+                                        <li data-val="+46"><span class="num">+46</span>瑞典</li>
+                                        <li data-val="+41"><span class="num">+41</span>瑞士</li>
+                                        <li class="disabled">S</li>
+                                        <li data-val="+503"><span class="num">+503</span>萨尔瓦多</li>
+                                        <li data-val="+232"><span class="num">+232</span>塞拉利昂</li>
+                                        <li data-val="+221"><span class="num">+221</span>塞内加尔</li>
+                                        <li data-val="+357"><span class="num">+357</span>塞浦路斯</li>
+                                        <li data-val="+248"><span class="num">+248</span>塞舌尔</li>
+                                        <li data-val="+966"><span class="num">+966</span>沙特阿拉伯</li>
+                                        <li data-val="+239"><span class="num">+239</span>圣多美和普林西比</li>
+                                        <li data-val="+1758"><span class="num">+1758</span>圣卢西亚</li>
+                                        <li data-val="+378"><span class="num">+378</span>圣马力诺</li>
+                                        <li data-val="+1784"><span class="num">+1784</span>圣文森特</li>
+                                        <li data-val="+1784"><span class="num">+1784</span>圣文森特岛</li>
+                                        <li data-val="+94"><span class="num">+94</span>斯里兰卡</li>
+                                        <li data-val="+421"><span class="num">+421</span>斯洛伐克</li>
+                                        <li data-val="+386"><span class="num">+386</span>斯洛文尼亚</li>
+                                        <li data-val="+268"><span class="num">+268</span>斯威士兰</li>
+                                        <li data-val="+249"><span class="num">+249</span>苏丹</li>
+                                        <li data-val="+597"><span class="num">+597</span>苏里南</li>
+                                        <li data-val="+677"><span class="num">+677</span>所罗门群岛</li>
+                                        <li data-val="+252"><span class="num">+252</span>索马里</li>
+                                        <li class="disabled">T</li>
+                                        <li data-val="+992"><span class="num">+992</span>塔吉克斯坦</li>
+                                        <li data-val="+66"><span class="num">+66</span>泰国</li>
+                                        <li data-val="+255"><span class="num">+255</span>坦桑尼亚</li>
+                                        <li data-val="+676"><span class="num">+676</span>汤加</li>
+                                        <li data-val="+1809"><span class="num">+1809</span>特立尼达和多巴哥</li>
+                                        <li data-val="+216"><span class="num">+216</span>突尼斯</li>
+                                        <li data-val="+90"><span class="num">+90</span>土耳其</li>
+                                        <li data-val="+993"><span class="num">+993</span>土库曼斯坦</li>
+                                        <li class="disabled">W</li>
+                                        <li data-val="+502"><span class="num">+502</span>危地马拉</li>
+                                        <li data-val="+58"><span class="num">+58</span>委内瑞拉</li>
+                                        <li data-val="+673"><span class="num">+673</span>文莱</li>
+                                        <li data-val="+256"><span class="num">+256</span>乌干达</li>
+                                        <li data-val="+380"><span class="num">+380</span>乌克兰</li>
+                                        <li data-val="+598"><span class="num">+598</span>乌拉圭</li>
+                                        <li data-val="+233"><span class="num">+233</span>乌兹别克斯坦</li>
+                                        <li class="disabled">X</li>
+                                        <li data-val="+34"><span class="num">+34</span>西班牙</li>
+                                        <li data-val="+685"><span class="num">+685</span>西萨摩亚</li>
+                                        <li data-val="+30"><span class="num">+30</span>希腊</li>
+                                        <li data-val="+65"><span class="num">+65</span>新加坡</li>
+                                        <li data-val="+64"><span class="num">+64</span>新西兰</li>
+                                        <li data-val="+36"><span class="num">+36</span>匈牙利</li>
+                                        <li data-val="+963"><span class="num">+963</span>叙利亚</li>
+                                        <li class="disabled">Y</li>
+                                        <li data-val="+1876"><span class="num">+1876</span>牙买加</li>
+                                        <li data-val="+374"><span class="num">+374</span>亚美尼亚</li>
+                                        <li data-val="+967"><span class="num">+967</span>也门</li>
+                                        <li data-val="+964"><span class="num">+964</span>伊拉克</li>
+                                        <li data-val="+98"><span class="num">+98</span>伊朗</li>
+                                        <li data-val="+972"><span class="num">+972</span>以色列</li>
+                                        <li data-val="+39"><span class="num">+39</span>意大利</li>
+                                        <li data-val="+91"><span class="num">+91</span>印度</li>
+                                        <li data-val="+62"><span class="num">+62</span>印度尼西亚</li>
+                                        <li data-val="+44"><span class="num">+44</span>英国</li>
+                                        <li data-val="+962"><span class="num">+962</span>约旦</li>
+                                        <li data-val="+84"><span class="num">+84</span>越南</li>
+                                        <li class="disabled">Z</li>
+                                        <li data-val="+260"><span class="num">+260</span>赞比亚</li>
+                                        <li data-val="+243"><span class="num">+243</span>扎伊尔</li>
+                                        <li data-val="+235"><span class="num">+235</span>乍得</li>
+                                        <li data-val="+350"><span class="num">+350</span>直布罗陀</li>
+                                        <li data-val="+56"><span class="num">+56</span>智利</li>
+                                        <li data-val="+236"><span class="num">+236</span>中非共和国</li>
+                                        <li data-val="+86"><span class="num">+86</span>中国大陆</li>
+                                        <li data-val="+852"><span class="num">+852</span>中国香港</li>
+                                        <li data-val="+853"><span class="num">+853</span>中国澳门</li>
+                                        <li data-val="+886"><span class="num">+886</span>中国台湾</li>
+                                    </ul>
+                                </div>
+                                <div class="tip-error"></div>
+                            </div>
+                            <!--<div class="form-row row-code">
+          <span class="cell-wrap"><i class="icon-sign-code"></i><input type="text" class="ipt ipt-code" name="captcha" ka="signin-code" maxlength="4" placeholder="验证码" data-url="/captcha/randkey.json" /></span><span class="cell-wrap"><img src="/captcha/?randomKey=JL5TNyymkIiLXpH1BF9Xspuy4Va3Rk4H" class="verifyimg"/></span>
+          <input type="hidden" name="randomKey" class="randomkey" value="JL5TNyymkIiLXpH1BF9Xspuy4Va3Rk4H" />
+        </div>-->
+                            <!-- <div class="form-row">
+                <div class="row-code" id="regVerrifyCode"></div>
+                <div class="tip-error"></div>
+              </div>
+
+              <input type="hidden" name="csessionId">
+              <input type="hidden" name="csig">
+              <input type="hidden" name="ctoken">
+              <input type="hidden" name="cscene" value="nc_login">
+              <input type="hidden" value="FFFF0N00000000006DC1" name="cappKey"> -->
+                            <div class="form-row">
+                                <span class="ipt-wrap"><i class="icon-sign-sms"></i><input type="text" class="ipt ipt-sms required"
+                    ka="signup-sms" placeholder="短信验证码" name="phoneCode" maxlength="6" v-model="phoneCode"><input
+                    type="hidden" name="smsType" value="2"><button type="button" class="btn btn-sms"
+                    data-url="/wapi/zppassport/send/smsCode" @click="sendMsg()">发送验证码</button></span>
+
+                                <div class="tip-error"></div>
+                            </div>
+                            <div class="form-row">
+                                <span class="ipt-wrap"><i class="icon-sign-pwd"></i><input type="password" class="ipt ipt-pwd required"
+                    ka="signin-password" placeholder="密码" name="password" v-model="password" v-model="password"></span>
+                                <div class="tip-error"></div>
+                            </div>
+                            <div class="form-btn">
+                                <button type="button" class="btn" @click="register()">注册</button>
+                            </div>
+                            <div class="text-tip">
+                                <div class="tip-error"></div>
+                                <input type="checkbox" class="agree-policy" name="policy">我已同意<a href="###" target="_blank" class="user-agreement">用户协议及隐私政策</a>
+                                <a href="javascript:;" class="link-signin" @click="changePasswordLogin()">直接登录</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="btn-switch ewm-switch">
+                        <div class="switch-tip">微信极速注册<i class="icon-triangle"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--扫码小程序注册-->
+
+            <div class="sign-form sign-miniapp" style="display: none;">
+                <div class="sign-slide-box">
+                    <a class="logo" href="./main.html" ka="header-logo">
+                        <img src="./login_files/icon-sign-welcome.png">
+                        <div>
+                            <p>找工作</p>
+                            <p>我要跟老板谈</p>
+                        </div>
+                    </a>
+                    <ul>
+                        <li>
+                            <i class="icon"></i>
+                            <span>沟通</span>
+                            <span>在线职位及时沟通</span>
+                        </li>
+                        <li>
+                            <i class="icon"></i>
+                            <span>任性选</span>
+                            <span>各大行业职位任你选</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sign-content">
+                    <div class="inner-box">
+                        <input type="hidden" class="scene" value="541ba822824646beb413d1fbd2c6e969">
+                        <h4>微信快速注册</h4>
+                        <div class="qrcodeimg-box">
+                            <div class="invalid-box">
+                                <p>请重新刷新二维码</p>
+                                <button class="btn">点击刷新</button>
+                            </div>
+                            <img src="https://www.zhipin.com/user/login.html" data-url="https://www.zhipin.com/qrscan/dispatcher?qrId=541ba822824646beb413d1fbd2c6e969">
+                        </div>
+                        <p class="sign-tip">请用微信“扫一扫”扫描上方二维码<br>进入快捷注册</p>
+                        <div class="text-tip">已有账号 <a href="javascript:;" class="link-signin">立即登录</a></div>
+                    </div>
+                    <div class="btn-switch phone-switch">
+                        <div class="switch-tip">手机号注册在这里<i class="icon-triangle"></i></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="guide-download-app-v62" style="display:none">
+        <div class="app-icon-arrow"></div>
+        <div class="app-icon-v62"></div>
+        <div class="app-icon-des-v62">一键扫码 随时沟通</div>
+    </div>
+    <input type="hidden" id="page_key_name" value="cpc_user_sign_up">
+
+
+    <div class="job-detail-guide-download-app-v62" style="display:none">
+        <div class="app-icon-arrow"></div>
+        <div class="app-icon-v62"></div>
+    </div>
+    <div class="company-detail-guide-download-app-v62" style="display:none">
+        <div class="app-icon-arrow"></div>
+        <div class="app-icon-v62"></div>
+        <div class="app-icon-des-v62">下载App 查看更多</div>
+    </div>
+</body>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: "#wrap",
+        data: {
+            phone: "",
+            password: "",
+            phoneCode: "",
+            isPasswordShow: 'block',
+            isCodeShow: 'none',
+            isScanShow: 'none',
+            isRegisterShow: 'none',
+            isWxShow: 'none',
+        },
+        created() {
+            let authorization = sessionStorage.getItem("Authorization");
+            if (authorization != null && authorization.length > 0) {
+                window.location.href = "./main.html";
+            }
+        },
+        methods: {
+            login() {
+                let param = new URLSearchParams();
+                param.append("phone", this.phone);
+                param.append("password", this.password);
+                param.append("phoneCode", this.phoneCode);
+                axios.post('http://localhost/login/doLogin', param)
+                    .then(function(response) {
+                        console.log(response);
+                        if (response.data.Authorization != null) {
+                            sessionStorage.setItem("Authorization", response.data.Authorization);
+                            window.location.href = response.data.url;
+                        }
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+            },
+            sendMsg() {
+                axios.get('http://localhost/login/sendMsg', {
+                        params: {
+                            phone: this.phone,
+                        }
+                    })
+                    .then(function(response) {
+                        console.log(response);
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+            },
+            register() {
+                let param = new URLSearchParams();
+                param.append("phone", this.phone);
+                param.append("password", this.password);
+                param.append("phoneCode", this.phoneCode);
+                axios.post('http://localhost/login/register', param)
+                    .then(function(response) {
+                        console.log(response);
+                        if (response.data.Authorization != null) {
+                            sessionStorage.setItem("Authorization", response.data.Authorization);
+                            window.location.href = "./main.html";
+                        }
+                    })
+                    .catch(function(error) {
+                        console.log(error);
+                    });
+            },
+            changeCodeLogin() {
+                this.isCodeShow = 'block';
+                this.isPasswordShow = 'none';
+                this.isScanShow = 'none';
+                this.isRegisterShow = 'none';
+                this.isWxShow = 'none';
+                this.phone = "";
+                this.password = "";
+                this.phoneCode = "";
+            },
+            changePasswordLogin() {
+                this.isPasswordShow = 'block';
+                this.isCodeShow = 'none';
+                this.isScanShow = 'none';
+                this.isRegisterShow = 'none';
+                this.isWxShow = 'none';
+                this.phone = "";
+                this.password = "";
+                this.phoneCode = "";
+            },
+            changeScanLogin() {
+                this.isScanShow = 'block';
+                this.isPasswordShow = 'none';
+                this.isCodeShow = 'none';
+                this.isRegisterShow = 'none';
+                this.isWxShow = 'none';
+                this.phone = "";
+                this.password = "";
+                this.phoneCode = "";
+            },
+            changeRegister() {
+                this.isRegisterShow = 'block';
+                this.isPasswordShow = 'none';
+                this.isCodeShow = 'none';
+                this.isScanShow = 'none';
+                this.isWxShow = 'none';
+                this.phone = "";
+                this.password = "";
+                this.phoneCode = "";
+            },
+            changeWxLogin() {
+                this.isWxShow = 'block';
+                this.isPasswordShow = 'none';
+                this.isCodeShow = 'none';
+                this.isScanShow = 'none';
+                this.isRegisterShow = 'none';
+                this.phone = "";
+                this.password = "";
+                this.phoneCode = "";
+            },
+        },
+    })
+</script>
+
+</html>

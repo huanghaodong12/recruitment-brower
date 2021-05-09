@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <!-- <div id="app">
+        <input id="phone" type="text" placeholder="请输入..." v-model="phone">
+        <input id="password" type="password" placeholder="请输入..." v-model="password">
+        <button @click="login">login</button>
+        <ul>
+            <li v-for="(jd, index) in jds">
+                <p v-for="(describe, index) in getPositionDetail(jd.positionDescribe)">{{index}}、{{describe}}</p>
+            </li>
+        </ul>
+    </div> -->
+    <div id="app">
+        <input type="text" v-model="phone" @change="confirmPhone()" name="" id="">
+        <input type="text" v-model="toPhone" name="" id="">
+        <input type="text" v-model="message" name="" id="">
+        <button type="button" @click="sendMessage()">send</button>
+    </div>
+</body>
+<script src="./js/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="./js/sockjs.min.js"></script>
+<script src="./js/stomp.js"></script>
+
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            phone: "",
+            message: "",
+            toPhone: "",
+            stompClient: null,
+            Authorization: "BearereyJhbGciOiJIUzUxMiJ9.eyJwaG9uZSI6IjE1MjExMDAyNTU3IiwiY3JlYXRlZCI6MTYyMDI5MzUxMzI2OCwiZXhwIjoxNjIwODk4MzEzfQ.nirwx16Jz99GnuL_g76z3-zhL_xoilprdlhRQ7JJh6myurra1vrYODHTzHQsQ-2G2ND5P3cgG0_GeJN5ihJXlQ",
+        },
+        created() {
+            // this.jdRecommend(1);
+            this.connect();
+        },
+        destroyed() {
+
+        },
+        methods: {
+            disconnect() {
+                if (stompClient != null) {
+                    stompClient.disconnect();
+                }
+            },
+            connect() {
+                let socket = new SockJS('http://127.0.0.1/chat');
+                this.stompClient = Stomp.over(socket);//使用STMOP子协议的WebSocket客户端
+                this.stompClient.connect({ 'Authorization': this.Authorization }, function (frame) { //连接WebSocket服务端
+                    console.log('Connected:' + frame);
+                    //广播接收信息
+                    // stompTopic();
+                });
+            },
+            stompQueue() {
+                alert("监听:" + this.phone)
+                //通过stompClient.subscribe订阅/topic/getResponse 目标(destination)发送的消息（队列接收信息）
+                this.stompClient.subscribe('/user/' + this.phone + '/alone/getMessage', function (response) {
+                    console.log(response)
+                });
+            },
+            confirmPhone() {
+                this.stompQueue();
+            },
+            sendMessage() {
+                let postValue = {};
+                postValue.fromUserPhone = this.phone;
+                postValue.toUserPhone = this.toPhone;
+                postValue.message = this.message;
+                this.stompClient.send("/sendMessage", { 'Authorization': this.Authorization }, JSON.stringify(postValue));
+            }
+        },
+        computed: {
+
+        },
+    })
+
+</script>
+
+</html>

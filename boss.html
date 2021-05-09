@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://www.zhipin.com/web/boss/job/edit?encryptId=0 -->
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="./boss_files/style1536672475627.css">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>BOSS直聘</title>
+
+    <style type="text/css">
+        body {
+            background: #eef0f5 !important;
+        }
+
+        #app .data-tips {
+            height: calc(100vh - 96px);
+            min-height: 340px;
+            position: relative;
+            background: #fff;
+            text-align: center;
+        }
+
+        #app .data-tips:after {
+            content: '';
+            display: inline-block;
+            width: 0;
+            height: 100%;
+            vertical-align: middle;
+        }
+
+        #app .data-tips {
+            color: #9fa3b0;
+        }
+
+        #app .data-tips .page-loading,
+        #app .data-tips .data-blank {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        #app .data-tips p {
+            margin-top: 10px;
+            font-size: 12px;
+        }
+
+        /* #app .page-loading .component-b,
+        #app .page-loading .component-s1,
+        #app .page-loading .component-o,
+        #app .page-loading .component-s2 {
+            display: inline-block;
+            width: 40px;
+            height: 42px;
+            background: url(data:image/png;
+ base64, iVBORw0KGgoAAAANSUhEUgAAACgAAADICAYAAACauqPvAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNS1jMDE0IDc5LjE1MTQ4MSwgMjAxMy8wMy8xMy0xMjowOToxNSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpEMUMzMTQxMDRGMzkxMUU3QTA4OEQ5OEZFMzYxRTFDNSIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpEMUMzMTQxMTRGMzkxMUU3QTA4OEQ5OEZFMzYxRTFDNSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkQxQzMxNDBFNEYzOTExRTdBMDg4RDk4RkUzNjFFMUM1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQxQzMxNDBGNEYzOTExRTdBMDg4RDk4RkUzNjFFMUM1Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+1AXewQAABzJJREFUeNrsnF1oHFUUx++OUaGmddNWrL50g6IU1G5QVASb3RdRFJqC+CBId0UQn5J9qT4Zgwh+gGkQ35SkDwp+kQQFQdFsEJEimCn6IEXMqlUUStxGrS0W4znuue043Z05986dnSmeA3803bszv7kf555775ktHF9bf00p9aCys79BJ0BroGOgr0GHQR/S35G2bWhz7A0GVDLzQEOka0CjoEdBG6BPQDOgefrb+gZpWAG0B/QOaBlUyhtg0O4EfQ4aySsg2nbQe6Ar8wqIdjXoGdMvcQfJE13+bQdoFzXhJuZ1HgIdoFHvFPC5iM8uA02AngRdEnMd/LxKg6dvTfwHNV2dWf66rPrg66AvGeW2ZDlIPmOUOZEl4GlGma+yBNzFqL2PswLcQS4nyl4CncwCEN3HK6BLI8ocjXFXqQHeBloC3RtR5if6/Pe0ZpJnQ38PYjgHugV0LWNQ7AV9a/P0XMDHLa6NA+JF0AugP22bZ0C5t99Az4NeBv2a9GJpRDMYxz8N+oJq8Ma8AWrDKLoBOgJ6g9xQLgNWDP8foBotp9UHu/Wlyw0f8CrQB6CbQT+4rsGtXXQRRSa3Uyz4PeM6V4DeNnkwz8GIPUyD4nrQHOM7t4Luz6IPngI9DPqIUbae1SDZoNqMsz3ce6cxij9l7CRs4rqdNADP0DolzgazAhxk3vxkVoB3Mcr8Bfo5C0AMXKeY65Iz/QbELbi3QDcwyr7fr3DrYtBNoPtAjyne5hDW3KxrwLUecIMWD/Uq6BvXgEOOugGCHchbuKUNg4l7QOt5BMQw6w6Tpu0X4C+gR0B3g37M06KpCXqTYr9TSS6GgO+aRLghO01TFs69x2j34CjXCbPWCxsbGyrP5qmcmwAKoAAKoAAKoAAKoAAKoAAKoAAKoADm2ApJvnx8bb2iOufCJfqn3aAiyFedlIA2/v/2rVuafQEEILz5mOokSYwZ3msBtAiwc84BCQxT8MaphpIY1uoMgD7lBBDgsKZmHYCFrQXaB6C+9SABuGnVSTMuptD/sd+uwD1qVjUIX8Raq/VpsNZ79c1CDuAiIQs9mnXCsvPr/lSxhBwJ98lClwExb+g6DoGacOF26FolckXjip+J3iLI9nmA5EpWmQOiRU3SZLopdCmTTMipoAsKjuIJJpxPT8meHeiG3ESKSar9c4BUe+PMmquGm5MJiQOgwSw+Hq7BGrP26jZwAciDqnPIE2e1MOB+xpfmkkz6wT7GKFOkAas8am9O0teMC2dHD+kzio7qGuREJX7cnGlohxhlKhpwN6PwouNZg9NVyhqw5OiCJs3Mag3ofmWPOS21Uph7OZBFj/nEaQCy3JWs6gTwggCk9W8aa5LYgeQxXUgpC0D0l1zAUZdkzBbxdRMvMwqPOa69vSaAC8zwx+Uqj3Otf+d/j+ZFjlefdNS8nKVFW8 //ehRzNnRKdPEkcEXmgy7oyL0QWCKu2q5dDeCWmMHxsJ7/vUAwMMe815KpXzSEmwsGJ0FH3WD2xSJBTtON4+BwQKww4drhNUvSnQW9u3AkFNSWKVKvGDr58/ZnXO7NJDVs2nrs5hFB9nt3qytcT8A+Q/aEi4xm6EuNlOEaUXCRNRhcWcF/ppX9nl+vVWKD40/ZxxDk+yYTgiLYlMkWivFBTmBjcpTcSSlmuepTxLRgszosuGgvgg6CtlwtVSULWAAFUAAFUAAFUAAFUAAFUAAFUAAFUAAFUAAvXECTDUw8EymT9PmIPqbVid1oOhPT75aIZrqbVoiBKqnOZuV+ZfGjXqqzgdlUnQTvBWeABIbbvTVXTQWABRvAgS5wCDWt0smdNraBEFxWp0zxo5hqbiKXo9jwvDiTPjhpODL1CWcr9FkFtFOZn3L2rkHyb5yfgkSf1uC+D0InVOPaE9jWIDd/EK1q8rIKHnPROdyw4mWW9Gxi7jG9b9n3sBvsS3su/i7vwcLOvAPWgvn1/QZsMcvOZwHpKX4KMg6mFcc5XOyZZEmZHVRjrU+ZviNn6wfRpgzvg009Cw+2mnaNFhxFMlijmJ9/MO51jkQBK0ByU5iipsOZKFDbJj47nalkefs6/W7FVWKuF5qW2qCqRZ/s1keXqNuks6pzmC/zn8wip6s6Aq2o5PkyZyGdA/aK7ywMw7VmaoChJWlNmb9rjLk0w6kDhnYapg1rdGTb0GY/iZsxCUTb1K+qivnyirJIGE+8eUSJYlVm8dG+A+r1B84eWQasHFtMBRAzfznpxlmG/GVHcyfnDYe2bRPruXOeHLKpy+Hu6ywn7YNjVJsIG7tQws8pW5j768jGC/hePxRb0XMvAARfrg9HLCaLKHwPvpV4A7NHjOcitmtk7WairG67ddIPwIbN6s+kiW2tpQx+6iBuXazDp7IjsBkKUt2ek5BbqdCkXlL8d49b6lwyt5/asjMmSA27FN/mJw2MASXRWwAFUAAFUAAFUAAF8H8N+I8AAwCXCGtyG2CdngAAAABJRU5ErkJggg==) no-repeat;
+                vertical-align: middle;
+            -webkit-animation-fill-mode: both;
+            -webkit-animation: bossLoading 0.6s infinite linear alternate;
+            -moz-animation: bossLoading 0.6s infinite linear alternate;
+            animation: bossLoading 0.6s infinite linear alternate;
+        } */
+
+        #app .page-loading .component-b {
+            background-position: 0 0;
+        }
+
+        #app .page-loading .component-o {
+            content: '';
+            background-position: 0 -68px;
+            margin-left: -4px;
+            -webkit-animation-delay: 0.1s;
+            -moz-animation-delay: 0.1s;
+            animation-delay: 0.1s;
+        }
+
+        #app .page-loading .component-s1 {
+            background-position: 0 -141px;
+            margin-left: 6px;
+            -webkit-animation-delay: 0.2s;
+            -moz-animation-delay: 0.2s;
+            animation-delay: 0.2s;
+        }
+
+        #app .page-loading .component-s2 {
+            content: '';
+            background-position: 0 -141px;
+            margin-left: -4px;
+            -webkit-animation-delay: 0.3s;
+            -moz-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+        }
+
+        @-webkit-keyframes bossLoading {
+            0% {
+                transform: -webkit-translate3d(0, 0, 0);
+            }
+
+            50% {
+                transform: -webkit-translate3d(0, -10px, 0);
+            }
+        }
+
+        @-moz-keyframes bossLoading {
+            0% {
+                transform: -moz-translate3d(0, 0, 0);
+            }
+
+            50% {
+                transform: -moz-translate3d(0, -10px, 0);
+            }
+        }
+
+        @keyframes bossLoading {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            50% {
+                transform: translate3d(0, -10px, 0);
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="./boss_files/vendor.css">
+    <link href="./boss_files/vendor(1).css" rel="stylesheet">
+    <link href="./boss_files/app.css" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="./boss_files/job.css">
+
+    <link href="./boss_files/business.css" rel="stylesheet">
+    <link href="./boss_files/complete_profile.css" rel="stylesheet">
+    <link href="./boss_files/profile.css" rel="stylesheet">
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./js/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div data-v-5ef48958="" id="wrap" class="">
+
+            <!-- header -->
+            <div data-v-5ef48958="" id="header">
+                <div data-v-f5ee89c2="" data-v-5ef48958="" class="page-inner">
+                    <h1 data-v-f5ee89c2="" class="logo"><a data-v-f5ee89c2="" href="javascript:;" title="直聘企业版"><img
+                                data-v-f5ee89c2="" src="./boss_files/logo-boss.png"> <span
+                                data-v-f5ee89c2="">直聘企业版</span></a></h1>
+                    <div data-v-f5ee89c2="" class="top-nav">
+                        <div data-v-f5ee89c2="" class="nav-item">
+                            <div data-v-f5ee89c2="" class="top-message-menu iboss-xiaoxitongzhi"><span
+                                    data-v-f5ee89c2="" class="muti-red-num"><span data-v-f5ee89c2=""
+                                        class="unread-nums">3</span></span></div>
+                        </div>
+                        <div data-v-f5ee89c2="" class="nav-item">
+                            <!---->
+                        </div>
+                        <div data-v-f5ee89c2="" class="nav-item nav-item-help-and-feedback">
+                            <div data-v-f5ee89c2="" class="top-feedback-dropdown ui-dropmenu ui-dropmenu-drop-arrow"
+                                ka="header_nav_help_feedback">
+                                <div class="ui-dropmenu-label">
+                                    <div data-v-f5ee89c2="" class="label-name">
+                                        帮助与反馈
+                                        
+                                    </div>
+                                    
+                                </div>
+                                <div class="ui-dropmenu-list">
+                                    <ul data-v-f5ee89c2="">
+                                        <li data-v-f5ee89c2="" ka="header_nav_feedback">意见反馈</li>
+                                        <li data-v-f5ee89c2="" ka="header_nav_support" class="chat-bot-entry">
+                                            在线客服
+                                            
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-f5ee89c2="" class="nav-item nav-interview">
+                            <div data-v-f5ee89c2="" class="ui-dropmenu ui-dropmenu-drop-arrow">
+                                <div class="ui-dropmenu-label">
+                                    <div data-v-f5ee89c2="" ka="header_nav_interview" class="label-name">面试</div>
+                                    
+                                </div>
+                                <div class="ui-dropmenu-list">
+                                    <div data-v-f5ee89c2="" class="interview-dropmenu-layout">
+                                        <p data-v-f5ee89c2="" class="nav-interview-loading" style="display: none;"><i
+                                                data-v-f5ee89c2="" class="ui-icon-loading"></i>正在加载...
+                                        </p>
+                                        <div data-v-f5ee89c2="" class="nav-interview">
+                                            <p data-v-f5ee89c2="" class="subhead">
+                                                面试日程
+                                                 <span data-v-f5ee89c2="" class="interview-record"><i
+                                                        data-v-f5ee89c2="" class="iboss-dacheng"></i>全部面试
+                                                </span>
+                                            </p>
+                                        </div>
+                                        <div data-v-f5ee89c2="" class="nav-interview-empty"><img data-v-f5ee89c2=""
+                                                src="./boss_files/tip-nodata.png">
+                                            <p data-v-f5ee89c2="">你目前还没有面试安排</p>
+                                        </div>
+                                        <!---->
+                                        <div data-v-f5ee89c2="" class="interview-guide"><img data-v-f5ee89c2=""
+                                                src="./boss_files/icon-interview-video.png" alt=""
+                                                class="icon-interview-guide"> <span
+                                                data-v-f5ee89c2="">新视频面试工具，高效高清！</span>
+                                            <a data-v-f5ee89c2="" href="https://mian.zhipin.com/?user_source=4"
+                                                target="_blank">了解更多</a> <img data-v-f5ee89c2=""
+                                                src="./boss_files/icon-interview-close.png" alt=""
+                                                class="icon-interview-close">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-v-f5ee89c2="" class="nav-item">
+                            <div data-v-f5ee89c2="" class="label-name records-center">
+                                招聘数据
+                                <span data-v-f5ee89c2="" class="num">1</span>
+                            </div>
+                        </div>
+                        <div data-v-f5ee89c2="" class="nav-item nav-privilege">
+                            <div data-v-f5ee89c2="" ka="header_nav_rights" class="label-name">账号权益</div>
+                        </div>
+                        <div data-v-f5ee89c2="" class="nav-item top-vip-entry">
+                            <div data-v-f5ee89c2="" class="label-name"><span data-v-f5ee89c2="">升级VIP</span>
+                                <!---->
+                                <!---->
+                            </div>
+                            <!---->
+                        </div>
+                        <div data-v-f5ee89c2="" class="nav-item nav-logout">
+                            <div data-v-f5ee89c2="" class="top-profile-logout ui-dropmenu ui-dropmenu-drop-arrow" 
+                            @mouseover="mouseOverUserNav()" @mouseleave="mouseLeaveUserNav()">
+                                <div class="ui-dropmenu-label">
+                                    <div data-v-f5ee89c2="" class="label-name">
+                                        {{userInfo.userNickname}}
+                                        <img data-v-f5ee89c2=""
+                                            :src="userInfo.userAvatar"
+                                            alt="">
+                                    </div>
+                                    <!---->
+                                    <!---->
+                                </div>
+                                <div v-show="isShowUserNav" @mouseover="mouseOverUserLi()" @mouseleave="mouseLeaveUserLi()" style="display: block;" class="ui-dropmenu-list">
+                                    <ul data-v-f5ee89c2="">
+                                        <li data-v-f5ee89c2=""><a data-v-f5ee89c2=""
+                                                href="https://www.zhipin.com/web/boss/profile" class="link-profile"
+                                                ka="menu_dropdown_profile">
+                                                个人资料
+                                                <span data-v-f5ee89c2="">基本信息、联系方式、更换公司</span></a></li>
+                                        <!---->
+                                        <li data-v-f5ee89c2=""><a data-v-f5ee89c2=""
+                                                href="https://www.zhipin.com/web/boss/set/greeting" class="link-msgset"
+                                                ka="menu_dropdown_message">
+                                                账号设置
+                                                <span data-v-f5ee89c2="">常用语、招呼语
+                                                    <!---->
+                                                </span></a></li>
+                                        <!---->
+                                        <li data-v-f5ee89c2="">
+                                            <!---->
+                                        </li>
+                                        <li data-v-f5ee89c2=""><a data-v-f5ee89c2=""
+                                                href="###" class="link-account"
+                                                ka="menu_dropdown_account">账号密码</a></li>
+                                        <li @click="changeRole()" data-v-f5ee89c2=""><a data-v-f5ee89c2="" href="javascript:;" 
+                                                ka="menu_dropdown_apply" class="link-apply">切换成求职者</a></li>
+                                        <li  @click="loginout()" data-v-f5ee89c2=""><a data-v-f5ee89c2=""
+                                                href="###" ka="menu_dropdown_signout"
+                                                class="link-signout">退出登录</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!---->
+                </div>
+                <!---->
+            </div>
+            <div data-v-5ef48958="" id="main" >
+                <!-- left -->
+                <div data-v-6453066c="" data-v-5ef48958="" class="side-wrap">
+                    <div data-v-6453066c="" class="side-menu">
+                        <div data-v-6453066c="" class="figure"><a data-v-6453066c="" href="javascript:;"
+                                ka="menu-user-info" title="我的资料"><img data-v-6453066c=""
+                                    :src="userInfo.userAvatar"
+                                    alt=""> <span data-v-6453066c="">
+                                    <!---->
+                                    {{userInfo.userNickname}}
+                                </span></a>
+                            <!---->
+                        </div>
+                        <!---->
+                        <dl data-v-6453066c="" class="menu-position" @click="changeLeftSize('position')">
+                            <dt data-v-6453066c=""><a data-v-6453066c="" href="###" :class="getLeftSizeClass('position')"
+                                    ka="menu-manager-job"><i data-v-6453066c="" class="icon-menu-position"></i>职位管理
+                                </a>
+                                <!---->
+                            </dt>
+                        </dl>
+                        <dl data-v-6453066c="" class="menu-recommend" @click="changeLeftSize('recommend')">
+                            <dt data-v-6453066c=""><a data-v-6453066c="" href="javascript:;" ka="menu-geek-recommend"
+                                :class="getLeftSizeClass('recommend')"><i data-v-6453066c="" class="icon-menu-recommend"></i>推荐牛人
+                                </a></dt>
+                        </dl>
+                        <dl data-v-6453066c="" class="menu-geeksearch" @click="changeLeftSize('search')">
+                            <dt data-v-6453066c=""><a data-v-6453066c="" href="javascript:;" ka="menu-geek-search"
+                                :class="getLeftSizeClass('search')"><i data-v-6453066c="" class="icon-menu-search"></i>搜索牛人
+                                </a></dt>
+                        </dl>
+                        <!---->
+                        <!---->
+                        <dl data-v-6453066c="" class="menu-chat" @click="changeLeftSize('chat')">
+                            <dt data-v-6453066c=""><a data-v-6453066c="" href="###" class="" ka="menu-im" :class="getLeftSizeClass('chat')"><i
+                                        data-v-6453066c="" class="icon-menu-chat"></i>沟通
+                                    <!---->
+                                </a></dt>
+                        </dl>
+
+                        <dl data-v-6453066c="" class="menu-user" @click="changeLeftSize('user')">
+                            <dt data-v-6453066c=""><a data-v-6453066c="" href="###" 
+                                :class="getLeftSizeClass('user')" ka="menu-user"><i data-v-6453066c="" class="icon-menu-company"></i>我的资料
+                                    <!---->
+                                </a></dt>
+                        </dl>
+
+                        <!---->
+                        <!---->
+                        <!---->
+                    </div>
+                    <!---->
+                    <!---->
+                </div>
+
+                <!-- 职位管理 -->
+                <div v-if="leftSide == 'position'" style="display: block;" class="frame-box">
+                    <div class="page-inner">
+                        <div class="page-header">
+                            <div class="page-name">职位管理</div>
+                        </div>
+                    </div>
+                    <iframe style="display: block;" src="./boss_files/saved_resource_position.html"></iframe>
+                </div>
+
+                <!-- 推荐牛人 -->
+                <div v-if="leftSide == 'recommend'" style="display: block;" id="recommendContent" class="frame-box" >
+                    <div data-v-040c7d2d="" class="recommend-container page-container page-inner">
+                        <div data-v-040c7d2d="" class="page-header">
+                            <div data-v-040c7d2d="" class="page-name">推荐牛人</div>
+                            <div data-v-040c7d2d=""
+                                class="recommend-top-dropdown  ui-dropmenu ui-dropmenu-label-arrow ui-dropmenu-drop-arrow">
+                                <div class="ui-dropmenu-label"><span data-v-040c7d2d="" class="chat-select-job">产品经理 _ 北京
+                                        10-11K <span data-v-040c7d2d="" class="position-type">待</span></span> <i
+                                        class="ui-icon-arrow-down"></i></div>
+                                <div class="ui-dropmenu-list">
+                                    <div data-v-040c7d2d="">
+                                        <div data-v-040c7d2d="" class="top-chat-search"><i data-v-040c7d2d=""
+                                                class="icon-search"></i> <i data-v-040c7d2d="" class="iboss-guanbi"></i>
+                                            <input data-v-040c7d2d="" placeholder="请输入职位名称" class="ipt chat-job-search">
+                                        </div>
+                                        <ul data-v-040c7d2d="">
+                                            <li data-v-040c7d2d="" value="47d068d0a70025141nF73dy9F1VX" class="cur"><span
+                                                    data-v-040c7d2d=""><u class="h"></u>产品经理 _ 北京 10-11K</span> <span
+                                                    data-v-040c7d2d="" class="position-type">待</span></li>
+                                        </ul>
+                                        <!---->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <iframe style="display: block;" src="./boss_files/saved_resource_recommend.html"></iframe>
+                </div>
+
+                <!-- 搜索牛人 -->
+                <div v-if="leftSide == 'search'" style="display: block;" id="searchContent" class="frame-box geeksearch-container"
+                    style="">
+                    <div data-v-6581ea2d="" class="search-container page-container page-inner">
+                        <div data-v-6581ea2d="" class="page-header">
+                            <div data-v-6581ea2d="" class="page-name">人才库</div>
+                        </div>
+                    </div> <iframe data-v-6581ea2d="" name="searchFrame"
+                        src="./boss_files/saved_resource_select.html"></iframe>
+                </div>
+
+                <!-- 个人聊天 -->
+                <div v-if="leftSide == 'chat'" class="frame-box">
+                    <iframe data-v-6581ea2d="" name="searchFrame"
+                        src="./boss_files/saved_resource_chat.html"></iframe>
+                </div>
+
+                <!-- 个人信息 -->
+                <div v-if="leftSide == 'user' && boss.phone!=null" style="display: block;" data-v-836ee14c="" data-v-5ef48958="" class="frame-box">
+                    <div data-v-3b6a88b8="" data-v-836ee14c="" class="page-inner">
+                        <div data-v-3b6a88b8="" class="page-header">
+                            <div data-v-3b6a88b8="" class="top-menu"><a data-v-3b6a88b8=""
+                                    href="###" class="router-link-active"
+                                    ka="menu_top_profile">我的资料</a>
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                        </div>
+                    </div>
+                    <div data-v-836ee14c="" class="page-inner">
+                        <!---->
+                        <div data-v-836ee14c="" class="profile-manage">
+                            <div data-v-25e55382="">
+                                <div data-v-25e55382="" class="profile-title">
+                                    基本信息
+                                    <span data-v-25e55382="" class="text-gray"></span>
+                                    <div @click="openUpdateUserInfoDiv()" v-show="!isShowUpdateUserInfoDiv" data-v-25e55382="" class="op"><a data-v-25e55382=""
+                                            data-url="/boss/user/info/edit.json" href="javascript:;"
+                                            ka="boss_profile_edit_desc" class="link-edit"><i data-v-25e55382=""
+                                                class="icon-profile icon-edit"></i>编辑
+                                        </a></div>
+                                </div>
+                                <!-- show -->
+                                <div v-show="!isShowUpdateUserInfoDiv" data-v-25e55382="" class="profile-item">
+                                    <div data-v-25e55382="" class="item-primary">
+                                        <div data-v-25e55382="" class="avatar"><img data-v-25e55382=""
+                                                :src="userInfo.userAvatar">
+                                        </div>
+                                        <div data-v-25e55382="" class="form-row">
+                                            <div data-v-25e55382="" class="t">姓名：</div>
+                                            <div data-v-25e55382="" class="c">{{boss.name}}</div>
+                                        </div>
+                                        <div data-v-25e55382="" class="form-row">
+                                            <div data-v-25e55382="" class="t">职务：</div>
+                                            <div data-v-25e55382="" class="c">{{boss.bossPosition}}</div>
+                                        </div>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <!-- update -->
+                                <div v-show="isShowUpdateUserInfoDiv" data-v-371069fa="" data-v-25e55382="" class="item-form">
+                                    <div data-v-5358e41f="" data-v-371069fa="" class="form-row">
+                                        <div data-v-5358e41f="" class="t">姓名：</div>
+                                        <div data-v-5358e41f="" class="dropdown-wrap profile-dropdown-select-input">
+                                            <span data-v-5358e41f="">
+                                                <input v-model="boss.name" data-v-5358e41f="" ka="boss_profile_name"
+                                                    type="text" placeholder="请输入姓名" data-range="2,12" maxlength="24"
+                                                    data-blank="请输入姓名" data-format="姓名应为2-12个汉字或4-24个字母"
+                                                    class="ipt dropdown-select required">
+                                            </span>
+                                            <div data-v-5358e41f="" class="dropdown-menu-edit" style="display: none;">
+                                                <ul data-v-5358e41f="">
+                                                    <li data-v-5358e41f="" class="disabled">已实名认证，真实姓名不可修改，可显示对外展示名</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-v-371069fa="" class="form-row profile-form-row">
+                                        <div data-v-371069fa="" class="t">性别：</div>
+                                        <dl data-v-371069fa="" class="c">
+                                            <div data-v-371069fa="" class="radio-list">
+                                                <label @click="changeGender('male')" data-v-371069fa="" :class="getGenderClass('male')" class="radio-square">男</label> 
+                                                <label @click="changeGender('female')" data-v-371069fa="" :class="getGenderClass('female')" class="radio-square">女</label></div>
+                                        </dl>
+                                    </div>
+                                    <div data-v-371069fa="" class="form-row">
+                                        <div data-v-371069fa="" class="t">职务：</div>
+                                        <div data-v-371069fa="" class="c"><span data-v-371069fa="" class="ipt-wrap">
+                                            <input v-model="boss.bossPosition" data-v-371069fa="" ka="boss_profile_jobname" type="text"
+                                                    class="ipt required">&nbsp;&nbsp;
+                                                <span data-v-371069fa="" class="gray job-desc">填写职务名称，让牛人了解你的身份</span>
+                                                <!---->
+                                            </span></div>
+                                    </div>
+                                    <!---->
+                                    <div data-v-371069fa="" class="form-btn">
+                                        <div data-v-371069fa="" class="btns"><button @click="closeUpdateUserInfoDiv()" data-v-371069fa=""
+                                                ka="boss_profile_info_cancel" type="button" class="btn btn-back">取消</button>
+                                            <button @click="updateInfo()" data-v-371069fa="" ka="boss_profile_info_sure" type="button"
+                                                class="btn">确定</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-title">
+                                    联系方式
+                                    <span class="text-gray">（仅在和牛人交换联系方式时可见）</span>
+                                </div>
+                                <div class="profile-item">
+                                    <div class="item-primary">
+                                        <div v-show="!isShowUpdateWChatDiv" class="form-row"><a @click="openUpdateWChatDiv()" href="javascript:;" class="link-modify">修改</a>
+                                            <div class="t">微信：</div>
+                                            <div class="c">{{boss.phone}}</div>
+                                        </div>
+                                        <div v-show="isShowUpdateWChatDiv" class="form-row form-wechat">
+                                            <div class="t">微信：</div>
+                                            <div class="c"><input v-model="boss.phone" type="text" class="ipt ipt-wechat">
+                                                <div class="btn-container">
+                                                    <button @click="updateWx()" class="btn">确定</button> 
+                                                    <button @click="closeUpdateWChatDiv()" class="btn btn-outline">取消</button>
+                                                </div> <span class="error-tip"
+                                                    style="display: none;">请输入正确的微信号</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-row"><a @click="openUpdateBusinessDiv()" href="javascript:;" class="link-modify">修改</a>
+                                            <div class="t">常用邮箱：</div>
+                                            <div class="c">{{boss.email}}</div>
+                                        </div>
+                                        <!---->
+                                    </div>
+                                </div>
+                                <!---->
+                                <!---->
+                                <!---->
+                            </div>
+                            <div data-v-7f9c7c97="">
+                                <div data-v-7f9c7c97="" class="profile-title">
+                                    任职信息
+                                    <div @click="openConfirmUpdateCompanyDiv()" data-v-7f9c7c97="" class="op">
+                                        <a data-v-7f9c7c97="" href="javascript:;" class="link-change">
+                                            <i data-v-7f9c7c97="" class="icon-change"></i>更换公司
+                                        </a>
+                                    </div>
+                                </div>
+                                <div data-v-7f9c7c97="" class="profile-item">
+                                    <div data-v-7f9c7c97="" class="item-primary">
+                                        <ul data-v-7f9c7c97="" class="company-container">
+                                            <li data-v-7f9c7c97="">
+                                                <div data-v-7f9c7c97="" class="img-wrap"><img data-v-7f9c7c97=""
+                                                        :src="company.companyLogo">
+                                                </div>
+                                                <div data-v-7f9c7c97="" class="text">
+                                                    <div data-v-7f9c7c97="" class="name">
+                                                        {{company.companyName}}
+                                                        <em data-v-7f9c7c97="" class="vline"></em>
+                                                        {{company.companyType}}
+                                                    </div>
+                                                    <p data-v-7f9c7c97="" class="gray">
+                                                        {{generatorScale(company.companyMinScale, company.companyMaxScale)}} . {{company.companyFinancingLevel}}
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- 修改-输入公司名称 -->
+                                <div v-show="isShowUpdateCompanyNameDiv" data-v-7f9c7c97="" class="dialog-wrap dialog-company-manage dialog-company-manage-my">
+                                    <div class="dialog-layer"></div>
+                                    <div data-v-39e28260="" class="dialog-container">
+                                        <div data-v-39e28260="" class="dialog-title">
+                                            <h3 data-v-39e28260="" class="title">填写你所在的公司全称</h3> <a @click="closeUpdateCompanyNameDiv()" 
+                                            data-v-39e28260="" href="javascript:;" class="close"><i data-v-39e28260=""
+                                                    class="icon-close"></i></a>
+                                        </div>
+                                        <div data-v-39e28260="" class="dialog-con">
+                                            <div data-v-39e28260="" class="dialog-step company-form">
+                                                <div data-v-39e28260="" class="form-row">
+                                                    <div data-v-39e28260="" class="c"><span data-v-39e28260=""
+                                                            class="ipt-wrap">
+                                                            <input v-model="updateCompanyName" data-v-39e28260="" type="text"
+                                                                data-blank="公司全称不能为空" placeholder="请输入您所属公司营业执照上的公司名称"
+                                                                class="ipt required ipt-company"> <span data-v-39e28260=""
+                                                                class="count-num"><em data-v-39e28260="">0</em>/46
+                                                            </span></span>
+                                                        <!---->
+                                                        <!---->
+                                                    </div>
+                                                </div>
+                                                <div data-v-39e28260="" class="tips">
+                                                    <p data-v-39e28260="">注意事项：</p>
+                                                    <p data-v-39e28260="">1.请输入您所属公司营业执照上的公司名称</p>
+                                                    <p data-v-39e28260="">2.请注意区分总公司和分公司</p>
+                                                    <p data-v-39e28260="">3.公司名称将用于后续的企业认证使用，请确保准确性</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div data-v-39e28260="" class="dialog-footer">
+                                            <div data-v-39e28260="" class="btns">
+                                                <!-- <span data-v-39e28260="" class="btn btn-sure disabled">下一步</span> -->
+                                                <span data-v-39e28260="" class="btn btn-sure" @click="openUdpateCompanyLastConfirmDiv()">下一步</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 修改-最终确认 -->
+                                <div v-show="isShowUpdateCompanyLastConfirmDiv" data-v-7f9c7c97="" class="dialog-wrap dialog-company-manage dialog-company-manage-my">
+                                    <div class="dialog-layer"></div>
+                                    <div data-v-de0a23b6="" class="dialog-container" style="">
+                                        <div data-v-de0a23b6="" class="dialog-title">
+                                            <h3 data-v-de0a23b6="" class="title">确认公司</h3> <a @click="closeUdpateCompanyLastConfirmDiv()" 
+                                            data-v-de0a23b6="" href="javascript:;" class="close"><i data-v-de0a23b6=""
+                                                    class="icon-close"></i></a>
+                                        </div>
+                                        <div data-v-de0a23b6="" class="dialog-con">
+                                            <div data-v-de0a23b6="" class="dialog-step change-form">
+                                                <p data-v-de0a23b6="" class="info-text">您的就职公司将从</p>
+                                                <ul data-v-de0a23b6="">
+                                                    <li data-v-de0a23b6="">
+                                                        <div data-v-de0a23b6="" class="img-wrap"><img data-v-de0a23b6=""
+                                                                :src="company.companyLogo">
+                                                        </div>
+                                                        <div data-v-de0a23b6="" class="text">
+                                                            <div data-v-de0a23b6="" class="name">{{company.companyName}}<em data-v-de0a23b6=""
+                                                                    class="vline"></em>{{company.companyType}}</div>
+                                                            <p data-v-de0a23b6="" class="gray">{{generatorScale(company.companyMinScale, company.companyMaxScale)}} . {{company.companyFinancingLevel}}</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <p data-v-de0a23b6="" class="info-text">变更为</p>
+                                                <ul data-v-de0a23b6="">
+                                                    <li data-v-de0a23b6="">
+                                                        <div data-v-de0a23b6="" class="img-wrap"><img data-v-de0a23b6=""
+                                                                :src="newCompany.companyLogo">
+                                                        </div>
+                                                        <div data-v-de0a23b6="" class="text">
+                                                            <div data-v-de0a23b6="" class="name">{{newCompany.companyName}}<em data-v-de0a23b6=""
+                                                                    class="vline"></em>{{newCompany.companyType}}</div>
+                                                            <p data-v-de0a23b6="" class="gray">{{generatorScale(newCompany.companyMinScale, newCompany.companyMaxScale)}} . {{newCompany.companyFinancingLevel}}</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <!---->
+                                            </div>
+                                        </div>
+                                        <div data-v-de0a23b6="" class="dialog-footer">
+                                            <div data-v-de0a23b6="" class="btns">
+                                                <a @click="companyLastConfirmPrev()" data-v-de0a23b6="" href="javascript:;" class="link-prev">上一步</a> 
+                                                <span data-v-de0a23b6="" class="btn btn-sure" style="display: inline-block;"  @click="openEmailConfirmDiv()">确认更改</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!---->
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div v-if="leftSide == 'user' && boss.phone==null" style="display: block;" data-v-836ee14c="" data-v-5ef48958="" class="frame-box">
+                    <div data-v-836ee14c="" class="page-inner">
+                        <!---->
+                        <div data-v-836ee14c="" class="profile-manage">
+                            <div data-v-25e55382="">
+
+                                <!-- update -->
+                                <div data-v-371069fa="" data-v-25e55382="" class="item-form">
+                                    <div data-v-5358e41f="" data-v-371069fa="" class="form-row">
+                                        <div data-v-5358e41f="" class="t">姓名：</div>
+                                        <div data-v-5358e41f="" class="dropdown-wrap profile-dropdown-select-input">
+                                            <span data-v-5358e41f="">
+                                                <input v-model="boss.name" data-v-5358e41f="" ka="boss_profile_name"
+                                                    type="text" placeholder="请输入姓名" data-range="2,12" maxlength="24"
+                                                    data-blank="请输入姓名" data-format="姓名应为2-12个汉字或4-24个字母"
+                                                    class="ipt dropdown-select required">
+                                            </span>
+                                            <div data-v-5358e41f="" class="dropdown-menu-edit" style="display: none;">
+                                                <ul data-v-5358e41f="">
+                                                    <li data-v-5358e41f="" class="disabled">已实名认证，真实姓名不可修改，可显示对外展示名</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-v-371069fa="" class="form-row profile-form-row">
+                                        <div data-v-371069fa="" class="t">性别：</div>
+                                        <dl data-v-371069fa="" class="c">
+                                            <div data-v-371069fa="" class="radio-list">
+                                                <label @click="changeGender('male')" data-v-371069fa="" :class="getGenderClass('male')" class="radio-square">男</label> 
+                                                <label @click="changeGender('female')" data-v-371069fa="" :class="getGenderClass('female')" class="radio-square">女</label></div>
+                                        </dl>
+                                    </div>
+                                    <div data-v-371069fa="" class="form-row">
+                                        <div data-v-371069fa="" class="t">职务：</div>
+                                        <div data-v-371069fa="" class="c"><span data-v-371069fa="" class="ipt-wrap">
+                                            <input v-model="boss.bossPosition" data-v-371069fa="" ka="boss_profile_jobname" type="text"
+                                                    class="ipt required">&nbsp;&nbsp;
+                                                <span data-v-371069fa="" class="gray job-desc">填写职务名称，让牛人了解你的身份</span>
+                                                <!---->
+                                            </span></div>
+                                    </div>
+                                    <div data-v-371069fa="" class="form-row">
+                                        <div data-v-371069fa="" class="t">公司：</div>
+                                        <div data-v-371069fa="" class="c"><span data-v-371069fa="" class="ipt-wrap">
+                                            <input v-model="boss.companyName" data-v-371069fa="" ka="boss_profile_jobname" type="text"
+                                                    class="ipt required">&nbsp;&nbsp;
+                                                <span data-v-371069fa="" class="gray job-desc">填写公司，进行认证</span>
+                                                <!---->
+                                            </span></div>
+                                    </div>
+                                    <div data-v-371069fa="" class="form-row">
+                                        <div data-v-371069fa="" class="t">身份证：</div>
+                                        <div data-v-371069fa="" class="c"><span data-v-371069fa="" class="ipt-wrap">
+                                            <input v-model="boss.idCard" data-v-371069fa="" ka="boss_profile_jobname" type="text"
+                                                    class="ipt required">&nbsp;&nbsp;
+                                                <span data-v-371069fa="" class="gray job-desc">填写身份证，进行认证</span>
+                                                <!---->
+                                            </span></div>
+                                    </div>
+                                    <div data-v-371069fa="" class="form-btn">
+                                        <div data-v-371069fa="" class="btns"><button @click="closeUpdateUserInfoDiv()" data-v-371069fa=""
+                                                ka="boss_profile_info_cancel" type="button" class="btn btn-back">取消</button>
+                                            <button @click="openUpdateBusinessDiv3()" data-v-371069fa="" ka="boss_profile_info_sure" type="button"
+                                                class="btn">确定</button>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div id="guide-wrap" style="display: none;">
+                <div class="guide-layer"></div>
+                <div class="guide-box">
+                    <div class="inner">
+                        <div class="guide-set"><span class="icon-set"></span>
+                            <p>未来如需修改，请点击右上角“<span class="text-orange">设置</span>”</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--未认证弹窗-->
+
+
+            <!-- 截图弹窗 -->
+            <div class="crop_wrap" id="cropWrap" style="display: none;">
+                <div class="crop_inner">
+                    <h1><a href="javascript:;" class="cancle"></a>添加公司照片</h1>
+                    <div class="crop_container">
+                        <span class="crop_foil"></span>
+                    </div>
+                    <div class="crop_frm" data-url="/user/crop/company/picture/" data-method="post">
+                        <input type="hidden" name="token" value="whkpt9D7wVxAs2m">
+                        <input type="hidden" id="x" name="x">
+                        <input type="hidden" id="y" name="y">
+                        <input type="hidden" id="w" name="w">
+                        <input type="hidden" id="h" name="h">
+                        <input type="submit" value="保存" id="saveCrop"><a href="javascript:;" class="cancle">取消</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 邮箱验证 -->
+        <div v-show="isShowUpdateBusinessDiv" data-transfer="true" class="dialog-profile-email dialog-wrap v-transfer-dom">
+            <div ka="dialog_layer" class="dialog-layer"></div>
+            <div class="dialog-container" style="">
+                <div class="dialog-header">
+                    <!---->
+                    <h3 class="title">修改常用邮箱</h3><span @click="closeUpdateBusinessDiv()" ka="dialog_close" class="close"><i class="icon-close"></i></span>
+                </div>
+                <div class="dialog-body">
+                    <!-- <div class="form-row">
+                        <input type="text" placeholder="请输入新的邮件" maxlength="50" class="ipt">
+                    </div> -->
+                    <div class="form-row row-sms">
+                        <span class="ipt-wrap"><i class="icon-sign-sms"></i> 
+                            <input v-model="companyEmailprefix" type="text" style="min-width: 180px; width: 180px;" placeholder="请输入新的邮件" name="phoneCode" maxlength="15" autocomplete="off" class="ipt ipt-sms"> 
+                            <button type="button" class="btn btn-sms">{{company.companyEmailSuffix}}</button> 
+                        </span>
+                    </div>
+                    <div class="form-row row-sms">
+                        <span class="ipt-wrap"><i class="icon-sign-sms"></i> 
+                            <input v-model="receivedCode" type="text" style="min-width: 180px; width: 180px;" placeholder="请输入邮件验证码" name="phoneCode" maxlength="6" autocomplete="off" class="ipt ipt-sms"> 
+                            <button @click="sendEmail()" type="button" class="btn btn-sms">获取验证码</button> 
+                            <span class="get-msg-code" style="display: none;">已发送(<em>60</em>s)</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                <div class="dialog-footer">
+                    <div class="btns">
+                        <span @click="closeUpdateBusinessDiv()" ka="dialog_cancel" class="btn btn-outline btn-cancel">取消</span>
+                        <span @click="updateEmail()" ka="dialog_sure" class="btn btn-primary btn-sure">确定</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 邮箱验证2-公司 -->
+        <div v-show="isShowUpdateBusinessDiv2" data-transfer="true" class="dialog-profile-email dialog-wrap v-transfer-dom">
+            <div ka="dialog_layer" class="dialog-layer"></div>
+            <div class="dialog-container" style="">
+                <div class="dialog-header">
+                    <!---->
+                    <h3 class="title">修改常用邮箱</h3><span @click="closeUpdateBusinessDiv2()" ka="dialog_close" class="close"><i class="icon-close"></i></span>
+                </div>
+                <div class="dialog-body">
+                    <!-- <div class="form-row">
+                        <input type="text" placeholder="请输入新的邮件" maxlength="50" class="ipt">
+                    </div> -->
+                    <div class="form-row row-sms">
+                        <span class="ipt-wrap"><i class="icon-sign-sms"></i> 
+                            <input v-model="companyEmailprefix" type="text" style="min-width: 180px; width: 180px;" placeholder="请输入新的邮件" name="phoneCode" maxlength="15" autocomplete="off" class="ipt ipt-sms"> 
+                            <button type="button" class="btn btn-sms">{{newCompany.companyEmailSuffix}}</button> 
+                        </span>
+                    </div>
+                    <div class="form-row row-sms">
+                        <span class="ipt-wrap"><i class="icon-sign-sms"></i> 
+                            <input v-model="receivedCode" type="text" style="min-width: 180px; width: 180px;" placeholder="请输入邮件验证码" name="phoneCode" maxlength="6" autocomplete="off" class="ipt ipt-sms"> 
+                            <button @click="sendEmail()" type="button" class="btn btn-sms">获取验证码</button> 
+                            <span class="get-msg-code" style="display: none;">已发送(<em>60</em>s)</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                <div class="dialog-footer">
+                    <div class="btns">
+                        <span @click="closeUpdateBusinessDiv2()" ka="dialog_cancel" class="btn btn-outline btn-cancel">取消</span>
+                        <span @click="updateCompanyNameEmail()" ka="dialog_sure" class="btn btn-primary btn-sure">确定</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 邮箱验证3-初次登陆验证 -->
+        <div v-show="isShowUpdateBusinessDiv3" data-transfer="true" class="dialog-profile-email dialog-wrap v-transfer-dom">
+            <div ka="dialog_layer" class="dialog-layer"></div>
+            <div class="dialog-container" style="">
+                <div class="dialog-header">
+                    <!---->
+                    <h3 class="title">修改常用邮箱</h3><span @click="closeUpdateBusinessDiv3()" ka="dialog_close" class="close"><i class="icon-close"></i></span>
+                </div>
+                <div class="dialog-body">
+                    <!-- <div class="form-row">
+                        <input type="text" placeholder="请输入新的邮件" maxlength="50" class="ipt">
+                    </div> -->
+                    <div class="form-row row-sms">
+                        <span class="ipt-wrap"><i class="icon-sign-sms"></i> 
+                            <input v-model="boss.email" type="text" style="min-width: 180px; width: 180px;" placeholder="请输入新的邮件" name="phoneCode" maxlength="15" autocomplete="off" class="ipt ipt-sms"> 
+                            <button type="button" class="btn btn-sms">{{company.companyEmailSuffix}}</button> 
+                        </span>
+                    </div>
+                    <div class="form-row row-sms">
+                        <span class="ipt-wrap"><i class="icon-sign-sms"></i> 
+                            <input v-model="receivedCode" type="text" style="min-width: 180px; width: 180px;" placeholder="请输入邮件验证码" name="phoneCode" maxlength="6" autocomplete="off" class="ipt ipt-sms"> 
+                            <button @click="sendEmailByAdd()" type="button" class="btn btn-sms">获取验证码</button> 
+                            <span class="get-msg-code" style="display: none;">已发送(<em>60</em>s)</span>
+                        </span>
+                        
+                    </div>
+                </div>
+                <div class="dialog-footer">
+                    <div class="btns">
+                        <span @click="closeUpdateBusinessDiv3()" ka="dialog_cancel" class="btn btn-outline btn-cancel">取消</span>
+                        <span @click="addBoss()" ka="dialog_sure" class="btn btn-primary btn-sure">确定</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 修改认证公司确认框 -->
+        <div v-show="isShowConfirmUpdateCompanyDiv" class="dialog-wrap dialog-comfirm-my-information dialog-icons-default">
+            <div ka="dialog_layer" class="dialog-layer"></div>
+            <div class="dialog-container">
+                <div class="dialog-header"><i class="icon-dialog icon-dialog-warning"></i>
+                    <h3 class="title">更换公司可能造成影响：</h3><span @click="closeConfirmUpdateCompanyDiv()" ka="dialog_close" class="close"><i
+                            class="icon-close"></i></span>
+                </div>
+                <div class="dialog-body">• 认证取消，需重新认证<br>• 已保存或发布的职位将不可再开启<br>•
+                    正在使用中的付费职位、道具、相关权益将不再生效，并且不做退还；如有被管理员分配的未使用的权益或道具，将退还给管理员</div>
+                <div class="dialog-footer">
+                    <div class="btns">
+                        <span @click="closeConfirmUpdateCompanyDiv()" ka="dialog_cancel" class="btn btn-outline btn-cancel">暂不更换</span>
+                        <span @click="openUpdateCompanyNameDiv()" ka="dialog_sure" class="btn btn-primary btn-sure">确定更换</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    const app = new Vue({
+        el: "#app",
+        data: {
+            isShowPulisherListDiv: true,
+            userInfo: {},
+            isShowUserNav: false,
+            isShowUserLi: false,
+            leftSide: "position",
+            // leftSide: "chat",
+            isShowUpdateUserInfoDiv: false,
+            isShowUpdateBusinessDiv2: false,
+            isShowUpdateBusinessDiv3: false,
+            isShowUpdateWChatDiv: false,
+            isShowUpdateBusinessDiv: false,
+            isShowConfirmUpdateCompanyDiv: false,
+            isShowUpdateCompanyNameDiv: false,
+            isShowUpdateCompanyLastConfirmDiv: false,
+            boss: {},
+            company: {},
+            companyEmailprefix: "",
+            receivedCode: "",
+            updateCompanyName: "",
+            newCompany: {},
+        },
+        created() {
+            let authorization = sessionStorage.getItem("Authorization");
+            if (authorization != null && authorization.length > 0) {
+                this.getUserInfo();
+                this.getBossInfo();
+            } else {
+                window.location.href = "./login.html";
+            }
+        },
+        methods: {
+            addBoss() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("name", this.boss.name);
+                    param.append("idCard", this.boss.idCard);
+                    param.append("bossPosition", this.boss.bossPosition);
+                    param.append("email", this.boss.email+this.company.companyEmailSuffix); 
+                    param.append("companyName", this.boss.companyName);
+                    param.append("code", this.receivedCode);
+                    axios.post('http://localhost/boss/save', param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getBossInfo();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                this.isShowUpdateBusinessDiv3 = false;
+            },
+            updateCompanyNameEmail() {
+                let email = this.companyEmailprefix + this.newCompany.companyEmailSuffix;
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("email", email);
+                    param.append("companyName", this.updateCompanyName);
+                    param.append("code", this.receivedCode);
+                    axios.post('http://localhost/boss/updateCompanyByCode', param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getBossInfo();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+
+
+                this.isShowUpdateBusinessDiv2 = false;
+            },
+            updateEmail() {
+                let email = this.companyEmailprefix + this.company.companyEmailSuffix;
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("email", email);
+                    param.append("code", this.receivedCode);
+                    axios.post('http://localhost/boss/updateEmailByCode', param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getBossInfo();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+
+
+                this.isShowUpdateBusinessDiv = false;
+            },
+            sendEmailByAdd() {
+                let email = this.boss.email + this.company.companyEmailSuffix;
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/boss/sendEmail?email='+email, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            sendEmail() {
+                let email = this.companyEmailprefix + this.company.companyEmailSuffix;
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/boss/sendEmail?email='+email, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+
+            },
+            updateWx() {
+                // TODO
+                // this.updateBossInfo();
+                this.isShowUpdateWChatDiv = false;
+            },
+            updateUserInfo() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("gender", this.userInfo.gender);
+                    axios.post('http://localhost/user/updateInfo', param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getUserInfo();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                
+            },
+            updateBossInfo() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    let param = new URLSearchParams();
+                    param.append("name", this.boss.name);
+                    param.append("idCard", this.boss.idCard);
+                    param.append("bossPosition", this.boss.bossPosition);
+                    param.append("companyName", this.boss.companyName);
+                    param.append("email", this.boss.email);
+                    axios.post('http://localhost/boss/update', param, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.getBossInfo();
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            updateInfo() {
+                this.updateUserInfo();
+                this.updateBossInfo();
+                this.isShowUpdateUserInfoDiv = false;
+            },
+            changeGender(gender) {
+                this.userInfo.gender = gender;
+            },
+            getGenderClass(gender) {
+                if (gender == this.userInfo.gender) {
+                    return " radioChecked";
+                }
+            },
+            getCompanyInfo(companyName) {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/company/info?companyName='+companyName, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.company = response.data.company;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            getBossInfo() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/boss/info', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            let boss = response.data.boss;
+                            if (boss == null) {
+                                this.leftSide = "user";
+                                alert("请填写贵公司信息");
+                            } else {
+                                this.boss = response.data.boss;
+                                this.getCompanyInfo(this.boss.companyName);
+                            }
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            openEmailConfirmDiv() {
+                this.isShowUpdateBusinessDiv2 = true;
+                this.isShowUpdateCompanyLastConfirmDiv = false;
+            },
+            closeUdpateCompanyLastConfirmDiv() {
+                this.isShowUpdateCompanyLastConfirmDiv = false;
+            },
+            companyLastConfirmPrev() {
+                this.isShowUpdateCompanyLastConfirmDiv = false;
+                this.isShowUpdateCompanyNameDiv = true;
+            },
+            openUdpateCompanyLastConfirmDiv() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/company/info?companyName='+this.updateCompanyName, {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.newCompany = response.data.company;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                this.isShowUpdateCompanyLastConfirmDiv = true;
+                this.isShowUpdateCompanyNameDiv = false;
+            },
+            closeUpdateCompanyNameDiv() {
+                this.isShowUpdateCompanyNameDiv = false;
+            },
+            openUpdateCompanyNameDiv() {
+                this.isShowUpdateCompanyNameDiv = true;
+                this.isShowConfirmUpdateCompanyDiv = false;
+            },
+            closeConfirmUpdateCompanyDiv() {
+                this.isShowConfirmUpdateCompanyDiv = false;
+            },
+            openConfirmUpdateCompanyDiv() {
+                this.isShowConfirmUpdateCompanyDiv = true;
+            },
+            closeUpdateBusinessDiv() {
+                this.receivedCode = "";
+                this.isShowUpdateBusinessDiv = false;
+            },
+            closeUpdateBusinessDiv2() {
+                this.receivedCode = "";
+                this.isShowUpdateBusinessDiv2 = false;
+            },
+            closeUpdateBusinessDiv3() {
+                this.receivedCode = "";
+                this.isShowUpdateBusinessDiv3 = false;
+            },
+            openUpdateBusinessDiv() {
+                this.isShowUpdateBusinessDiv = true;
+            },
+            openUpdateBusinessDiv3() {
+                this.isShowUpdateBusinessDiv3 = true;
+                this.getCompanyInfo(this.boss.companyName);
+            },
+            closeUpdateWChatDiv() {
+                this.isShowUpdateWChatDiv = false;
+            },
+            openUpdateWChatDiv() {
+                this.isShowUpdateWChatDiv = true;
+            },
+            closeUpdateUserInfoDiv() {
+                this.isShowUpdateUserInfoDiv = false;
+            },
+            openUpdateUserInfoDiv() {
+                this.isShowUpdateUserInfoDiv = true;
+            },
+            loginout() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/login/out', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.cvs = response.data.pageInfo.list;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+                sessionStorage.removeItem("Authorization");
+                window.location.href = "./login.html";
+            },
+            changeRole() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/user/change/role', {
+                        headers: {
+                            Authorization: authorization,
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            if ("user" == response.data.user.role) {
+                                window.location.href = "./main.html";
+                            }
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                } 
+            },
+            getUserInfo() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/user/getInfo', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.userInfo = response.data.user;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
+            mouseOverUserNav() {
+                this.isShowUserNav = true;
+            },
+            mouseLeaveUserNav() {
+                if (this.timeor) clearTimeout(this.timeor);
+                this.timeor = setTimeout(() => {
+                    if (!this.isShowUserLi) {
+                        this.isShowUserNav = false;
+                    }
+                }, 300);
+            },
+            mouseOverUserLi() {
+                this.isShowUserLi = true;
+            },
+            mouseLeaveUserLi() {
+                this.isShowUserLi = false;
+                this.isShowUserNav = false;
+            },
+            changeLeftSize(str) {
+                if (this.boss.phone == null) {
+                    return;
+                }
+                this.leftSide = str;
+            },
+            getLeftSizeClass(str) {
+                let res = "";
+                if (this.leftSide == str) {
+                    res = res + " router-link-active";
+                }
+                return res;
+            },
+            generatorScale(companyMinScale, companyMaxScale) {
+                if (companyMaxScale >= 10000) {
+                    return "10000人以上";
+                }
+                return companyMinScale + "-" + companyMaxScale + "人";
+            },
+        },
+    })
+
+</script>
+
+</html>

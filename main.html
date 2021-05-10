@@ -754,7 +754,7 @@
                                         data-v-5a609dbf="" class="icon-vip icon-vip-upgrade"></i></div>
                                 <div data-v-5a609dbf="" class="userinfo" style="font-size: 12px;
                             line-height: 26px;"> {{userInfo.age}}岁 <i data-v-5a609dbf="" class="vline"></i>
-                                    {{userInfo.workAge}}年 <i data-v-5a609dbf="" class="vline"></i> 本科 </div>
+                                    {{userInfo.workAge}}年 <i data-v-5a609dbf="" class="vline"></i> {{eduInfo.degree}} </div>
                                 <div data-v-5a609dbf="" class="now-state" style="margin-top: 15px;">
                                     <div data-v-5a609dbf="" class="ui-select ui-select-single"
                                         style="width: 100%; box-sizing: border-box;
@@ -1127,7 +1127,7 @@
                             <!-- 有数据 -->
                             <ul v-show="jds.length > 0" data-v-18b5e770="">
                                 <li data-v-18b5e770="" class="item-boss" v-for="(jd, index) in jds">
-                                    <div data-v-18b5e770="" class="figure"><img data-v-18b5e770="" src="###">
+                                    <div data-v-18b5e770="" class="figure"><img data-v-18b5e770="" :src="jd.publisherAvatar">
                                     </div>
                                     <div data-v-18b5e770="" class="item-content">
                                         <div data-v-18b5e770="" class="info-header">
@@ -1657,6 +1657,7 @@
             condCompanyType: null,
             condStr: "",
             searchType: 1,
+            eduInfo: {},
         },
         created() {
             let authorization = sessionStorage.getItem("Authorization");
@@ -1669,12 +1670,30 @@
                 this.getDeliverIdList();
                 this.getChatIdList();
                 this.clearRedis();
+                this.getHighestEdu();
             } else {
                 this.jdRecommend(this.pageIndex);
             }
 
         },
         methods: {
+            getHighestEdu() {
+                let authorization = sessionStorage.getItem("Authorization");
+                if (authorization != null && authorization.length > 0) {
+                    axios.get('http://localhost/eduExp/highest', {
+                        headers: {
+                            Authorization: authorization
+                        }
+                    })
+                        .then((response) => {
+                            console.log(response);
+                            this.eduInfo = response.data.edu;
+                        })
+                        .catch(function (error) {
+                            console.log(error);
+                        });
+                }
+            },
             clearRedis() {
                 let authorization = sessionStorage.getItem("Authorization");
                 if (authorization != null && authorization.length > 0) {

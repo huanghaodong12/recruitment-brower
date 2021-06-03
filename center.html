@@ -1748,7 +1748,9 @@
                     param.append("companyDepartment", this.workInfo.companyDepartment);
                     param.append("position", this.workInfo.position);
                     param.append("startTime", this.workInfo.startTime);
-                    param.append("endTime", this.workInfo.endTime);
+                    if (this.workInfo.endTime != null) {
+                        param.append("endTime", this.workInfo.endTime);
+                    }
                     param.append("describe", this.workInfo.describe);
                     let url = "http://localhost/workExp/save";
                     if (this.workAddOrUpdateDivType == 'update') {
